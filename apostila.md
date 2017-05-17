@@ -2,25 +2,29 @@
 
 ## Surgimento
 
-A *World Wide Web*, também conhecida como *WWW* ou apenas *web*, foi criada para exibição de documentos em hipermídia interligados na internet, a fim de tornar mais fácil o compartilhamento de documentos de pesquisas. 
+A *World Wide Web*, também conhecida como *WWW* ou apenas *web*, foi criada para exibição de documentos em hipermídia interligados na internet, a fim de tornar mais fácil o compartilhamento de documentos de pesquisas.
 
-O primeiro site é o hoje disponibilizado no endereço: [http://info.cern.ch/hypertext/WWW/TheProject.html](http://info.cern.ch/hypertext/WWW/TheProject.html)
+O primeiro site é o hoje disponibilizado no endereço: http://info.cern.ch/hypertext/WWW/TheProject.html
 
 Nesse site é possível obter diversas informações sobre o seu surgimento.
 
 Há inúmeras referências na sua base, código e documentação sobre a sua real intenção no desenvolvimento mesmo esta ter mudado drasticamente nos seus anos de existência.
 
-!!! COLOCAR AQUI IMAGEM SITE DA MICROSOFT !!!
+Site da Microsoft em 1994:
+
+![Site da Microsoft em 1994](imagens/site_microsoft_1994.png)
 
 ## Como funciona
 
 Para exibir uma página de internet é necessário um navegador compatível o qual realizará uma requisição web e exibirá o retorno para o usuário.
 
-Um site é hospedado em um servidor HTTP (protocolo comumente usado para fornecimento de conteúdo na internet, geralmente páginas em HTML). 
+Um site é hospedado em um servidor HTTP (protocolo comumente usado para fornecimento de conteúdo na internet, geralmente páginas em HTML).
 
 A grosso modo, o usuário digita um endereço no navegador e este envia uma requisição ao servidor onde o site está hospedado. O servidor processa essa informação e retorna o conteúdo requisitado. O navegador recebendo essa informação, renderiza o documento e o exibe ao usuário.
 
-!!! IMAGEM DE REQUISIÇÃO WEB !!!
+Ilustração de uma requisição web:
+
+![Ilustração de uma requisição web](imagens/web_request.png)
 
 ## WEB 2.0 e SPAs
 
@@ -44,7 +48,9 @@ Como o próprio nome diz, SPA é basicamente uma aplicação que tem apenas uma 
 
 O Google foi um dos pioneiros nesse conceito, tendo o Gmail como seu carro chefe.
 
-!!! IMAGEM DO GMAIL !!!
+Ilustração do Gmail:
+
+![Gmail](imagens/gmail.png)
 
 ## Camadas
 
@@ -56,11 +62,11 @@ Uma página web é basicamente divida em 3 camadas: exibição, estilo e comport
 
 *JavaScript* é responsável pela parte comportamental.
 
-# HTML (HyperText Markup Language)
+# HyperText Markup Language
 
-## Definição e história
+## Introdução
 
-Assim como XML (usada para estrutura de dados, comunicação, entre outros), HTML é derivada da SGML, Standard Generalized Markup Language.
+Assim como a XML (usada para estrutura de dados, comunicação, entre outros), a *HTML* é derivada da SGML (Standard Generalized Markup Language).
 
 Sua estrutura é composta por *tags* (marcadores), delimitadas pelos sinais de menor `<` e maior `>`.
 
@@ -92,13 +98,13 @@ Exemplo de uma página HTML:
 </html>
 ```
 
-!!! EXIBIR HTML RENDERIZADO !!!
+O exemplo acima será renderizado como a seguir:
 
-## Tags existentes
+![Página de exemplo renderizada no Chrome](imagens/exemplo_pagina.png)
 
-Essas são as tags HTML suportadas pelos navegadores atuais:
+## Elementos e tags existentes
 
-!!! COLOCAR TABELA DE TAGS !!!
+Essas são os elementos e suas tags HTML suportados pelos navegadores atuais:
 
 | Nome | Significado |
 |--------|--------|
@@ -133,7 +139,7 @@ Essas são as tags HTML suportadas pelos navegadores atuais:
 | `<em>` | 	Texto enfatizado |
 | `<embed>` | Elemento embutido |
 | `<fieldset>` | Grupo de campos |
-| `<figcaption>` | ? |
+| `<figcaption>` | Legenda de uma figura |
 | `<figure>` | 	Figura |
 | `<footer>` | 	Rodapé da página |
 | `<form>` | 	Formulário |
@@ -211,13 +217,13 @@ Exemplo de comentário:
 
 ## HTML5
 
+![Logotipo do HTML5](imagens/html5_logo.png)
+
 ### Surgimento
 
 Em 2004, o WHATWG (Web Hypertext Application Technology Working Group) começou a trabalhar em um novo padrão HTML, enquanto a W3C (World Wide Web Consortium) concentrava seus esforços no XHTML. Mas em 2009 os dois grupos se uniram e trabalharam juntos no desenvolvimento do HTML5.
 
 Com o crescimento de dispositivos móveis, como o iPhone, e a morte do Flash, o HTML5 foi ganhando força até tomar conta do mercado e obter suporte em todos os navegadores atuais. Substituindo assim a necessidade de qualquer plugin de terceiros para a criação de páginas web ricas em conteúdo e até mesmo animações.
-
-!!! LOGOTIPO DO HTML5 !!!
 
 ### DOCTYPE
 
@@ -292,12 +298,150 @@ Exemplo:
 </body>
 ```
 
-Essas novas tags não traz nenhuma diferença no visual, mas traz diversas vantagens por carregarem um significado atrelado à elas.
+Essas novas tags não trazem nenhuma diferença no visual, apenas carregarem um significado semântico atrelado à elas.
 
-Algum leitor de tela, por exemplo, agora é capaz de ler o código e identificar as partes importantes de determinada página.
+Com isso algum leitor de tela, por exemplo, é capaz de ler o código e identificar as partes julgadas importantes por ele.
 
-Além disso, os motores de busca utilizam esse código semântico para buscar e mostrar ao usuário o conteúdo realmente interessante à ele.
+Os motores de busca também podem utilizar esse código semântico para buscar e mostrar ao usuário o conteúdo de seu real interesse mais facilmente.
 
-As *divs* não deixarão de existir pois ainda cumprem bem o papel de agrupar elementos, mas não precisam mais ser usadas para identificar a estrutura semântica da página.
+As *divs* não deixarão de existir pois ainda cumprem bem seu papel, mas não são mais necessárias para identificar a estrutura semântica da página.
 
-Para explicar todo esse conceito de semântica, o 
+Para explicar todo esse conceito o WHATWG fez um documento sobre o assunto. O qual pode ser conferido no seguinte endereço: https://html.spec.whatwg.org/multipage/semantics.html
+
+# Cascading Style Sheets
+
+## Introdução
+
+CSS, sua sigla, foi proposta por *[Håkon Wium Lie](https://en.wikipedia.org/wiki/H%C3%A5kon_Wium_Lie)* em 1994 e publicamente lançada em 1996.
+
+Foi desenvolvida com a intenção de prover *folhas de estilo* para a web, mas demorou a emplacar e apenas em 2000 o primeiro na navegador com **total suporte** à CSS1 foi lançado, *Internet Explorer 5.0*.
+
+Apesar de ter demorado para ser largamente utilizada, hoje é essencial para qualquer página na web e já está na sua terceira versão.
+
+Hoje, a linguagem em si não é mais baseada em versões, apenas seus módulos. O termo CSS3 engloba todas as novidades pós *CSS2.1*, logo pode ser simplesmente chamada de CSS.
+
+Logotipo do CSS3:
+
+![Logotipo do CSS3](imagens\css3_logo.png)
+
+## Estrutura
+
+CSS não possui tags como HTML, mas seletores com propriedades e valores. Como a seguir:
+
+```css
+seletor {
+	propriedade: valor;
+}
+```
+
+De uma forma genérica, o *seletor* representa o elemento ao qual a regra será aplicada. A *propriedade* define o atributo a ser usado. *Valor* nada mais é que o valor a ser aplicado na propriedade do elemento.
+
+Exemplo de uma regra CSS:
+
+```css
+body {
+	background-color: white;
+}
+```
+
+A regra acima diz para aplicar branco como cor de fundo do corpo da página.
+
+## Aplicação
+
+Há três formas de inserir estilos em uma página HTML:
+
+- Inline, ou em linha
+- Folha de estilos interna
+- Folha de estilos externa
+
+### Inline
+
+Usado para aplicar estilos diretamente no elemento desejado.
+
+Para inserir esse tipo de estilo, é necessário um atributo `style` no elemento contendo a regra a ser aplicada.
+
+Exemplo de CSS inline:
+
+```xml
+<p style="color:blue;">Sou um parágrafo com o texto em azul</p>
+```
+
+Esse tipo de estilização não é recomendável por ter de ser repetida em cada elemento, impossibilitando o aproveitamento do código.
+
+### Folha de estilos interna
+
+Essa opção facilita o aproveitamento de estilos dentor de uma mesma página, já que as regras serão aplicadas à todos os elementos referenciados nos seletores.
+
+Para isso, basta indicar uma tag `style` no `head` do documento.
+
+Exemplo:
+
+```xml
+<html>
+
+	<head>
+    	<style>
+        	p {
+            	color: blue;
+            }
+        </style>
+    </head>
+
+    <body>
+    	<p>Sou um parágrafo com o texto em azul</p>
+        <p>Também tenho o texto em azul!</p>
+        <p>Eu também!!</p>
+    </body>
+
+</html>
+```
+
+Aqui temos um melhor aproveitamento do código, pois como explicado anteriormente, todos os elementos referenciados nos seletores serão afetados pelas regras ali criadas.
+
+Mas e quando temos mais de uma página? Ainda temos de copiar todo o código feito em uma para todas as outras.
+
+### Folha de estilos externa
+
+Com uma folha de estilos externa, ou external style sheet, os estilos podem ser aplicados em mais de um documento. Assim diminuímos a repetição de código e aumentamos a produtividade.
+
+Conseguimos vincular uma folha de estilos a uma página simplesmente a referenciando no `head` da página com uma tag `link`.
+
+```xml
+<html>
+
+	<head>
+    	<link rel="stylesheet" type="text/css" href="meu_paragrafos_azuis.css">
+    </head>
+
+    <body>
+    	<p>Sou um parágrafo com o texto em azul</p>
+        <p>Também tenho o texto em azul!</p>
+        <p>Eu também!!</p>
+    </body>
+
+</html>
+```
+
+Também podemos referenciar mais de uma folha de estilos na mesma página:
+
+```xml
+<html>
+
+	<head>
+    	<link rel="stylesheet" type="text/css" href="meu_paragrafos_azuis.css">
+        <link rel="stylesheet" type="text/css" href="titulo_sao_verdes.css">
+    </head>
+
+    <body>
+    	<h1>Título é verde!</h1>
+    	<p>Sou um parágrafo com o texto em azul</p>
+        <p>Também tenho o texto em azul!</p>
+        <p>Eu também!!</p>
+    </body>
+
+</html>
+```
+
+Assim será reproduzido esse documento no navegador:
+
+![Página estilizada](imagens/pagina_estilizada.png)
