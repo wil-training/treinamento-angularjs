@@ -30,7 +30,7 @@ Ilustração de uma requisição web:
 
 ### Páginas dinâmicas
 
-Até então, os documentos exibidos na internet eram apenas páginas estáticas e não era possível ter seu conteúdo dinamicamente.
+Até então, os documentos exibidos na internet eram apenas páginas estáticas e não era possível ter seu conteúdo alterado dinamicamente.
 
 Embora essas páginas suprissem a necessidade do momento, com o passar do tempo fomos tendo a necessidade de páginas mais ricas, dinâmicas e interativas. Criando um conceito hoje chamado de WEB 2.0.
 
@@ -78,7 +78,7 @@ Exemplo de um parágrafo em HTML:
 
 ## Estrutura
 
-Uma página HTML é composta de cabeçalho e corpo, sendo representados pelas palavras head e body, respectivamente.
+Uma página HTML é composta de cabeçalho e corpo, sendo representados pelas palavras `head` e `body`, respectivamente.
 
 No cabeçalho vão informações como o título e outras informações usadas pelos navegadores.
 
@@ -322,7 +322,7 @@ Hoje, a linguagem em si não é mais baseada em versões, apenas seus módulos. 
 
 Logotipo do CSS3:
 
-![Logotipo do CSS3](imagens\css3_logo.png)
+![Logotipo do CSS3](imagens/css3_logo.png)
 
 ## Estrutura
 
@@ -330,7 +330,7 @@ CSS não possui tags como HTML, mas seletores com propriedades e valores. Como a
 
 ```css
 seletor {
-	propriedade: valor;
+    propriedade: valor;
 }
 ```
 
@@ -340,7 +340,7 @@ Exemplo de uma regra CSS:
 
 ```css
 body {
-	background-color: white;
+    background-color: white;
 }
 ```
 
@@ -410,7 +410,7 @@ Conseguimos vincular uma folha de estilos a uma página simplesmente a referenci
 <html>
 
 	<head>
-    	<link rel="stylesheet" type="text/css" href="meu_paragrafos_azuis.css">
+    	<link rel="stylesheet" type="text/css" href="meus_paragrafos_azuis.css">
     </head>
 
     <body>
@@ -428,8 +428,8 @@ Também podemos referenciar mais de uma folha de estilos na mesma página:
 <html>
 
 	<head>
-    	<link rel="stylesheet" type="text/css" href="meu_paragrafos_azuis.css">
-        <link rel="stylesheet" type="text/css" href="titulo_sao_verdes.css">
+    	<link rel="stylesheet" type="text/css" href="meus_paragrafos_azuis.css">
+        <link rel="stylesheet" type="text/css" href="titulos_sao_verdes.css">
     </head>
 
     <body>
@@ -445,3 +445,547 @@ Também podemos referenciar mais de uma folha de estilos na mesma página:
 Assim será reproduzido esse documento no navegador:
 
 ![Página estilizada](imagens/pagina_estilizada.png)
+
+### Cores
+
+Há diversas formas de aplicarmos cores em CSS e em diversos lugares.
+
+Podemos definir cor do texto, cor de fundo de algum elemento ou da página em si, cor do botão, cor da borda e outros.
+
+Por exemplo, para definir a cor de fundo de uma `div` para verde, basta fazer o seguinte:
+
+```css
+div {
+    background-color: green;
+}
+```
+
+Para definir que os parágrafos terão o texto em azul:
+
+```css
+p {
+    color: blue;
+}
+```
+
+Como pode ver, basta inserir o nome da cor e o navegador irá reproduzí-la ao usuário. Mas esta não é a única maneira de dizer a cor desejada, temos as seguintes:
+
+- Por nome, também chamado de *keyword*
+- Valores em RGB
+- Valores hexadecimais
+- Valores HSL
+
+#### Keyword
+
+Como vimos anteriormente, um keyword é nada além de o nome em inglês da cor. Aqui segue uma tabela completa das keywords disponíveis:
+
+| Keyword | Representação |
+| ------ | ------ |
+| `black` | <div style="color:transparent;background-color:#000000;">&nbsp</div> |
+| `silver` | <div style="color:transparent;background-color:#c0c0c0;">&nbsp</div> |
+| `gray` | <div style="color:transparent;background-color:#808080;">&nbsp</div> |
+| `white` | <div style="color:transparent;background-color:#ffffff;">&nbsp</div> |
+| `maroon` | <div style="color:transparent;background-color:#800000;">&nbsp</div> |
+| `red` | <div style="color:transparent;background-color:#ff0000;">&nbsp</div> |
+| `purple` | <div style="color:transparent;background-color:#800080;">&nbsp</div> |
+| `fuchsia` | <div style="color:transparent;background-color:#ff00ff;">&nbsp</div> |
+| `green` | <div style="color:transparent;background-color:#008000;">&nbsp</div> |
+| `lime` | <div style="color:transparent;background-color:#00ff00;">&nbsp</div> |
+| `olive` | <div style="color:transparent;background-color:#808000;">&nbsp</div> |
+| `yellow` | <div style="color:transparent;background-color:#ffff00;">&nbsp</div> |
+| `navy` | <div style="color:transparent;background-color:#000080;">&nbsp</div> |
+| `blue` | <div style="color:transparent;background-color:#0000ff;">&nbsp</div> |
+| `teal` | <div style="color:transparent;background-color:#008080;">&nbsp</div> |
+| `aqua` | <div style="color:transparent;background-color:#00ffff;">&nbsp</div> |
+| `orange` | <div style="color:transparent;background-color:#ffa500;">&nbsp</div> |
+| `aliceblue` | <div style="color:transparent;background-color:#f0f8ff;">&nbsp</div> |
+| `antiquewhite` | <div style="color:transparent;background-color:#faebd7;">&nbsp</div> |
+| `aquamarine` | <div style="color:transparent;background-color:#7fffd4;">&nbsp</div> |
+| `azure` | <div style="color:transparent;background-color:#f0ffff;">&nbsp</div> |
+| `beige` | <div style="color:transparent;background-color:#f5f5dc;">&nbsp</div> |
+| `bisque` | <div style="color:transparent;background-color:#ffe4c4;">&nbsp</div> |
+| `blanchedalmond` | <div style="color:transparent;background-color:#ffebcd;">&nbsp</div> |
+| `blueviolet` | <div style="color:transparent;background-color:#8a2be2;">&nbsp</div> |
+| `brown` | <div style="color:transparent;background-color:#a52a2a;">&nbsp</div> |
+| `burlywood` | <div style="color:transparent;background-color:#deb887;">&nbsp</div> |
+| `cadetblue` | <div style="color:transparent;background-color:#5f9ea0;">&nbsp</div> |
+| `chartreuse` | <div style="color:transparent;background-color:#7fff00;">&nbsp</div> |
+| `chocolate` | <div style="color:transparent;background-color:#d2691e;">&nbsp</div> |
+| `coral` | <div style="color:transparent;background-color:#ff7f50;">&nbsp</div> |
+| `cornflowerblue` | <div style="color:transparent;background-color:#6495ed;">&nbsp</div> |
+| `cornsilk` | <div style="color:transparent;background-color:#fff8dc;">&nbsp</div> |
+| `crimson` | <div style="color:transparent;background-color:#dc143c;">&nbsp</div> |
+| `cyan` ou `aqua` | <div style="color:transparent;background-color:#00ffff;">&nbsp</div> |
+| `darkblue` | <div style="color:transparent;background-color:#00008b;">&nbsp</div> |
+| `darkcyan` | <div style="color:transparent;background-color:#008b8b;">&nbsp</div> |
+| `darkgoldenrod` | <div style="color:transparent;background-color:#b8860b;">&nbsp</div> |
+| `darkgray` | <div style="color:transparent;background-color:#a9a9a9;">&nbsp</div> |
+| `darkgreen` | <div style="color:transparent;background-color:#006400;">&nbsp</div> |
+| `darkgrey` | <div style="color:transparent;background-color:#a9a9a9;">&nbsp</div> |
+| `darkkhaki` | <div style="color:transparent;background-color:#bdb76b;">&nbsp</div> |
+| `darkmagenta` | <div style="color:transparent;background-color:#8b008b;">&nbsp</div> |
+| `darkolivegreen` | <div style="color:transparent;background-color:#556b2f;">&nbsp</div> |
+| `darkorange` | <div style="color:transparent;background-color:#ff8c00;">&nbsp</div> |
+| `darkorchid` | <div style="color:transparent;background-color:#9932cc;">&nbsp</div> |
+| `darkred` | <div style="color:transparent;background-color:#8b0000;">&nbsp</div> |
+| `darksalmon` | <div style="color:transparent;background-color:#e9967a;">&nbsp</div> |
+| `darkseagreen` | <div style="color:transparent;background-color:#8fbc8f;">&nbsp</div> |
+| `darkslateblue` | <div style="color:transparent;background-color:#483d8b;">&nbsp</div> |
+| `darkslategray` | <div style="color:transparent;background-color:#2f4f4f;">&nbsp</div> |
+| `darkslategrey` | <div style="color:transparent;background-color:#2f4f4f;">&nbsp</div> |
+| `darkturquoise` | <div style="color:transparent;background-color:#00ced1;">&nbsp</div> |
+| `darkviolet` | <div style="color:transparent;background-color:#9400d3;">&nbsp</div> |
+| `deeppink` | <div style="color:transparent;background-color:#ff1493;">&nbsp</div> |
+| `deepskyblue` | <div style="color:transparent;background-color:#00bfff;">&nbsp</div> |
+| `dimgray` | <div style="color:transparent;background-color:#696969;">&nbsp</div> |
+| `dimgrey` | <div style="color:transparent;background-color:#696969;">&nbsp</div> |
+| `dodgerblue` | <div style="color:transparent;background-color:#1e90ff;">&nbsp</div> |
+| `firebrick` | <div style="color:transparent;background-color:#b22222;">&nbsp</div> |
+| `floralwhite` | <div style="color:transparent;background-color:#fffaf0;">&nbsp</div> |
+| `forestgreen` | <div style="color:transparent;background-color:#228b22;">&nbsp</div> |
+| `gainsboro` | <div style="color:transparent;background-color:#dcdcdc;">&nbsp</div> |
+| `ghostwhite` | <div style="color:transparent;background-color:#f8f8ff;">&nbsp</div> |
+| `gold` | <div style="color:transparent;background-color:#ffd700;">&nbsp</div> |
+| `goldenrod` | <div style="color:transparent;background-color:#daa520;">&nbsp</div> |
+| `greenyellow` | <div style="color:transparent;background-color:#adff2f;">&nbsp</div> |
+| `grey` | <div style="color:transparent;background-color:#808080;">&nbsp</div> |
+| `honeydew` | <div style="color:transparent;background-color:#f0fff0;">&nbsp</div> |
+| `hotpink` | <div style="color:transparent;background-color:#ff69b4;">&nbsp</div> |
+| `indianred` | <div style="color:transparent;background-color:#cd5c5c;">&nbsp</div> |
+| `indigo` | <div style="color:transparent;background-color:#4b0082;">&nbsp</div> |
+| `ivory` | <div style="color:transparent;background-color:#fffff0;">&nbsp</div> |
+| `khaki` | <div style="color:transparent;background-color:#f0e68c;">&nbsp</div> |
+| `lavender` | <div style="color:transparent;background-color:#e6e6fa;">&nbsp</div> |
+| `lavenderblush` | <div style="color:transparent;background-color:#fff0f5;">&nbsp</div> |
+| `lawngreen` | <div style="color:transparent;background-color:#7cfc00;">&nbsp</div> |
+| `lemonchiffon` | <div style="color:transparent;background-color:#fffacd;">&nbsp</div> |
+| `lightblue` | <div style="color:transparent;background-color:#add8e6;">&nbsp</div> |
+| `lightcoral` | <div style="color:transparent;background-color:#f08080;">&nbsp</div> |
+| `lightcyan` | <div style="color:transparent;background-color:#e0ffff;">&nbsp</div> |
+| `lightgoldenrodyellow` | <div style="color:transparent;background-color:#fafad2;">&nbsp</div> |
+| `lightgray` | <div style="color:transparent;background-color:#d3d3d3;">&nbsp</div> |
+| `lightgreen` | <div style="color:transparent;background-color:#90ee90;">&nbsp</div> |
+| `lightgrey` | <div style="color:transparent;background-color:#d3d3d3;">&nbsp</div> |
+| `lightpink` | <div style="color:transparent;background-color:#ffb6c1;">&nbsp</div> |
+| `lightsalmon` | <div style="color:transparent;background-color:#ffa07a;">&nbsp</div> |
+| `lightseagreen` | <div style="color:transparent;background-color:#20b2aa;">&nbsp</div> |
+| `lightskyblue` | <div style="color:transparent;background-color:#87cefa;">&nbsp</div> |
+| `lightslategray` | <div style="color:transparent;background-color:#778899;">&nbsp</div> |
+| `lightslategrey` | <div style="color:transparent;background-color:#778899;">&nbsp</div> |
+| `lightsteelblue` | <div style="color:transparent;background-color:#b0c4de;">&nbsp</div> |
+| `lightyellow` | <div style="color:transparent;background-color:#ffffe0;">&nbsp</div> |
+| `limegreen` | <div style="color:transparent;background-color:#32cd32;">&nbsp</div> |
+| `linen` | <div style="color:transparent;background-color:#faf0e6;">&nbsp</div> |
+| `magenta` ou `fuchsia` | <div style="color:transparent;background-color:#ff00ff;">&nbsp</div> |
+| `mediumaquamarine` | <div style="color:transparent;background-color:#66cdaa;">&nbsp</div> |
+| `mediumblue` | <div style="color:transparent;background-color:#0000cd;">&nbsp</div> |
+| `mediumorchid` | <div style="color:transparent;background-color:#ba55d3;">&nbsp</div> |
+| `mediumpurple` | <div style="color:transparent;background-color:#9370db;">&nbsp</div> |
+| `mediumseagreen` | <div style="color:transparent;background-color:#3cb371;">&nbsp</div> |
+| `mediumslateblue` | <div style="color:transparent;background-color:#7b68ee;">&nbsp</div> |
+| `mediumspringgreen` | <div style="color:transparent;background-color:#00fa9a;">&nbsp</div> |
+| `mediumturquoise` | <div style="color:transparent;background-color:#48d1cc;">&nbsp</div> |
+| `mediumvioletred` | <div style="color:transparent;background-color:#c71585;">&nbsp</div> |
+| `midnightblue` | <div style="color:transparent;background-color:#191970;">&nbsp</div> |
+| `mintcream` | <div style="color:transparent;background-color:#f5fffa;">&nbsp</div> |
+| `mistyrose` | <div style="color:transparent;background-color:#ffe4e1;">&nbsp</div> |
+| `moccasin` | <div style="color:transparent;background-color:#ffe4b5;">&nbsp</div> |
+| `navajowhite` | <div style="color:transparent;background-color:#ffdead;">&nbsp</div> |
+| `oldlace` | <div style="color:transparent;background-color:#fdf5e6;">&nbsp</div> |
+| `olivedrab` | <div style="color:transparent;background-color:#6b8e23;">&nbsp</div> |
+| `orangered` | <div style="color:transparent;background-color:#ff4500;">&nbsp</div> |
+| `orchid` | <div style="color:transparent;background-color:#da70d6;">&nbsp</div> |
+| `palegoldenrod` | <div style="color:transparent;background-color:#eee8aa;">&nbsp</div> |
+| `palegreen` | <div style="color:transparent;background-color:#98fb98;">&nbsp</div> |
+| `paleturquoise` | <div style="color:transparent;background-color:#afeeee;">&nbsp</div> |
+| `palevioletred` | <div style="color:transparent;background-color:#db7093;">&nbsp</div> |
+| `papayawhip` | <div style="color:transparent;background-color:#ffefd5;">&nbsp</div> |
+| `peachpuff` | <div style="color:transparent;background-color:#ffdab9;">&nbsp</div> |
+| `peru` | <div style="color:transparent;background-color:#cd853f;">&nbsp</div> |
+| `pink` | <div style="color:transparent;background-color:#ffc0cb;">&nbsp</div> |
+| `plum` | <div style="color:transparent;background-color:#dda0dd;">&nbsp</div> |
+| `powderblue` | <div style="color:transparent;background-color:#b0e0e6;">&nbsp</div> |
+| `rosybrown` | <div style="color:transparent;background-color:#bc8f8f;">&nbsp</div> |
+| `royalblue` | <div style="color:transparent;background-color:#4169e1;">&nbsp</div> |
+| `saddlebrown` | <div style="color:transparent;background-color:#8b4513;">&nbsp</div> |
+| `salmon` | <div style="color:transparent;background-color:#fa8072;">&nbsp</div> |
+| `sandybrown` | <div style="color:transparent;background-color:#f4a460;">&nbsp</div> |
+| `seagreen` | <div style="color:transparent;background-color:#2e8b57;">&nbsp</div> |
+| `seashell` | <div style="color:transparent;background-color:#fff5ee;">&nbsp</div> |
+| `sienna` | <div style="color:transparent;background-color:#a0522d;">&nbsp</div> |
+| `skyblue` | <div style="color:transparent;background-color:#87ceeb;">&nbsp</div> |
+| `slateblue` | <div style="color:transparent;background-color:#6a5acd;">&nbsp</div> |
+| `slategray` | <div style="color:transparent;background-color:#708090;">&nbsp</div> |
+| `slategrey` | <div style="color:transparent;background-color:#708090;">&nbsp</div> |
+| `snow` | <div style="color:transparent;background-color:#fffafa;">&nbsp</div> |
+| `springgreen` | <div style="color:transparent;background-color:#00ff7f;">&nbsp</div> |
+| `steelblue` | <div style="color:transparent;background-color:#4682b4;">&nbsp</div> |
+| `tan` | <div style="color:transparent;background-color:#d2b48c;">&nbsp</div> |
+| `thistle` | <div style="color:transparent;background-color:#d8bfd8;">&nbsp</div> |
+| `tomato` | <div style="color:transparent;background-color:#ff6347;">&nbsp</div> |
+| `turquoise` | <div style="color:transparent;background-color:#40e0d0;">&nbsp</div> |
+| `violet` | <div style="color:transparent;background-color:#ee82ee;">&nbsp</div> |
+| `wheat` | <div style="color:transparent;background-color:#f5deb3;">&nbsp</div> |
+| `whitesmoke` | <div style="color:transparent;background-color:#f5f5f5;">&nbsp</div> |
+| `yellowgreen` | <div style="color:transparent;background-color:#9acd32;">&nbsp</div> |
+| `rebeccapurple` | <div style="color:transparent;background-color:#663399;">&nbsp</div> |
+
+**<div style="color:red;">Apesar dessas keywords existirem e serem aceitas, elas podem variar entre sistemas e navegadores diferentes. Sua aplicação não é muito confiável.</div>**
+
+#### RGB
+
+RGB significa Red, Green, Blue (vermelho, verde e azul em inglês). Dessa forma podemos especificar a quantidade de cada uma dessas cores para produzir a cor final desejada.
+
+Podendo ser escrita da seguinte maneira:
+
+```css
+rgb(vermelho, verde, azul);
+```
+
+Onde coloca-se um número de *0 a 255* onde deseja aplicar a intensidade de cada cor. Conseguimos criar a cor desejada *misturando* essas cores, como pode-se ver na ilustração:
+
+![Representação RGB](imagens/representacao_rgb.png)
+
+Dessa forma, para deixar um parágrafo com seu texto em vermelho seria feito assim:
+
+```css
+p {
+    color: rgb(255, 0, 0);
+}
+```
+
+Alguns exemplos de cores:
+
+| Código RGB | Amostra |
+| ------ | ------ |
+| `rgb(255,0,0)` | <div style="color:transparent;background-color:rgb(255,0,0);">&nbsp</div> |
+| `rgb(0,255,0)` | <div style="color:transparent;background-color:rgb(0,255,0);">&nbsp</div> |
+| `rgb(0,0,255)` | <div style="color:transparent;background-color:rgb(0,0,255);">&nbsp</div> |
+| `rgb(0,0,0)` | <div style="color:transparent;background-color:rgb(0,0,0);">&nbsp</div> |
+| `rgb(128,128,128)` | <div style="color:transparent;background-color:rgb(128,128,128);">&nbsp</div> |
+| `rgb(255,255,255)` | <div style="color:transparent;background-color:rgb(255,255,255);">&nbsp</div> |
+
+#### Hexadecimal
+
+Os valores em hexadecimal funcionam da mesma forma de um em *rgb()*. Na verdade, os dois representam valores na escala RGB, apenas são representados de maneiras diferentes.
+
+Ao invés de os valores irem de 0 à 255, vão de *00 à FF*.
+
+FF em hexadecimal é igual a 255 em decimal.
+
+Para atribuirmos um valor hexadecimal só é necessário colocar um hashtag `#` antes do valor, como segue:
+
+```css
+ #FFFFFF;
+```
+
+Sendo assim, para aplicar vermelho ao texto de um parágrafo deve ser feito assim:
+
+```css
+p {
+    color: #FF0000;
+}
+```
+
+Alguns exemplos e seus valores correspondentes usando RGB:
+
+| Código Hexadecimal | RGB | Amostra |
+| ------ | ------ | ------ |
+| `#FF0000` | `rgb(255,0,0)` | <div style="color:transparent;background-color:#FF0000;">&nbsp</div> |
+| `#00FF00` | `rgb(0,255,0)` | <div style="color:transparent;background-color:#00FF00;">&nbsp</div> |
+| `#0000FF` | `rgb(0,0,255)` | <div style="color:transparent;background-color:#0000FF;">&nbsp</div> |
+| `#000000` | `rgb(0,0,0)` | <div style="color:transparent;background-color:#000000;">&nbsp</div> |
+| `#808080` | `rgb(128,128,128)` | <div style="color:transparent;background-color:#808080;">&nbsp</div> |
+| `#FFFFFF` | `rgb(255,255,255)` | <div style="color:transparent;background-color:#FFFFFF;">&nbsp</div> |
+
+Pode-se usar tanto letra maiúscula como minúscula, o navegador vai interpretar da mesma forma.
+
+#### HSL
+
+É um modelo relativamente novo e portanto não é suportado em navegadores mais antigos. Sua sigla significa **H**ue, **S**aturation e **L**ightness (matiz, saturação e luminosidade).
+
+É de bastante interesse de designers, por usar uma paleta de cores diferente da RGB. Mas sua declaração é bastante parecida.
+
+```css
+hsl(matiz, saturação, luminoside);
+```
+
+Para entender como funciona, vejamos representações visuais desse modelo e o significado de cada parâmetro:
+
+![Representação HSL](imagens/representacao_hsl.jpg)
+
+##### Matiz
+
+Matiz se refere à cor em si. Ex: vermelho, verde, azul, amarelo. Nesse parâmetro é especificado o ângulo da volta no cilindro, começando de 0 (vermelho).
+
+##### Saturação
+
+Aqui é definido o quanto dessa cor deseja aplicar, variando de 0 a 100%. Quanto maior esse valor, mais *pura* é a cor. Quanto menor, mais cinza ela se torna.
+
+##### Luminosidade
+
+Aqui nada mais é que a quantidade de luz a ser aplicada na mistura. Também varia de 0 a 100%, onde correspondente à ausência e total presença de luz, respectivamente.
+
+##### Aplicação
+
+Com isso, para aplicarmos vermelho em um parágrafo seria:
+
+```css
+p {
+    color: hsl(720, 100%, 50%);
+}
+```
+
+Exemplos:
+
+| HSL | Amostra |
+| ------ | ------ |
+| `hsl(0, 100%, 50%)` | <div style="color:transparent;background-color:hsl(0, 100%, 50%);">&nbsp</div> |
+| `hsl(0, 100%, 90%)` | <div style="color:transparent;background-color:hsl(0, 100%, 90%);">&nbsp</div> |
+| `hsl(0, 50%, 50%)` | <div style="color:transparent;background-color:hsl(0, 50%, 50%);">&nbsp</div> |
+| `hsl(0, 15%, 50%)` | <div style="color:transparent;background-color:hsl(0, 15%, 50%);">&nbsp</div> |
+| `hsl(120, 100%, 50%)` | <div style="color:transparent;background-color:hsl(120, 100%, 50%);">&nbsp</div> |
+| `hsl(240, 100%, 50%)` | <div style="color:transparent;background-color:hsl(240, 100%, 50%);">&nbsp</div> |
+
+### Texto
+
+Além de definir cores, o CSS também pode ser usado para mudar as fontes do documento. Sendo possível deixar os textos em negrito, itálico, etc.
+
+#### Fonte
+
+Para mudar a fonte a ser usada em algum elemento, basta usar a propriedade `font-family`:
+
+```css
+p {
+    font-family: arial;
+}
+```
+
+Também podemos definir uma lista de fontes, assim o navegador pode escolher uma delas, de acordo com a disponibilidade delas:
+
+```css
+p {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+```
+
+O navegador procura a fonte indo da esquerda para a direita, aplicando a que encontrar primeiro. Caso nenhuma tenha encontrada, ele usuário a sua padrão.
+
+#### Tamanho
+
+Também podemos alterar o tamanho do texto exibido, para isso usamos a propriedade `font-size`.
+
+Por exemplo, para definir um parágrafo para `20px` basta:
+
+```css
+p {
+    font-size: 20px;
+}
+```
+
+#### Estilo
+
+Para definirmos o texto como itálico, usamos a propriedade `font-style`:
+
+```css
+p {
+    font-style: italic;
+}
+```
+
+Se quiser deixar o texto negrito, usamos `font-weight`.
+
+```css
+p {
+    font-weight: bold;
+}
+```
+
+Para o texto ficar sublinhado, sobrelinhado ou tachado, temos a `text-decoration`, usando os valores `underline`, `overline` e `line-through`, respectivamente:
+
+```css
+p {
+    text-decoration: underline;
+}
+```
+
+Muitas dessas propriedades citadas anteriormente podem ser usadas juntas com a propriedade `font`.
+
+Os valores dessa propriedade podem ser atribuídos dessa forma:
+
+Por exemplo, um parágrafo em itálico, com tamanho 20px e fonte Arial seria assim:
+
+```css
+p {
+   font: italic 20px Arial;
+}
+```
+
+Além de alterar o estilo da fonte, também podemos alterar o alinhamento do texto em si. Isso é possível com a propriedade `text-align`, tendo `left`, `right`, `center` e `justify` como seus valores:
+
+```css
+p {
+    text-align: center;
+}
+```
+
+
+
+### Bordas
+
+Por padrão, os elementos em HTML já possuem uma borda de tamanho 0 para não ser exibida até ser requerido.
+
+#### Shorthand
+
+Assim como a priopriedade `font`, também temos um shorthand para aplicar uma borda rapidamente a um elemento.
+
+Para isso usamos a propriedade `border`. Para aplicar uma borda com a espessura de 3px, sólida (sem tracejado) com a cor vermelha, fazemos assim:
+
+```css
+p {
+    border: 3px solid rgb(255,0,0);
+}
+```
+
+Também temos shorthands para um dos lados da borda:
+
+```css
+p {
+    border-top: 3px solid rgb(255,0,0);
+    border-right: 2px solid rgb(0,255,0);
+    border-bottom: 3px solid rgb(255,0,0);
+    border-left: 2px solid rgb(0,255,0);
+}
+```
+
+Mas também podemos alterar esses valores em propriedades independentes, para uma maior liberdade.
+
+#### Espessura
+
+Para definir a espessura, usamos a propriedade `border-width`.
+
+```css
+p {
+    border-width: 3px;
+}
+```
+
+Também conseguimos definir espessuras diferentes para um dos lados da borda, na seguinte ordem:
+
+```css
+p {
+    border-width: cima direita baixo esquerda;
+}
+```
+
+Ou seja, para definir uma borda com a espessura de 5px em cima, 3px à direita, 5px em baixo e 10px à esquerda faremos assim:
+
+```css
+p {
+    border-width: 5px 3px 5px 10px;
+}
+```
+
+Também temos propriedades separadas para cada um desses *lados*, fazendo assim:
+
+```css
+p {
+    border-top-width: 5px;
+    border-right-width: 3px;
+    border-bottom-width: 5px;
+    border-left-width: 10px;
+}
+```
+
+#### Cor
+
+Para definir a cor usa-se a propriedade `border-color`.
+
+Funcionando da mesma maneira da espessura, temos uma propriedade que agrupa todos os lados e também cada lado separadamente.
+
+```css
+p {
+    border-color: rgb(255, 0, 0);
+}
+```
+
+```css
+p {
+    border-color: rgb(255, 0, 0) rgb(0, 255, 0) rgb(255, 0, 0) rgb(0, 255, 0);
+}
+```
+
+```css
+p {
+    border-top-color: rgb(255, 0, 0);
+    border-right-color: rgb(0, 255, 0);
+    border-bottom-color: rgb(255, 0, 0);
+    border-left-color: rgb(0, 255, 0);
+}
+```
+
+#### Estilo
+
+O estilo é definido usando a propriedade `border-style`.
+
+Essa propriedade pode receber os seguintes valores:
+
+- `none`
+- `hidden`
+- `dotted`
+- `dashed`
+- `solid`
+- `double`
+- `groove`
+- `ridge`
+- `inset`
+- `outset`
+
+Ilustração:
+
+![Ilustração dos estilos de bordas disponíveis](imagens/border_styles.png)
+
+#### Bordas arredondadas
+
+Há um tempo atrás, imagens eram usadas para simular bordas arredondadas. Mas o CSS3 trouxe uma nova propriedade `border-radius`.
+
+Com essa nova propriedade, podemos definir o raio do arredondamento que quisermos.
+
+Para definir uma borda de 5px se faz assim:
+
+```css
+p {
+    border-radius: 5px;
+}
+```
+
+Ela também funciona como as outras propriedades, também sendo uma shorthand e tendo suporte para definição de cada *lado*.
+
+Com tudo que vimos, podemos produzir algo assim:
+
+```css
+p {
+    border: 10px solid #000000;
+    border-radius: 10px 40px 40px 10px;
+    width: 200px;
+    height: 100px;
+    background-color: #cccccc;
+}
+```
+
+O que teria esse efeito:
+
+![Combinação de regras CSS](imagens/combinacao_css.png)
+
+#### Comentários
+
+Assim como em HTML, às vezes precisamos de comentários.
+
+Podemos inserir comentários dentro das nossas definições de regras, desde que não esteja *dentro* de uma propriedade. Basta colocarmos entre `/*` e `*/`, como a seguir:
+
+```css
+p {
+	/* Aqui vão as regras para o parágrafo */
+    background-color: #cccccc; /* Aqui definimos a cor de fundo */
+}
+```
