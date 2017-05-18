@@ -676,7 +676,7 @@ FF em hexadecimal é igual a 255 em decimal.
 Para atribuirmos um valor hexadecimal só é necessário colocar um hashtag `#` antes do valor, como segue:
 
 ```css
-#FFFFFF;
+ #FFFFFF;
 ```
 
 Sendo assim, para aplicar vermelho ao texto de um parágrafo deve ser feito assim:
@@ -828,3 +828,151 @@ p {
     text-align: center;
 }
 ```
+
+
+
+### Bordas
+
+Por padrão, os elementos em HTML já possuem uma borda de tamanho 0 para não ser exibida até ser requerido.
+
+#### Shorthand
+
+Assim como a priopriedade `font`, também temos um shorthand para aplicar uma borda rapidamente a um elemento.
+
+Para isso usamos a propriedade `border`. Para aplicar uma borda com a espessura de 3px, sólida (sem tracejado) com a cor vermelha, fazemos assim:
+
+```css
+p {
+    border: 3px solid rgb(255,0,0);
+}
+```
+
+Também temos shorthands para um dos lados da borda:
+
+```css
+p {
+    border-top: 3px solid rgb(255,0,0);
+    border-right: 2px solid rgb(0,255,0);
+    border-bottom: 3px solid rgb(255,0,0);
+    border-left: 2px solid rgb(0,255,0);
+}
+```
+
+Mas também podemos alterar esses valores em propriedades independentes, para uma maior liberdade.
+
+#### Espessura
+
+Para definir a espessura, usamos a propriedade `border-width`.
+
+```css
+p {
+    border-width: 3px;
+}
+```
+
+Também conseguimos definir espessuras diferentes para um dos lados da borda, na seguinte ordem:
+
+```css
+p {
+    border-width: cima direita baixo esquerda;
+}
+```
+
+Ou seja, para definir uma borda com a espessura de 5px em cima, 3px à direita, 5px em baixo e 10px à esquerda faremos assim:
+
+```css
+p {
+    border-width: 5px 3px 5px 10px;
+}
+```
+
+Também temos propriedades separadas para cada um desses *lados*, fazendo assim:
+
+```css
+p {
+    border-top-width: 5px;
+    border-right-width: 3px;
+    border-bottom-width: 5px;
+    border-left-width: 10px;
+}
+```
+
+#### Cor
+
+Para definir a cor usa-se a propriedade `border-color`.
+
+Funcionando da mesma maneira da espessura, temos uma propriedade que agrupa todos os lados e também cada lado separadamente.
+
+```css
+p {
+    border-color: rgb(255, 0, 0);
+}
+```
+
+```css
+p {
+    border-color: rgb(255, 0, 0) rgb(0, 255, 0) rgb(255, 0, 0) rgb(0, 255, 0);
+}
+```
+
+```css
+p {
+    border-top-color: rgb(255, 0, 0);
+    border-right-color: rgb(0, 255, 0);
+    border-bottom-color: rgb(255, 0, 0);
+    border-left-color: rgb(0, 255, 0);
+}
+```
+
+#### Estilo
+
+O estilo é definido usando a propriedade `border-style`.
+
+Essa propriedade pode receber os seguintes valores:
+
+- `none`
+- `hidden`
+- `dotted`
+- `dashed`
+- `solid`
+- `double`
+- `groove`
+- `ridge`
+- `inset`
+- `outset`
+
+Ilustração:
+
+![Ilustração dos estilos de bordas disponíveis](imagens/border_styles.png)
+
+#### Bordas arredondadas
+
+Há um tempo atrás, imagens eram usadas para simular bordas arredondadas. Mas o CSS3 trouxe uma nova propriedade `border-radius`.
+
+Com essa nova propriedade, podemos definir o raio do arredondamento que quisermos.
+
+Para definir uma borda de 5px se faz assim:
+
+```css
+p {
+    border-radius: 5px;
+}
+```
+
+Ela também funciona como as outras propriedades, também sendo uma shorthand e tendo suporte para definição de cada *lado*.
+
+Com tudo que vimos, podemos produzir algo assim:
+
+```css
+p {
+    border: 10px solid #000000;
+    border-radius: 10px 40px 40px 10px;
+    width: 200px;
+    height: 100px;
+    background-color: #cccccc;
+}
+```
+
+O que teria esse efeito:
+
+![Combinação de regras CSS](imagens/combinacao_css.png)
