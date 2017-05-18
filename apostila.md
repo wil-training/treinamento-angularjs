@@ -30,7 +30,7 @@ Ilustração de uma requisição web:
 
 ### Páginas dinâmicas
 
-Até então, os documentos exibidos na internet eram apenas páginas estáticas e não era possível ter seu conteúdo dinamicamente.
+Até então, os documentos exibidos na internet eram apenas páginas estáticas e não era possível ter seu conteúdo alterado dinamicamente.
 
 Embora essas páginas suprissem a necessidade do momento, com o passar do tempo fomos tendo a necessidade de páginas mais ricas, dinâmicas e interativas. Criando um conceito hoje chamado de WEB 2.0.
 
@@ -78,7 +78,7 @@ Exemplo de um parágrafo em HTML:
 
 ## Estrutura
 
-Uma página HTML é composta de cabeçalho e corpo, sendo representados pelas palavras head e body, respectivamente.
+Uma página HTML é composta de cabeçalho e corpo, sendo representados pelas palavras `head` e `body`, respectivamente.
 
 No cabeçalho vão informações como o título e outras informações usadas pelos navegadores.
 
@@ -322,7 +322,7 @@ Hoje, a linguagem em si não é mais baseada em versões, apenas seus módulos. 
 
 Logotipo do CSS3:
 
-![Logotipo do CSS3](imagens\css3_logo.png)
+![Logotipo do CSS3](imagens/css3_logo.png)
 
 ## Estrutura
 
@@ -330,7 +330,7 @@ CSS não possui tags como HTML, mas seletores com propriedades e valores. Como a
 
 ```css
 seletor {
-	propriedade: valor;
+    propriedade: valor;
 }
 ```
 
@@ -340,7 +340,7 @@ Exemplo de uma regra CSS:
 
 ```css
 body {
-	background-color: white;
+    background-color: white;
 }
 ```
 
@@ -410,7 +410,7 @@ Conseguimos vincular uma folha de estilos a uma página simplesmente a referenci
 <html>
 
 	<head>
-    	<link rel="stylesheet" type="text/css" href="meu_paragrafos_azuis.css">
+    	<link rel="stylesheet" type="text/css" href="meus_paragrafos_azuis.css">
     </head>
 
     <body>
@@ -428,8 +428,8 @@ Também podemos referenciar mais de uma folha de estilos na mesma página:
 <html>
 
 	<head>
-    	<link rel="stylesheet" type="text/css" href="meu_paragrafos_azuis.css">
-        <link rel="stylesheet" type="text/css" href="titulo_sao_verdes.css">
+    	<link rel="stylesheet" type="text/css" href="meus_paragrafos_azuis.css">
+        <link rel="stylesheet" type="text/css" href="titulos_sao_verdes.css">
     </head>
 
     <body>
