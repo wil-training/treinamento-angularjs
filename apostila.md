@@ -976,3 +976,16 @@ p {
 O que teria esse efeito:
 
 ![Combinação de regras CSS](imagens/combinacao_css.png)
+
+#### Comentários
+
+Assim como em HTML, às vezes precisamos de comentários.
+
+Podemos inserir comentários dentro das nossas definições de regras, desde que não esteja *dentro* de uma propriedade. Basta colocarmos entre `/*` e `*/`, como a seguir:
+
+```css
+p {
+	/* Aqui vão as regras para o parágrafo */
+    background-color: #cccccc; /* Aqui definimos a cor de fundo */
+}
+```
