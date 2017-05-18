@@ -746,3 +746,85 @@ Exemplos:
 | `hsl(0, 15%, 50%)` | <div style="color:transparent;background-color:hsl(0, 15%, 50%);">&nbsp</div> |
 | `hsl(120, 100%, 50%)` | <div style="color:transparent;background-color:hsl(120, 100%, 50%);">&nbsp</div> |
 | `hsl(240, 100%, 50%)` | <div style="color:transparent;background-color:hsl(240, 100%, 50%);">&nbsp</div> |
+
+### Texto
+
+Além de definir cores, o CSS também pode ser usado para mudar as fontes do documento. Sendo possível deixar os textos em negrito, itálico, etc.
+
+#### Fonte
+
+Para mudar a fonte a ser usada em algum elemento, basta usar a propriedade `font-family`:
+
+```css
+p {
+    font-family: arial;
+}
+```
+
+Também podemos definir uma lista de fontes, assim o navegador pode escolher uma delas, de acordo com a disponibilidade delas:
+
+```css
+p {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+```
+
+O navegador procura a fonte indo da esquerda para a direita, aplicando a que encontrar primeiro. Caso nenhuma tenha encontrada, ele usuário a sua padrão.
+
+#### Tamanho
+
+Também podemos alterar o tamanho do texto exibido, para isso usamos a propriedade `font-size`.
+
+Por exemplo, para definir um parágrafo para `20px` basta:
+
+```css
+p {
+    font-size: 20px;
+}
+```
+
+#### Estilo
+
+Para definirmos o texto como itálico, usamos a propriedade `font-style`:
+
+```css
+p {
+    font-style: italic;
+}
+```
+
+Se quiser deixar o texto negrito, usamos `font-weight`.
+
+```css
+p {
+    font-weight: bold;
+}
+```
+
+Para o texto ficar sublinhado, sobrelinhado ou tachado, temos a `text-decoration`, usando os valores `underline`, `overline` e `line-through`, respectivamente:
+
+```css
+p {
+    text-decoration: underline;
+}
+```
+
+Muitas dessas propriedades citadas anteriormente podem ser usadas juntas com a propriedade `font`.
+
+Os valores dessa propriedade podem ser atribuídos dessa forma:
+
+Por exemplo, um parágrafo em itálico, com tamanho 20px e fonte Arial seria assim:
+
+```css
+p {
+   font: italic 20px Arial;
+}
+```
+
+Além de alterar o estilo da fonte, também podemos alterar o alinhamento do texto em si. Isso é possível com a propriedade `text-align`, tendo `left`, `right`, `center` e `justify` como seus valores:
+
+```css
+p {
+    text-align: center;
+}
+```
