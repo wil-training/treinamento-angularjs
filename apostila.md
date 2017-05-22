@@ -1396,3 +1396,57 @@ typeof new Date()  // object
 typeof undefined   // undefined
 typeof null        // object
 ```
+
+## Aplicação
+
+### Caixas de diálogo
+
+Existem três formas de exibirmos caixas de diálogo em um navegador:
+
+- alert
+- prompt
+- confirm
+
+Eles são usados para exibir um alerta, caixa de entrada e caixa de confirmação, respectivamente.
+
+#### alert
+
+Esse método mostra uma caixa de diálogo com a mensagem definida na chamada. Como segue:
+
+```javascript
+alert('Olá mundo!');
+```
+
+Exibindo o seguinte:
+
+![Exibição de um alerta](imagens/js/aplicacao_alert.png)
+
+#### prompt
+
+Esse método trabalha de forma parecida.
+
+Mas além de simplesmente mostrar uma mensagem ao usuário, também exibe um campo onde pode-se digitar algo e essa função se encarrega de retornar o digitado em uma string.
+
+```javascript
+prompt('Digite seu nome');
+```
+
+Exibindo o seguinte:
+
+![Exibição de um prompt](imagens/js/aplicacao_prompt.png)
+
+
+#### confirm
+
+Como os outros, também mostra uma caixa de diálogo.
+
+Porém com dois botões: um para confirmar e outro para cancelar. Retornando `true` ou `false` de acordo com a escolha do usuário:
+
+```javascript
+confirm('Gostou?');
+```
+
+Exibindo o seguinte:
+
+![Exibição de um confirm](imagens/js/aplicacao_confirm.png)
+
