@@ -1225,3 +1225,174 @@ div > span {
 Tendo como resultado:
 
 ![Exemplo combinador filho](imagens/css/combinadores_filhos.png)
+
+# JavaScript
+
+## Surgimento
+
+JS, como também é chamada, foi criada por [Brendan Eich](https://brendaneich.com/) em 1996 enquanto trabalhava na Netscape.
+
+Apesar de seu nome sugerir ser uma ver *simplificada* de Java, é completamente diferente.
+
+JS foi inspirada em linguagens como Lisp e Scheme, mas ainda assim teve sua sintaxe inspirada pelo Java.
+
+## ECMAScript
+
+Desde o início do projeto de criação, a linguagem já teve nomes como Mocha e LiveScript, hoje também é chamada de ECMAScript.
+
+Apesar de não ser totalmente errado, ECMAScript se refere à base para a criação do JavaScript. É um padrão usado para definir o funcionamento dessa linguagem.
+
+Qualquer linguagem pode ser feita com base nesse padrão, como foi o caso da ActionScript (para desenvolvimento com Flash) e JScript (criado pela Microsoft para ser usada no Internet Explorer).
+
+Tem esse nome, ECMAScript, por desde 1996 ser mantida pela ECMA International. Um órgão que tem o objetivo de manter esse padrão, fazer correções e lançar atualizações.
+
+## Uso
+
+Hoje em dia, JS/ES é uma das linguagens mais populares.
+
+![Ranking de popularidade no GitHub](imagens/js/popularity.jpg)
+
+Além de ser usada em sites, também está presente em servidores web (NodeJS), banco de dados (MongoDB) e aplicações desktop (Electron).
+
+> A popular IDE Visual Studio Code foi escrita com JavaScript.
+
+## Estrutura
+
+JS é uma linguagem interpretada, com suporte à orientação a objetos e fracamente tipada.
+
+### Variáveis
+
+Variável é o que usamos para armazenar os valores posteriormente úteis para o nosso software.
+
+Em JS uma variável pode ser criada assim:
+
+```javascript
+var minhaVariavel;
+```
+
+Para atribuir um valor à ela, basta informar o mesmo depois de um `=` (sinal de igual):
+
+```javascript
+minhaVariavel = 5;
+```
+
+Acima, atribuimos o valor `5` à nossa variável `minhaVariavel`.
+
+Podemos mudar o seu valor da mesma forma que definimos:
+
+```javascript
+minhaVariavel = 'tenho um novo valor';
+```
+
+Como pôde ver, podemos atribuir qualquer tipo de valor à uma variável. Portanto, JS é uma linguagem fracamente tipada, diferente de Java, por exemplo.
+
+### Strings
+
+Strings são, à grosso modo, representações de texto.
+
+Para definir uma string em JS, basta colocar seu valor entre `'` (aspas simples) ou `"` (aspas duplas).
+
+O navegador interpretará da mesma forma usando aspas simples ou duplas, ficando a escolha mais para uma questão de gosto ou praticidade.
+
+As aspas simples são, de longe, as mais usadas. Logo, é extrememamente recomendável usá-la dessa forma para se manter um padrão.
+
+Exemplo:
+
+```javascript
+'aqui está um texto'
+"aqui também é um texto"
+```
+
+### Ponto e vírgula `;`
+
+Aqui já é outra questão que o gosto pode interferir.
+
+O uso de ponto e vírgula em JS é opcional. Não nos obriga a colocarmos ao final de cada linha, assim como Java ou C#.
+
+Na verdade, essa pontuação é inserida automaticamente em alguns pontos, por isso não é obrigatória. Esse mecanismo é denominado por *ASI (Automatic Semicolon Insertion)*.
+
+### Comentários
+
+Para definirmos um comentário em JS, basta colocar `//` antes do conteúdo desejado:
+
+```javascript
+// aqui é um comentário
+```
+
+Também podemos definir blocos de comentários, usado quando estes podem tomar mais de uma linha:
+
+```javascript
+/* Bloco de comentário
+são permitidas múltiplas linhas!
+*/
+```
+
+### Comparação
+
+Muita vezes precisamos comparar os valores contidos nas variáveis, a fim de fazermos alguma validação, verificar se o usuário preencheu um determinado campo, etc.
+
+Para isso temos dois operadores:
+
+- `==` (igual)
+- `===` (igual estrito)
+
+Os dois trabalham de forma similar, mas o primeiro apenas compara os valores das variáveis. Já o segundo, também verifica se os valores são do mesmo tipo.
+
+Exemplo:
+
+```javascript
+2 == '2' // true
+```
+
+Ao usar o igual para compararmos os valores `2` (numérico) e `'2'` (texto), o resultado dá verdadeiro.
+
+Já se usarmos o igual estrito, dará falso:
+
+```javascript
+2 === '2' // false
+```
+
+Dará verdadeiro caso se os dois valores forem do mesmo tipo:
+
+```javascript
+2 === 2 // true
+```
+
+### null e undefined
+
+Em JS, temos dois valores representando o vazio.
+
+`undefined` significa que uma variável foi declarada mas ainda não tem valor. Exemplo:
+
+```javascript
+var minhaVariavel;
+```
+
+`null` é um valor que pode ser atribuído a uma variável. Exemplo:
+
+```javascript
+minhaVariavel = null;
+```
+
+Apesar de os dois representarem o *vazio*, tem algumas diferenças quando comparados:
+
+```javascript
+null == undefined   // true
+null === undefined  // false
+null === null       // true
+```
+
+Podemos ver que os dois representam o mesmo valor, mas possuem tipos diferentes.
+
+### typeof
+
+`typeof` é um operador usado para retornar o tipo desejado de uma variável ou valor. Exemplo:
+
+```javascript
+typeof 'texto'     // string
+typeof 0           // number
+typeof true        // boolean
+typeof new Date()  // object
+typeof undefined   // undefined
+typeof null        // object
+```
