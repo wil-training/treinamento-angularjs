@@ -1160,3 +1160,68 @@ E aplicando no seguinte HTML:
 Resulta no seguinte:
 
 ![Exemplo seletores por atributo](imagens/css/seletores_atributo.png)
+
+### Combinadores
+
+Além de podermos criar regras com expressões para elementos diretamente, também é possível combiná-las para termos ferramentas ainda mais poderosas.
+
+Para isso, usamos combinadores e alguns de seus tipos são:
+
+- Elemento descendente
+- Elemento filho
+
+#### Elemento descendente
+
+O combinador ` ` (espaço) é usado para encontrar qual elemento que faz parte da árvore de descendentes do elemento anterior a ele. Exemplo:
+
+```css
+div span {
+    color: red;
+}
+```
+
+```xml
+<html>
+    <body>
+        <div>
+            <span>Eu serei vermelho!</span>
+            <p>
+                <span>Eu também serei vermelho.</span>
+            </p>
+        </div>
+        <p>Não serei vermelho.</p>
+    </body>
+</html>
+```
+
+Será exibido assim:
+
+![Exemplo combinador descendentes](imagens/css/combinadores_descendentes.png)
+
+#### Elemento filho
+
+O combinador `>` (maior) é usado para encontrar um filho imediato ao especificado à esquerda do combinador. Exemplo:
+
+```css
+div > span {
+    color: red;
+}
+```
+
+```xml
+<html>
+    <body>
+        <div>
+            <span>Eu serei vermelho!</span>
+            <p>
+                <span>Não sou mais vermelho.</span>
+            </p>
+        </div>
+        <p>Não serei vermelho.</p>
+    </body>
+</html>
+```
+
+Tendo como resultado:
+
+![Exemplo combinador filho](imagens/css/combinadores_filhos.png)
