@@ -989,3 +989,174 @@ p {
     background-color: #cccccc; /* Aqui definimos a cor de fundo */
 }
 ```
+
+### Seletores
+
+Como visto anteriormente, para definirmos o estilo de algum elemento na página devemos escrever uma regra com a seguinte estrutura:
+
+```css
+seletor {
+    propriedade: valor;
+}
+```
+
+Esse seletor nada mais é que uma *expressão* a ser comparada pelo navegador, a fim de decidir se determinada regra será aplicada aos elementos da página.
+
+O navegador, ao renderizar a página, inicia um processo de comparação dos elementos presentes nela às regras de CSS definidas.
+
+Os elementos são testados para saber se passam pela expressão usada no seletor. Se o elemento atender à regra, os estilos ali presentes são aplicados nele.
+
+Até o momento, colocamos `tags` como sendo nosso seletor, por exemplo:
+
+```css
+p {
+    background-color: #cccccc;
+}
+```
+
+Mas temos mais tipos de seletores:
+
+- Por tipo, ou tag
+- Classes
+- ID
+- Por atributo
+
+#### Por tipo
+
+Aqui usamos a tag do elemento, como `a`, `div`, `button`, etc.
+
+É o tipo de expressão usada neste documento em todos os exemplos anteriores.
+
+#### Classes
+
+Todo elemento HTML possui um atributo denominado `class`, usado aqui para definirmos um mesmo estilo a determinados elementos.
+
+Por exemplo:
+
+```html
+<html>
+    <body>
+        <h1 class="verde">Título verde</h1>
+        <p class="azul">Parágrafo azul</p>
+    </body>
+</html>
+```
+
+Pode-se observar o atributo `class` nos elementos `h1` e `p`, com os valores `verde` e `azul`, respectivamente.
+
+Com isso, podemos definir o CSS assim:
+
+```css
+.verde {
+    color: rgb(0,255,0);
+}
+.azul {
+    color: rgb(0,0,255);
+}
+```
+
+Ficando assim ao exibirmos no navegador:
+
+![Exemplo seletores Classes](imagens/css/seletores_classes.png)
+
+Também com as mesmas regras, podemos definir a mesma cor para tipos de elementos diferentes:
+
+```html
+<html>
+    <body>
+        <h1 class="verde">Título verde</h1>
+        <p class="azul">Parágrafo azul</p>
+        <p class="verde">Parágrafo verde</p>
+    </body>
+</html>
+```
+
+Ficando assim:
+
+![Exemplo seletores Classes 2](imagens/css/seletores_classes2.png)
+
+#### ID
+
+Além do atributo `class`, os elementos em HTML também possuem o `id` que funciona de forma semelhante.
+
+A principalmente diferença entre eles é que o ID deve ser único, não podendo ter outro elemento com o mesmo ID na mesma página.
+
+Ele é usado para podermos criar estilos específicos para um elemento, semelhantemente à uma regra inline.
+
+Por exemplo:
+
+```css
+.verde {
+    color: rgb(0,255,0);
+}
+.azul {
+    color: rgb(0,0,255);
+}
+#principal {
+    /* Aplicamos borda no parágrafo principal */
+    border-style: dotted;
+}
+```
+
+Aplicado na seguinte página:
+
+```html
+<html>
+    <body>
+        <h1 class="verde">Título verde</h1>
+        <p id="principal">Parágrafo principal</p>
+        <p class="azul">Parágrafo azul</p>
+        <p class="verde">Parágrafo verde</p>
+    </body>
+</html>
+```
+
+Temos o seguinte efeito:
+
+![Exemplo seletores ID](imagens/css/seletores_id.png)
+
+Também podemos usar duas regras no mesmo elemento, por exemplo:
+
+```html
+<html>
+    <body>
+        <h1 class="verde">Título verde</h1>
+        <p id="principal" class="verde">Parágrafo principal</p>
+        <p class="azul">Parágrafo azul</p>
+        <p class="verde">Parágrafo verde</p>
+    </body>
+</html>
+```
+
+FIcando assim:
+
+![Exemplo seletores ID 2](imagens/css/seletores_id2.png)
+
+#### Por atributo
+
+Também é possível criar regras baseando-se nos atributos dos elementos.
+
+Por exemplo, o elemento `input` possui um atributo de nome `type` onde especificamos o tipo desse input, podendo ser `text`, `password`, `button`, etc.
+
+Sendo assim, podemos criar uma regra para todos os elementos input do tipo text assim:
+
+```css
+input[type=text] {
+    color: rgb(0,0,255);
+}
+```
+
+E aplicando no seguinte HTML:
+
+```xml
+<html>
+	<body>
+        <p>Nome:</p>
+        <input type="text" />
+    </body>
+</html>
+```
+
+Resulta no seguinte:
+
+![Exemplo seletores por atributo](imagens/css/seletores_atributo.png)
