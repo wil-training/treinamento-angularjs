@@ -1450,3 +1450,38 @@ Exibindo o seguinte:
 
 ![Exibição de um confirm](imagens/js/aplicacao_confirm.png)
 
+### Document Object Model
+
+Apesar de podermos mostrar caixas de diálogos para o usuário, essa funcionalidade está longe de ser a ideal para aplicações complexas.
+
+Comumente, fazemos formulários no próprio documento HTML para o usuário preencher os campos necessários e assim obtermos os dados ali inseridos.
+
+Esses campos, ou elementos, definimos em uma página HTML são organizados pelo navegador em uma espécie de árvore. Essa organização é chamada de *DOM (Document Object Model)*.
+
+Além de definir essa estrutura, os navegadores dispõem de uma API para acessarmos o DOM programaticamente.
+
+Segue uma representação gráfica do DOM:
+
+![Representação do DOM](imagens/js/aplicacao_dom_representacao.gif)
+
+#### DOM API
+
+Com essa API podemos acessar diversas áreas do nosso documento.
+
+Para conseguirmos ver o título dessa página em um alerta, por exemplo:
+
+```xml
+<html>
+<head>
+   <title>Olá, mundo!</title>
+</head>
+<body></body>
+</html>
+```
+
+Basta usarmos esse código:
+
+```javascript
+alert(window.document.title); // Olá, mundo!
+```
+
