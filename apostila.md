@@ -989,3 +989,499 @@ p {
     background-color: #cccccc; /* Aqui definimos a cor de fundo */
 }
 ```
+
+### Seletores
+
+Como visto anteriormente, para definirmos o estilo de algum elemento na página devemos escrever uma regra com a seguinte estrutura:
+
+```css
+seletor {
+    propriedade: valor;
+}
+```
+
+Esse seletor nada mais é que uma *expressão* a ser comparada pelo navegador, a fim de decidir se determinada regra será aplicada aos elementos da página.
+
+O navegador, ao renderizar a página, inicia um processo de comparação dos elementos presentes nela às regras de CSS definidas.
+
+Os elementos são testados para saber se passam pela expressão usada no seletor. Se o elemento atender à regra, os estilos ali presentes são aplicados nele.
+
+Até o momento, colocamos `tags` como sendo nosso seletor, por exemplo:
+
+```css
+p {
+    background-color: #cccccc;
+}
+```
+
+Mas temos mais tipos de seletores:
+
+- Por tipo, ou tag
+- Classes
+- ID
+- Por atributo
+
+#### Por tipo
+
+Aqui usamos a tag do elemento, como `a`, `div`, `button`, etc.
+
+É o tipo de expressão usada neste documento em todos os exemplos anteriores.
+
+#### Classes
+
+Todo elemento HTML possui um atributo denominado `class`, usado aqui para definirmos um mesmo estilo a determinados elementos.
+
+Por exemplo:
+
+```html
+<html>
+    <body>
+        <h1 class="verde">Título verde</h1>
+        <p class="azul">Parágrafo azul</p>
+    </body>
+</html>
+```
+
+Pode-se observar o atributo `class` nos elementos `h1` e `p`, com os valores `verde` e `azul`, respectivamente.
+
+Com isso, podemos definir o CSS assim:
+
+```css
+.verde {
+    color: rgb(0,255,0);
+}
+.azul {
+    color: rgb(0,0,255);
+}
+```
+
+Ficando assim ao exibirmos no navegador:
+
+![Exemplo seletores Classes](imagens/css/seletores_classes.png)
+
+Também com as mesmas regras, podemos definir a mesma cor para tipos de elementos diferentes:
+
+```html
+<html>
+    <body>
+        <h1 class="verde">Título verde</h1>
+        <p class="azul">Parágrafo azul</p>
+        <p class="verde">Parágrafo verde</p>
+    </body>
+</html>
+```
+
+Ficando assim:
+
+![Exemplo seletores Classes 2](imagens/css/seletores_classes2.png)
+
+#### ID
+
+Além do atributo `class`, os elementos em HTML também possuem o `id` que funciona de forma semelhante.
+
+A principalmente diferença entre eles é que o ID deve ser único, não podendo ter outro elemento com o mesmo ID na mesma página.
+
+Ele é usado para podermos criar estilos específicos para um elemento, semelhantemente à uma regra inline.
+
+Por exemplo:
+
+```css
+.verde {
+    color: rgb(0,255,0);
+}
+.azul {
+    color: rgb(0,0,255);
+}
+#principal {
+    /* Aplicamos borda no parágrafo principal */
+    border-style: dotted;
+}
+```
+
+Aplicado na seguinte página:
+
+```html
+<html>
+    <body>
+        <h1 class="verde">Título verde</h1>
+        <p id="principal">Parágrafo principal</p>
+        <p class="azul">Parágrafo azul</p>
+        <p class="verde">Parágrafo verde</p>
+    </body>
+</html>
+```
+
+Temos o seguinte efeito:
+
+![Exemplo seletores ID](imagens/css/seletores_id.png)
+
+Também podemos usar duas regras no mesmo elemento, por exemplo:
+
+```html
+<html>
+    <body>
+        <h1 class="verde">Título verde</h1>
+        <p id="principal" class="verde">Parágrafo principal</p>
+        <p class="azul">Parágrafo azul</p>
+        <p class="verde">Parágrafo verde</p>
+    </body>
+</html>
+```
+
+FIcando assim:
+
+![Exemplo seletores ID 2](imagens/css/seletores_id2.png)
+
+#### Por atributo
+
+Também é possível criar regras baseando-se nos atributos dos elementos.
+
+Por exemplo, o elemento `input` possui um atributo de nome `type` onde especificamos o tipo desse input, podendo ser `text`, `password`, `button`, etc.
+
+Sendo assim, podemos criar uma regra para todos os elementos input do tipo text assim:
+
+```css
+input[type=text] {
+    color: rgb(0,0,255);
+}
+```
+
+E aplicando no seguinte HTML:
+
+```xml
+<html>
+	<body>
+        <p>Nome:</p>
+        <input type="text" />
+    </body>
+</html>
+```
+
+Resulta no seguinte:
+
+![Exemplo seletores por atributo](imagens/css/seletores_atributo.png)
+
+### Combinadores
+
+Além de podermos criar regras com expressões para elementos diretamente, também é possível combiná-las para termos ferramentas ainda mais poderosas.
+
+Para isso, usamos combinadores e alguns de seus tipos são:
+
+- Elemento descendente
+- Elemento filho
+
+#### Elemento descendente
+
+O combinador ` ` (espaço) é usado para encontrar qual elemento que faz parte da árvore de descendentes do elemento anterior a ele. Exemplo:
+
+```css
+div span {
+    color: red;
+}
+```
+
+```xml
+<html>
+    <body>
+        <div>
+            <span>Eu serei vermelho!</span>
+            <p>
+                <span>Eu também serei vermelho.</span>
+            </p>
+        </div>
+        <p>Não serei vermelho.</p>
+    </body>
+</html>
+```
+
+Será exibido assim:
+
+![Exemplo combinador descendentes](imagens/css/combinadores_descendentes.png)
+
+#### Elemento filho
+
+O combinador `>` (maior) é usado para encontrar um filho imediato ao especificado à esquerda do combinador. Exemplo:
+
+```css
+div > span {
+    color: red;
+}
+```
+
+```xml
+<html>
+    <body>
+        <div>
+            <span>Eu serei vermelho!</span>
+            <p>
+                <span>Não sou mais vermelho.</span>
+            </p>
+        </div>
+        <p>Não serei vermelho.</p>
+    </body>
+</html>
+```
+
+Tendo como resultado:
+
+![Exemplo combinador filho](imagens/css/combinadores_filhos.png)
+
+# JavaScript
+
+## Surgimento
+
+JS, como também é chamada, foi criada por [Brendan Eich](https://brendaneich.com/) em 1996 enquanto trabalhava na Netscape.
+
+Apesar de seu nome sugerir ser uma ver *simplificada* de Java, é completamente diferente.
+
+JS foi inspirada em linguagens como Lisp e Scheme, mas ainda assim teve sua sintaxe inspirada pelo Java.
+
+## ECMAScript
+
+Desde o início do projeto de criação, a linguagem já teve nomes como Mocha e LiveScript, hoje também é chamada de ECMAScript.
+
+Apesar de não ser totalmente errado, ECMAScript se refere à base para a criação do JavaScript. É um padrão usado para definir o funcionamento dessa linguagem.
+
+Qualquer linguagem pode ser feita com base nesse padrão, como foi o caso da ActionScript (para desenvolvimento com Flash) e JScript (criado pela Microsoft para ser usada no Internet Explorer).
+
+Tem esse nome, ECMAScript, por desde 1996 ser mantida pela ECMA International. Um órgão que tem o objetivo de manter esse padrão, fazer correções e lançar atualizações.
+
+## Uso
+
+Hoje em dia, JS/ES é uma das linguagens mais populares.
+
+![Ranking de popularidade no GitHub](imagens/js/popularity.jpg)
+
+Além de ser usada em sites, também está presente em servidores web (NodeJS), banco de dados (MongoDB) e aplicações desktop (Electron).
+
+> A popular IDE Visual Studio Code foi escrita com JavaScript.
+
+## Estrutura
+
+JS é uma linguagem interpretada, com suporte à orientação a objetos e fracamente tipada.
+
+### Variáveis
+
+Variável é o que usamos para armazenar os valores posteriormente úteis para o nosso software.
+
+Em JS uma variável pode ser criada assim:
+
+```javascript
+var minhaVariavel;
+```
+
+Para atribuir um valor à ela, basta informar o mesmo depois de um `=` (sinal de igual):
+
+```javascript
+minhaVariavel = 5;
+```
+
+Acima, atribuimos o valor `5` à nossa variável `minhaVariavel`.
+
+Podemos mudar o seu valor da mesma forma que definimos:
+
+```javascript
+minhaVariavel = 'tenho um novo valor';
+```
+
+Como pôde ver, podemos atribuir qualquer tipo de valor à uma variável. Portanto, JS é uma linguagem fracamente tipada, diferente de Java, por exemplo.
+
+### Strings
+
+Strings são, à grosso modo, representações de texto.
+
+Para definir uma string em JS, basta colocar seu valor entre `'` (aspas simples) ou `"` (aspas duplas).
+
+O navegador interpretará da mesma forma usando aspas simples ou duplas, ficando a escolha mais para uma questão de gosto ou praticidade.
+
+As aspas simples são, de longe, as mais usadas. Logo, é extrememamente recomendável usá-la dessa forma para se manter um padrão.
+
+Exemplo:
+
+```javascript
+'aqui está um texto'
+"aqui também é um texto"
+```
+
+### Ponto e vírgula `;`
+
+Aqui já é outra questão que o gosto pode interferir.
+
+O uso de ponto e vírgula em JS é opcional. Não nos obriga a colocarmos ao final de cada linha, assim como Java ou C#.
+
+Na verdade, essa pontuação é inserida automaticamente em alguns pontos, por isso não é obrigatória. Esse mecanismo é denominado por *ASI (Automatic Semicolon Insertion)*.
+
+### Comentários
+
+Para definirmos um comentário em JS, basta colocar `//` antes do conteúdo desejado:
+
+```javascript
+// aqui é um comentário
+```
+
+Também podemos definir blocos de comentários, usado quando estes podem tomar mais de uma linha:
+
+```javascript
+/* Bloco de comentário
+são permitidas múltiplas linhas!
+*/
+```
+
+### Comparação
+
+Muita vezes precisamos comparar os valores contidos nas variáveis, a fim de fazermos alguma validação, verificar se o usuário preencheu um determinado campo, etc.
+
+Para isso temos dois operadores:
+
+- `==` (igual)
+- `===` (igual estrito)
+
+Os dois trabalham de forma similar, mas o primeiro apenas compara os valores das variáveis. Já o segundo, também verifica se os valores são do mesmo tipo.
+
+Exemplo:
+
+```javascript
+2 == '2' // true
+```
+
+Ao usar o igual para compararmos os valores `2` (numérico) e `'2'` (texto), o resultado dá verdadeiro.
+
+Já se usarmos o igual estrito, dará falso:
+
+```javascript
+2 === '2' // false
+```
+
+Dará verdadeiro caso se os dois valores forem do mesmo tipo:
+
+```javascript
+2 === 2 // true
+```
+
+### null e undefined
+
+Em JS, temos dois valores representando o vazio.
+
+`undefined` significa que uma variável foi declarada mas ainda não tem valor. Exemplo:
+
+```javascript
+var minhaVariavel;
+```
+
+`null` é um valor que pode ser atribuído a uma variável. Exemplo:
+
+```javascript
+minhaVariavel = null;
+```
+
+Apesar de os dois representarem o *vazio*, tem algumas diferenças quando comparados:
+
+```javascript
+null == undefined   // true
+null === undefined  // false
+null === null       // true
+```
+
+Podemos ver que os dois representam o mesmo valor, mas possuem tipos diferentes.
+
+### typeof
+
+`typeof` é um operador usado para retornar o tipo desejado de uma variável ou valor. Exemplo:
+
+```javascript
+typeof 'texto'     // string
+typeof 0           // number
+typeof true        // boolean
+typeof new Date()  // object
+typeof undefined   // undefined
+typeof null        // object
+```
+
+## Aplicação
+
+### Caixas de diálogo
+
+Existem três formas de exibirmos caixas de diálogo em um navegador:
+
+- alert
+- prompt
+- confirm
+
+Eles são usados para exibir um alerta, caixa de entrada e caixa de confirmação, respectivamente.
+
+#### alert
+
+Esse método mostra uma caixa de diálogo com a mensagem definida na chamada. Como segue:
+
+```javascript
+alert('Olá mundo!');
+```
+
+Exibindo o seguinte:
+
+![Exibição de um alerta](imagens/js/aplicacao_alert.png)
+
+#### prompt
+
+Esse método trabalha de forma parecida.
+
+Mas além de simplesmente mostrar uma mensagem ao usuário, também exibe um campo onde pode-se digitar algo e essa função se encarrega de retornar o digitado em uma string.
+
+```javascript
+prompt('Digite seu nome');
+```
+
+Exibindo o seguinte:
+
+![Exibição de um prompt](imagens/js/aplicacao_prompt.png)
+
+
+#### confirm
+
+Como os outros, também mostra uma caixa de diálogo.
+
+Porém com dois botões: um para confirmar e outro para cancelar. Retornando `true` ou `false` de acordo com a escolha do usuário:
+
+```javascript
+confirm('Gostou?');
+```
+
+Exibindo o seguinte:
+
+![Exibição de um confirm](imagens/js/aplicacao_confirm.png)
+
+### Document Object Model
+
+Apesar de podermos mostrar caixas de diálogos para o usuário, essa funcionalidade está longe de ser a ideal para aplicações complexas.
+
+Comumente, fazemos formulários no próprio documento HTML para o usuário preencher os campos necessários e assim obtermos os dados ali inseridos.
+
+Esses campos, ou elementos, definimos em uma página HTML são organizados pelo navegador em uma espécie de árvore. Essa organização é chamada de *DOM (Document Object Model)*.
+
+Além de definir essa estrutura, os navegadores dispõem de uma API para acessarmos o DOM programaticamente.
+
+Segue uma representação gráfica do DOM:
+
+![Representação do DOM](imagens/js/aplicacao_dom_representacao.gif)
+
+#### DOM API
+
+Com essa API podemos acessar diversas áreas do nosso documento.
+
+Para conseguirmos ver o título dessa página em um alerta, por exemplo:
+
+```xml
+<html>
+<head>
+   <title>Olá, mundo!</title>
+</head>
+<body></body>
+</html>
+```
+
+Basta usarmos esse código:
+
+```javascript
+alert(window.document.title); // Olá, mundo!
+```
+
