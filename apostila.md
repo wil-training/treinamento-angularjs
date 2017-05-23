@@ -1856,3 +1856,148 @@ let numerosMaioresQuinze = meusNumeros.filter(function (item) {
 });
 console.log(numerosMaioresQuinze); // [20, 30]
 ```
+
+### Objetos
+
+JavaScript é uma linguagem com suporte a orientação a objetos e nela podemos representar objetos das seguintes formas:
+
+- Notação literal
+- Object.create()
+- Função construtora
+- Classes
+
+#### Notação literal
+
+Essa é a maneira mais rápida de se criar objeto, apesar de nem sempre ser a mais usual.
+
+Para criarmos um objeto dessa forma basta usarmos um `inicializador de objeto`, ou `object literal`. Como a seguir:
+
+```javascript
+let pessoa = {
+    nome: 'Nome',
+    idade: 15
+};
+```
+
+Aqui, `pessoa` é o nome do novo objeto. `nome` e `idade` são propriedades desse objeto, com os valores `'Nome'` e `15`, respectivamente.
+
+Também é possível criar um objeto vazio:
+
+```javascript
+let objeto = {};
+```
+
+#### Object.create()
+
+Esse método cria um objeto a partir de um `protótipo de objeto`, o qual é bastante semelhante a um `object literal`.
+
+Exemplo:
+
+```javascript
+let Pessoa = {
+    nome: 'Nome',
+    idade: 15
+};
+let novaPessoa = Object.create(Pessoa);
+```
+
+#### Função construtora
+
+Essa é a forma que nos dá a maior liberdade ao criar nossos objetos.
+
+Para usarmos, basta criarmos uma funçao construtora e criarmos uma instância do objeto com `new`:
+
+```javascript
+function Pessoa() {
+    this.nome = 'Nome';
+    this.idade = 15;
+}
+let novaPessoa = new Pessoa();
+```
+
+#### Classes
+
+O ES2015 trouxe mais uma bem-vinda novidade ao JS: classes.
+
+Funciona de forma parecida à uma função construtora, porém mais simplificada:
+
+```javascript
+class Pessoa {
+	constructor() {
+        this.nome = 'Nome';
+        this.idade = 15;
+    }
+}
+let novaPessoa = new Pessoa();
+```
+
+#### Propriedades
+
+Propriedade de um objeto nada mais que uma variável ligada à ele. Nos exemplos anteriores tínhamos as variáveis `nome` e `idade` ligadas aos nossos objetos.
+
+Além disso, nos exemplos anteriores podemos ver como criar propriedades no objeto na hora de sua definição.
+
+Mas também podemos definir novas após o objeto já ter sido criado. Para isso temos duas maneiras:
+
+- Notação de ponto
+- Notação de colchetes
+
+##### Notação de ponto
+
+Essa é a notação mais usada, por sua simplicidade e familiaridade com outras linguagens com suporte a OO.
+
+Tomemos esse exemplo de classe:
+
+```javascript
+class Pessoa {
+	constructor() {
+        this.nome = 'Nome';
+        this.idade = 15;
+    }
+}
+```
+
+Aqui usamos a notação de ponto para introduzir duas propriedade no objeto a ser criado.
+
+Para acessar essas propriedades, basta colocarmos o nome do nosso objeto, um ponto e o nome da propriedade em questão:
+
+```javascript
+let novaPessoa = new Pessoa();
+console.log(novaPessoa.idade); // 15
+```
+
+Da mesma forma, conseguimos adicionar propriedade a esse objeto:
+
+```javascript
+let novaPessoa = new Pessoa();
+novaPessoa.sobrenome = 'Sobrenome';
+consoloe.log(novaPessoa.sobrenome); // Sobrenome
+```
+
+Também podemos alterar os valores das propriedades já definidas:
+
+```javascript
+let novaPessoa = new Pessoa();
+novaPessoa.idade = 23;
+consoloe.log(novaPessoa.idade); // 23
+```
+
+##### Notação de colchetes
+
+Aqui, como o nome diz, usamos colchetes para acessar as propriedades de um objeto. Exemplo:
+
+```javascript
+novaPessoa['sobrenome'];
+```
+
+Como no exemplo, o nome da proriedade deve ser uma string.
+
+Todas as operações possíveis na notação de ponto são possíveis com a de colchetes.
+
+```javascript
+let novaPessoa = new Pessoa();
+console.log(novaPessoa['idade']); // 15
+
+novaPessoa['sobrenome'] = 'Sobrenome';
+console.log(novaPessoa['sobrenome']); // Sobrenome
+```
