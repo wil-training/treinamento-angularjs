@@ -1738,3 +1738,23 @@ JS tem um objeto `Array` para definir vetores, podendo ser inicializado da segui
 ```javascript
 let meusNumeros = [10, 20, 30];
 ```
+
+#### Acessando itens
+
+Para acessarmos algum item de um vetor, basta colocar o  índice do mesmo entre colchetes após o nome da variável:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+let primeiroNumero = [0];
+consoloe.log(primeiroNumero); // 10
+```
+
+Índice é a posição do elemento em um vetor, começando de `0` (zero).
+
+Para descobrirmos o índice de um elemento, usa-se o método `indexOf`:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+let posicaoNumeroDez = meusNumeros.indexOf(10);
+consoloe.log(posicaoNumeroDez); // 0
+```
