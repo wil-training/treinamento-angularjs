@@ -2001,3 +2001,43 @@ console.log(novaPessoa['idade']); // 15
 novaPessoa['sobrenome'] = 'Sobrenome';
 console.log(novaPessoa['sobrenome']); // Sobrenome
 ```
+
+### JavaScript Object Notation
+
+JSON, como é chamado, é um formato de troca de dados baseado em objetos JavaScript.
+
+Foi criado por conta da dificuldade em trabalhar com estruturas em XML. É mais leve e mais fácil de ler.
+
+Exemplo:
+
+```json
+{
+    "pessoa": {
+        "nome": "Nome",
+        "idade": 15
+    }
+}
+```
+
+Como podemos ver, é praticamente um literal. Apesar de as propriedades terem de ser declaradas com `"` (aspas duplas) em volta delas.
+
+#### JSON e JS
+
+Esse formato foi pensado não só, mas especialment para trabalhar em conjunto com o JS. Portanto, é extremamente simples transformar um objeto JS para um JSON:
+
+```javascript
+let pessoa = {
+    nome: 'Nome',
+    idade: 15
+}
+let pessoaEmJson = JSON.stringify(pessoa);
+console.log(pessoaEmJson); // "{ "nome": "Nome", "idade": 15 }"
+```
+
+O contrário também é verdade. Para convertermos um objeto JSON para JS basta usarmos o método `parse`:
+
+```javascript
+let pessoaEmJson = '{ "nome": "Nome", "idade": 15 }';
+let pessoaEmJs = JSON.parse(pessoaEmJson);
+console.log(pessoaEmJs.idade); // 15
+```
