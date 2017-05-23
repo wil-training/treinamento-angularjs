@@ -1756,5 +1756,15 @@ Para descobrirmos o índice de um elemento, usa-se o método `indexOf`:
 ```javascript
 let meusNumeros = [10, 20, 30];
 let posicaoNumeroDez = meusNumeros.indexOf(10);
-consoloe.log(posicaoNumeroDez); // 0
+console.log(posicaoNumeroDez); // 0
+```
+
+#### Adicionando itens
+
+Para adicionar itens usamos o método `push`:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+meusNumeros.push(40);
+console.log(meusNumeros); // [10, 20, 30, 40]
 ```
