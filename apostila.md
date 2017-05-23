@@ -1456,7 +1456,7 @@ Apesar de podermos mostrar caixas de diálogos para o usuário, essa funcionalid
 
 Comumente, fazemos formulários no próprio documento HTML para o usuário preencher os campos necessários e assim obtermos os dados ali inseridos.
 
-Esses campos, ou elementos, definimos em uma página HTML são organizados pelo navegador em uma espécie de árvore. Essa organização é chamada de *DOM (Document Object Model)*.
+Esses campos, ou elementos, definidos em uma página HTML são organizados pelo navegador em uma espécie de árvore. Essa organização é chamada de *DOM (Document Object Model)*.
 
 Além de definir essa estrutura, os navegadores dispõem de uma API para acessarmos o DOM programaticamente.
 
@@ -1484,4 +1484,16 @@ Basta usarmos esse código:
 ```javascript
 alert(window.document.title); // Olá, mundo!
 ```
+
+### Uso estrito
+
+Por padrão, o JS não nos avisa de alguns erros possíveis de acontecer. Como uso de variáveis não declaradas, uso de palavras reservadas, ou recursos considerados obsoletos.
+
+Para mudar isso, a versão 5 da ECMAScript trouxe o `use strict;`.
+
+Essa diretiva faz o navegador interpretar o código de uma maneira mais estrita, como diz o próprio nome. Nos forçando a escrever um código de melhor qualidade.
+
+> Para saber mais, veja em: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Strict_mode
+
+Para ativar o movo estrito, basta colocar `'use strict';` no começo do arquivo ou função que deseja aplicar.
 
