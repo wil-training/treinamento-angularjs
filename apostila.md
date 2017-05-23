@@ -1800,3 +1800,59 @@ let numeroVinte = meusNumeros.splice(0, 2);
 console.log(meusNumeros); // [30]
 console.log(numeroVinte); // [10, 20]
 ```
+
+#### Laços de repetição
+
+Muitas vezes precisamos *varrer* o array. Para isso, em JS temos alguns métodos, dentre eles:
+
+- forEach
+- map
+- filter
+- some
+
+##### forEach
+
+Esse método é usado para iterar de forma simples no array. Recebe uma função como parâmetro e essa é executada em cada item deste.
+
+Exemplo:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+meusNumeros.forEach(function (item) {
+    console.log(item);
+});
+```
+
+##### map
+
+O `map` funciona de forma semelhante ao `forEach`, porém este retorna um novo array com base no retorno da função executada em cada item.
+
+Exemplo:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+meusNumeros.map(function (item) {
+	let numeroSomadoCinco = item + 5;
+    return numeroSomadoCinco;
+});
+console.log(meusNumeros); // [15, 25, 35]
+```
+
+##### filter
+
+Esse é usado para, como o nome diz, filtrarmos os itens de um array.
+
+O método `filter` retorna um novo array contendo apenas os elementos onde a função recebida tenha retornado `true`.
+
+Exemplo:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+let numerosMaioresQuinze = meusNumeros.filter(function (item) {
+	if (item > 15) {
+    	return true;
+    }
+    return false;
+});
+console.log(numerosMaioresQuinze); // [20, 30]
+```
