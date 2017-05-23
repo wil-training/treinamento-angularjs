@@ -1456,7 +1456,7 @@ Apesar de podermos mostrar caixas de diálogos para o usuário, essa funcionalid
 
 Comumente, fazemos formulários no próprio documento HTML para o usuário preencher os campos necessários e assim obtermos os dados ali inseridos.
 
-Esses campos, ou elementos, definimos em uma página HTML são organizados pelo navegador em uma espécie de árvore. Essa organização é chamada de *DOM (Document Object Model)*.
+Esses campos, ou elementos, definidos em uma página HTML são organizados pelo navegador em uma espécie de árvore. Essa organização é chamada de *DOM (Document Object Model)*.
 
 Além de definir essa estrutura, os navegadores dispõem de uma API para acessarmos o DOM programaticamente.
 
@@ -1485,3 +1485,559 @@ Basta usarmos esse código:
 alert(window.document.title); // Olá, mundo!
 ```
 
+### Uso estrito
+
+Por padrão, o JS não nos avisa de alguns erros possíveis de acontecer. Como uso de variáveis não declaradas, uso de palavras reservadas, ou recursos considerados obsoletos.
+
+Para mudar isso, a versão 5 da ECMAScript trouxe o `use strict;`.
+
+Essa diretiva faz o navegador interpretar o código de uma maneira mais estrita, como diz o próprio nome. Nos forçando a escrever um código de melhor qualidade.
+
+> Para saber mais, veja em: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Strict_mode
+
+Para ativar o movo estrito, basta colocar `'use strict';` no começo do arquivo ou função que deseja aplicar.
+
+### Funções
+
+Muitas vezes precisamos criar blocos de código para serem executados conforme a nossa necessidade.
+
+Para isso, criamos funções:
+
+```javascript
+function mostrarNumeroCinco() {
+    alert(5);
+}
+```
+
+Existem duas maneiras de criarmos uma função:
+
+- Declaração
+- Expressão
+
+#### Declaração de função
+
+Uma função é declarada com a seguinte estrutura:
+
+```javascript
+function nomeDaFuncao(parametros) {
+    // instruções
+}
+```
+
+Para, por exemplo, criarmos uma função que mostra um número em uma caixa de diálogo:
+
+```javascript
+function mostrarNumero(numero) {
+    alert(numero);
+}
+```
+
+#### Expressão de função
+
+Além de uma função pode ser declarada, também é possível criar com uma expressão:
+
+```javascript
+var nomeDaFuncao = function(parametros) {
+    // instruções
+}
+```
+
+A diferença aqui é que estamos *guardando* uma `função anônima` em uma variável, não declarando como fizemos anteriormente.
+
+#### Execução de uma função
+
+Tanto uma função criada à partir de uma declaração quanto de uma expressão são executadas da mesma maneira:
+
+```javascript
+nomeDaFuncao(parametro);
+```
+
+Basta colocarmos o nome da função e passarmos os parâmetros necessários entre parênteses.
+
+Caso a função não necessite de parâmetros, basta os parênteses:
+
+```javascript
+funcaoSemParametros();
+```
+
+#### Escopo
+
+As variáveis criadas dentro de uma função pertencem à ela e não podem ser usadas fora.
+
+Exemplo:
+
+```javascript
+function minhaFuncao() {
+    var minhaVariavel = 5;
+    console.log(minhaVariavel); // 5
+}
+console.log(minhaVariavel); // variável não existe
+```
+
+Ao contrário de linguagens como C, C# e Java, JS trabalha com escopos por função, não por blocos.
+
+Isso significa que, por exemplo, todas as variáveis definidas dentro de uma função será vista em qualquer parte dela, por fazer parte do mesmo escopo.
+
+Exemplo:
+
+```javascript
+function minhaFuncao() {
+    var minhaVariavel = 5;
+    
+    if (minhaVariavel === 5) {
+        var minhaOutraVariavel = 6;
+    }
+    
+    console.log(minhaOutraVariavel); // 6
+}
+```
+
+#### Hoisting
+
+Durante a execução de uma função o navegador inicia de um processo chamado de `hoisting`.
+
+Esse processo varre todo o corpo da função procurando por declarações e já as executa primeiro.
+
+Por exemplo:
+
+```javascript
+function minhaFuncao() {
+    console.log('primeira linha');
+    var variavel; // essa será a primeira linha executa
+    variavel = 'minha variável';
+    console.log(variavel);
+}
+```
+
+Com isso, podemos escrever um código assim e este executará normalmente:
+
+```javascript
+function minhaFuncao() {
+    variavel = 'minha variável';
+    var variavel;
+    console.log(variavel); // minha variável
+}
+```
+
+Lembre-se que apenas a criação da variável passa por esse processo, não sua inicialização. Portanto:
+
+```javascript
+function minhaFuncao() {
+    console.log(variavel); // undefined
+    variavel = 'minha variável';
+    var variavel;
+    console.log(variavel); // minha variável
+}
+```
+
+Esse processo também existe para declarações de funções. Mas diferentemente das variáveis, o corpo da função também fica disponível.
+
+Exemplo:
+
+```javascript
+minhaFuncao() // minha variável
+
+function minhaFuncao() {
+    var variavel = 'minha variável';
+    return variavel;
+}
+```
+
+#### ECMAScript 2015
+
+A nova versão da ECMAScript, também conhecida como ES6, trouxe novas maneiras de inicializar variáveis:
+
+- let
+- const
+
+##### let
+
+O `let` trabalha de forma semelhante ao `var`, **mas cria um escopo por bloco**.
+
+Dessa maneira, um dos exemplos anteriores ficaria assim:
+
+```javascript
+function minhaFuncao() {
+    let minhaVariavel = 5;
+    
+    if (minhaVariavel === 5) {
+        let minhaOutraVariavel = 6;
+    }
+    
+    console.log(minhaOutraVariavel); // erro de referëncia
+}
+```
+
+Além disso o processo de hoisting fica diferente, fazendo com que a variável não esteja disponível antes da sua inicialização:
+
+```javascript
+function minhaFuncao() {
+    variavel = 'minha variável'; // erro de referência
+    let variavel;
+}
+```
+
+##### const
+
+O `const` funciona exatamente como o `let`, exceto por este não permitir que uma variável seja atribuída com outro valor após a sua inicialização.
+
+Exemplo:
+
+```javascript
+let minhaVariavel = 5;
+minhaVariavel = 6; // podemos atribuir outro valor
+
+const minhaConstante = 6;
+minhaConstante = 7; // erro de execução
+```
+
+#### Closures
+
+Definição de closure na [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures).
+
+> Closures (fechamentos) são funções que se referem a variáveis livres (independentes).
+> Em outras palavras, a função definida no closure "lembra" do ambiente em que ela foi criada.
+
+Exemplo:
+
+```javascript
+function minhaFuncao() {
+    let x = 10;
+    
+    function somarDez(numero) {
+        let resultado = numero + x;
+        return resultado;
+    }
+    
+    return somarDez;
+}
+
+let funcaoSomarDez = minhaFuncao();
+let numeroSomadoDez = funcaoSomarDez(5);
+console.log(numeroSomadoDez); // 15
+```
+
+Declaramos uma função de nome `minhaFuncao` que ao ser executada retorna outra função de nome `somarDez`.
+
+Pegamos essa função retornada e armazenamos em uma variável `funcaoSomarDez`.
+
+Essa função estava dentro do escopo da `minhaFuncao`, portanto tem acesso a todas as variáveis ali criadas.
+
+Dessa fornma, a `funcaoSomarDez` *carrega* todo o escopo da `minhaFuncao`. Podendo ser executada mesmo depois de termos *saído* do escopo da *funçao mãe*.
+
+Uma closure é um tipo de objeto que combina a função e o ambiente onde foi criada, contendo as variáveis daquele escopo. Nesse caso, a `funcaoSomarDez` é uma closure que contém a função `somarDez` e variável `x`.
+
+### Vetores
+
+Um vetor, ou array, é uma estrutura de dados usada para armazenar uma coleção de valores, agrupados continuamente na memória.
+
+#### Criação
+
+JS tem um objeto `Array` para definir vetores, podendo ser inicializado da seguinte maneira:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+```
+
+#### Acessando itens
+
+Para acessarmos algum item de um vetor, basta colocar o  índice do mesmo entre colchetes após o nome da variável:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+let primeiroNumero = [0];
+console.log(primeiroNumero); // 10
+```
+
+Índice é a posição do elemento em um vetor, começando de `0` (zero).
+
+Para descobrirmos o índice de um elemento, usa-se o método `indexOf`:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+let posicaoNumeroDez = meusNumeros.indexOf(10);
+console.log(posicaoNumeroDez); // 0
+```
+
+#### Adicionando itens
+
+Para adicionar itens usamos o método `push`:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+meusNumeros.push(40);
+console.log(meusNumeros); // [10, 20, 30, 40]
+```
+
+#### Removendo itens
+
+Para remoção de itens temos disponível o método `pop`, o qual remove o último item adicionado ao array.
+
+```javascript
+let meusNumeros = [10, 20, 30];
+meusNumeros.pop();
+console.log(meusNumeros); // [10, 20]
+```
+
+Apesar de ter sua utilidade, esse método pode ser bem limitado por apenas remover o último item. Para remover outros, usamos o `splice`.
+
+Esse método retorna um novo array baseado em posições de início e quantidade de itens passadas por parâmetro.
+
+Por exemplo:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+let numeroVinte = meusNumeros.splice(1, 1);
+console.log(meusNumeros); // [10, 30]
+console.log(numeroVinte); // [20]
+```
+
+Com esse método, podemos remover mais de um elemento, como a seguir:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+let numeroVinte = meusNumeros.splice(0, 2);
+console.log(meusNumeros); // [30]
+console.log(numeroVinte); // [10, 20]
+```
+
+#### Laços de repetição
+
+Muitas vezes precisamos *varrer* o array. Para isso, em JS temos alguns métodos, dentre eles:
+
+- forEach
+- map
+- filter
+- some
+
+##### forEach
+
+Esse método é usado para iterar de forma simples no array. Recebe uma função como parâmetro e essa é executada em cada item deste.
+
+Exemplo:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+meusNumeros.forEach(function (item) {
+    console.log(item);
+});
+```
+
+##### map
+
+O `map` funciona de forma semelhante ao `forEach`, porém este retorna um novo array com base no retorno da função executada em cada item.
+
+Exemplo:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+meusNumeros.map(function (item) {
+	let numeroSomadoCinco = item + 5;
+    return numeroSomadoCinco;
+});
+console.log(meusNumeros); // [15, 25, 35]
+```
+
+##### filter
+
+Esse é usado para, como o nome diz, filtrarmos os itens de um array.
+
+O método `filter` retorna um novo array contendo apenas os elementos onde a função recebida tenha retornado `true`.
+
+Exemplo:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+let numerosMaioresQuinze = meusNumeros.filter(function (item) {
+	if (item > 15) {
+    	return true;
+    }
+    return false;
+});
+console.log(numerosMaioresQuinze); // [20, 30]
+```
+
+### Objetos
+
+JavaScript é uma linguagem com suporte a orientação a objetos e nela podemos representar objetos das seguintes formas:
+
+- Notação literal
+- Object.create()
+- Função construtora
+- Classes
+
+#### Notação literal
+
+Essa é a maneira mais rápida de se criar objeto, apesar de nem sempre ser a mais usual.
+
+Para criarmos um objeto dessa forma basta usarmos um `inicializador de objeto`, ou `object literal`. Como a seguir:
+
+```javascript
+let pessoa = {
+    nome: 'Nome',
+    idade: 15
+};
+```
+
+Aqui, `pessoa` é o nome do novo objeto. `nome` e `idade` são propriedades desse objeto, com os valores `'Nome'` e `15`, respectivamente.
+
+Também é possível criar um objeto vazio:
+
+```javascript
+let objeto = {};
+```
+
+#### Object.create()
+
+Esse método cria um objeto a partir de um `protótipo de objeto`, o qual é bastante semelhante a um `object literal`.
+
+Exemplo:
+
+```javascript
+let Pessoa = {
+    nome: 'Nome',
+    idade: 15
+};
+let novaPessoa = Object.create(Pessoa);
+```
+
+#### Função construtora
+
+Essa é a forma que nos dá a maior liberdade ao criar nossos objetos.
+
+Para usarmos, basta criarmos uma funçao construtora e criarmos uma instância do objeto com `new`:
+
+```javascript
+function Pessoa() {
+    this.nome = 'Nome';
+    this.idade = 15;
+}
+let novaPessoa = new Pessoa();
+```
+
+#### Classes
+
+O ES2015 trouxe mais uma bem-vinda novidade ao JS: classes.
+
+Funciona de forma parecida à uma função construtora, porém mais simplificada:
+
+```javascript
+class Pessoa {
+	constructor() {
+        this.nome = 'Nome';
+        this.idade = 15;
+    }
+}
+let novaPessoa = new Pessoa();
+```
+
+#### Propriedades
+
+Propriedade de um objeto nada mais que uma variável ligada à ele. Nos exemplos anteriores tínhamos as variáveis `nome` e `idade` ligadas aos nossos objetos.
+
+Além disso, nos exemplos anteriores podemos ver como criar propriedades no objeto na hora de sua definição.
+
+Mas também podemos definir novas após o objeto já ter sido criado. Para isso temos duas maneiras:
+
+- Notação de ponto
+- Notação de colchetes
+
+##### Notação de ponto
+
+Essa é a notação mais usada, por sua simplicidade e familiaridade com outras linguagens com suporte a OO.
+
+Tomemos esse exemplo de classe:
+
+```javascript
+class Pessoa {
+	constructor() {
+        this.nome = 'Nome';
+        this.idade = 15;
+    }
+}
+```
+
+Aqui usamos a notação de ponto para introduzir duas propriedade no objeto a ser criado.
+
+Para acessar essas propriedades, basta colocarmos o nome do nosso objeto, um ponto e o nome da propriedade em questão:
+
+```javascript
+let novaPessoa = new Pessoa();
+console.log(novaPessoa.idade); // 15
+```
+
+Da mesma forma, conseguimos adicionar propriedade a esse objeto:
+
+```javascript
+let novaPessoa = new Pessoa();
+novaPessoa.sobrenome = 'Sobrenome';
+consoloe.log(novaPessoa.sobrenome); // Sobrenome
+```
+
+Também podemos alterar os valores das propriedades já definidas:
+
+```javascript
+let novaPessoa = new Pessoa();
+novaPessoa.idade = 23;
+consoloe.log(novaPessoa.idade); // 23
+```
+
+##### Notação de colchetes
+
+Aqui, como o nome diz, usamos colchetes para acessar as propriedades de um objeto. Exemplo:
+
+```javascript
+novaPessoa['sobrenome'];
+```
+
+Como no exemplo, o nome da proriedade deve ser uma string.
+
+Todas as operações possíveis na notação de ponto são possíveis com a de colchetes.
+
+```javascript
+let novaPessoa = new Pessoa();
+console.log(novaPessoa['idade']); // 15
+
+novaPessoa['sobrenome'] = 'Sobrenome';
+console.log(novaPessoa['sobrenome']); // Sobrenome
+```
+
+### JavaScript Object Notation
+
+JSON, como é chamado, é um formato de troca de dados baseado em objetos JavaScript.
+
+Foi criado por conta da dificuldade em trabalhar com estruturas em XML. É mais leve e mais fácil de ler.
+
+Exemplo:
+
+```json
+{
+    "pessoa": {
+        "nome": "Nome",
+        "idade": 15
+    }
+}
+```
+
+Como podemos ver, é praticamente um literal. Apesar de as propriedades terem de ser declaradas com `"` (aspas duplas) em volta delas.
+
+#### JSON e JS
+
+Esse formato foi pensado não só, mas especialment para trabalhar em conjunto com o JS. Portanto, é extremamente simples transformar um objeto JS para um JSON:
+
+```javascript
+let pessoa = {
+    nome: 'Nome',
+    idade: 15
+}
+let pessoaEmJson = JSON.stringify(pessoa);
+console.log(pessoaEmJson); // "{ "nome": "Nome", "idade": 15 }"
+```
+
+O contrário também é verdade. Para convertermos um objeto JSON para JS basta usarmos o método `parse`:
+
+```javascript
+let pessoaEmJson = '{ "nome": "Nome", "idade": 15 }';
+let pessoaEmJs = JSON.parse(pessoaEmJson);
+console.log(pessoaEmJs.idade); // 15
+```
