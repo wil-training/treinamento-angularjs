@@ -1726,3 +1726,15 @@ Essa função estava dentro do escopo da `minhaFuncao`, portanto tem acesso a to
 Dessa fornma, a `funcaoSomarDez` *carrega* todo o escopo da `minhaFuncao`. Podendo ser executada mesmo depois de termos *saído* do escopo da *funçao mãe*.
 
 Uma closure é um tipo de objeto que combina a função e o ambiente onde foi criada, contendo as variáveis daquele escopo. Nesse caso, a `funcaoSomarDez` é uma closure que contém a função `somarDez` e variável `x`.
+
+### Vetores
+
+Um vetor, ou array, é uma estrutura de dados usada para armazenar uma coleção de valores, agrupados continuamente na memória.
+
+#### Criação
+
+JS tem um objeto `Array` para definir vetores, podendo ser inicializado da seguinte maneira:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+```
