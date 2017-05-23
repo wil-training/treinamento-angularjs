@@ -1544,7 +1544,7 @@ var nomeDaFuncao = function(parametros) {
 
 A diferença aqui é que estamos *guardando* uma `função anônima` em uma variável, não declarando como fizemos anteriormente.
 
-#### Execuçao de uma função
+#### Execução de uma função
 
 Tanto uma função criada à partir de uma declaração quanto de uma expressão são executadas da mesma maneira:
 
@@ -1690,3 +1690,39 @@ minhaVariavel = 6; // podemos atribuir outro valor
 const minhaConstante = 6;
 minhaConstante = 7; // erro de execução
 ```
+
+#### Closures
+
+Definição de closure na [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures).
+
+> Closures (fechamentos) são funções que se referem a variáveis livres (independentes).
+> Em outras palavras, a função definida no closure "lembra" do ambiente em que ela foi criada.
+
+Exemplo:
+
+```javascript
+function minhaFuncao() {
+    let x = 10;
+    
+    function somarDez(numero) {
+        let resultado = numero + x;
+        return resultado;
+    }
+    
+    return somarDez;
+}
+
+let funcaoSomarDez = minhaFuncao();
+let numeroSomadoDez = funcaoSomarDez(5);
+console.log(numeroSomadoDez); // 15
+```
+
+Declaramos uma função de nome `minhaFuncao` que ao ser executada retorna outra função de nome `somarDez`.
+
+Pegamos essa função retornada e armazenamos em uma variável `funcaoSomarDez`.
+
+Essa função estava dentro do escopo da `minhaFuncao`, portanto tem acesso a todas as variáveis ali criadas.
+
+Dessa fornma, a `funcaoSomarDez` *carrega* todo o escopo da `minhaFuncao`. Podendo ser executada mesmo depois de termos *saído* do escopo da *funçao mãe*.
+
+Uma closure é um tipo de objeto que combina a função e o ambiente onde foi criada, contendo as variáveis daquele escopo. Nesse caso, a `funcaoSomarDez` é uma closure que contém a função `somarDez` e variável `x`.
