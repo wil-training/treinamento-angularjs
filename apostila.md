@@ -1746,7 +1746,7 @@ Para acessarmos algum item de um vetor, basta colocar o  índice do mesmo entre 
 ```javascript
 let meusNumeros = [10, 20, 30];
 let primeiroNumero = [0];
-consoloe.log(primeiroNumero); // 10
+console.log(primeiroNumero); // 10
 ```
 
 Índice é a posição do elemento em um vetor, começando de `0` (zero).
@@ -1767,4 +1767,36 @@ Para adicionar itens usamos o método `push`:
 let meusNumeros = [10, 20, 30];
 meusNumeros.push(40);
 console.log(meusNumeros); // [10, 20, 30, 40]
+```
+
+#### Removendo itens
+
+Para remoção de itens temos disponível o método `pop`, o qual remove o último item adicionado ao array.
+
+```javascript
+let meusNumeros = [10, 20, 30];
+meusNumeros.pop();
+console.log(meusNumeros); // [10, 20]
+```
+
+Apesar de ter sua utilidade, esse método pode ser bem limitado por apenas remover o último item. Para remover outros, usamos o `splice`.
+
+Esse método retorna um novo array baseado em posições de início e quantidade de itens passadas por parâmetro.
+
+Por exemplo:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+let numeroVinte = meusNumeros.splice(1, 1);
+console.log(meusNumeros); // [10, 30]
+console.log(numeroVinte); // [20]
+```
+
+Com esse método, podemos remover mais de um elemento, como a seguir:
+
+```javascript
+let meusNumeros = [10, 20, 30];
+let numeroVinte = meusNumeros.splice(0, 2);
+console.log(meusNumeros); // [30]
+console.log(numeroVinte); // [10, 20]
 ```
