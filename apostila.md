@@ -1497,3 +1497,100 @@ Essa diretiva faz o navegador interpretar o código de uma maneira mais estrita,
 
 Para ativar o movo estrito, basta colocar `'use strict';` no começo do arquivo ou função que deseja aplicar.
 
+### Funções
+
+Muitas vezes precisamos criar blocos de código para serem executados conforme a nossa necessidade.
+
+Para isso, criamos funções:
+
+```javascript
+function mostrarNumeroCinco() {
+    alert(5);
+}
+```
+
+Existem duas maneiras de criarmos uma função:
+
+- Declaração
+- Expressão
+
+#### Declaração de função
+
+Uma função é declarada com a seguinte estrutura:
+
+```javascript
+function nomeDaFuncao(parametros) {
+    // instruções
+}
+```
+
+Para, por exemplo, criarmos uma função que mostra um número em uma caixa de diálogo:
+
+```javascript
+function mostrarNumero(numero) {
+    alert(numero);
+}
+```
+
+#### Expressão de função
+
+Além de uma função pode ser declarada, também é possível criar com uma expressão:
+
+```javascript
+var nomeDaFuncao = function(parametros) {
+    // instruções
+}
+```
+
+A diferença aqui é que estamos *guardando* uma `função anônima` em uma variável, não declarando como fizemos anteriormente.
+
+#### Execuçao de uma função
+
+Tanto uma função criada à partir de uma declaração quanto de uma expressão são executadas da mesma maneira:
+
+```javascript
+nomeDaFuncao(parametro);
+```
+
+Basta colocarmos o nome da função e passarmos os parâmetros necessários entre parênteses.
+
+Caso a função não necessite de parâmetros, basta os parênteses:
+
+```javascript
+funcaoSemParametros();
+```
+
+#### Escopo
+
+As variáveis criadas dentro de uma função pertencem à ela e não podem ser usadas fora.
+
+Exemplo:
+
+```javascript
+function minhaFuncao() {
+    var minhaVariavel = 5;
+    console.log(minhaVariavel); // 5
+}
+console.log(minhaVariavel); // variável não existe
+```
+
+Ao contrário de linguagens como c, C# e Java, JS trabalha com escopos por função, não por blocos.
+
+Isso significa que, por exemplo, todas as variáveis definidas dentro de uma função será vista em qualquer parte dela, por fazer parte do mesmo escopo.
+
+Exemplo:
+
+```javascript
+function minhaFuncao() {
+    var minhaVariavel = 5;
+    
+    if (minhaVariavel === 5) {
+        var minhaOutraVariavel = 6;
+    }
+    
+    console.log(minhaOutraVariavel); // 6
+}
+```
+
+#### Hoisting
+
