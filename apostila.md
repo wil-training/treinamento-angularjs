@@ -1642,3 +1642,51 @@ function minhaFuncao() {
     return variavel;
 }
 ```
+
+#### ECMAScript 2015
+
+A nova versão da ECMAScript, também conhecida como ES6, trouxe novas maneiras de inicializar variáveis:
+
+- let
+- const
+
+##### let
+
+O `let` trabalha de forma semelhante ao `var`, **mas cria um escopo por bloco**.
+
+Dessa maneira, um dos exemplos anteriores ficaria assim:
+
+```javascript
+function minhaFuncao() {
+    let minhaVariavel = 5;
+    
+    if (minhaVariavel === 5) {
+        let minhaOutraVariavel = 6;
+    }
+    
+    console.log(minhaOutraVariavel); // erro de referëncia
+}
+```
+
+Além disso o processo de hoisting fica diferente, fazendo com que a variável não esteja disponível antes da sua inicialização:
+
+```javascript
+function minhaFuncao() {
+    variavel = 'minha variável'; // erro de referência
+    let variavel;
+}
+```
+
+##### const
+
+O `const` funciona exatamente como o `let`, exceto por este não permitir que uma variável seja atribuída com outro valor após a sua inicialização.
+
+Exemplo:
+
+```javascript
+let minhaVariavel = 5;
+minhaVariavel = 6; // podemos atribuir outro valor
+
+const minhaConstante = 6;
+minhaConstante = 7; // erro de execução
+```
