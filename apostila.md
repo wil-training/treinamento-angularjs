@@ -1574,7 +1574,7 @@ function minhaFuncao() {
 console.log(minhaVariavel); // variável não existe
 ```
 
-Ao contrário de linguagens como c, C# e Java, JS trabalha com escopos por função, não por blocos.
+Ao contrário de linguagens como C, C# e Java, JS trabalha com escopos por função, não por blocos.
 
 Isso significa que, por exemplo, todas as variáveis definidas dentro de uma função será vista em qualquer parte dela, por fazer parte do mesmo escopo.
 
@@ -1594,3 +1594,51 @@ function minhaFuncao() {
 
 #### Hoisting
 
+Durante a execução de uma função o navegador inicia de um processo chamado de `hoisting`.
+
+Esse processo varre todo o corpo da função procurando por declarações e já as executa primeiro.
+
+Por exemplo:
+
+```javascript
+function minhaFuncao() {
+    console.log('primeira linha');
+    var variavel; // essa será a primeira linha executa
+    variavel = 'minha variável';
+    console.log(variavel);
+}
+```
+
+Com isso, podemos escrever um código assim e este executará normalmente:
+
+```javascript
+function minhaFuncao() {
+    variavel = 'minha variável';
+    var variavel;
+    console.log(variavel); // minha variável
+}
+```
+
+Lembre-se que apenas a criação da variável passa por esse processo, não sua inicialização. Portanto:
+
+```javascript
+function minhaFuncao() {
+    console.log(variavel); // undefined
+    variavel = 'minha variável';
+    var variavel;
+    console.log(variavel); // minha variável
+}
+```
+
+Esse processo também existe para declarações de funções. Mas diferentemente das variáveis, o corpo da função também fica disponível.
+
+Exemplo:
+
+```javascript
+minhaFuncao() // minha variável
+
+function minhaFuncao() {
+    var variavel = 'minha variável';
+    return variavel;
+}
+```
