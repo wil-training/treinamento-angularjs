@@ -2236,3 +2236,24 @@ No exemplo abaixo, será escrito no console o nome digitado a cada alteração:
 
 Pode-se, por exemplo, existir uma diretiva que altera a cor da fonte do elemento onde for aplicada para azul, fazer todas as letras ficarem maiúsculas, etc.
 
+### Diretivas nativas
+
+O próprio AngularJS traz algumas diretivas por padrão.
+
+Algumas delas são:
+
+- ng-app
+- ng-controller
+- ng-bind
+- ng-init
+- ng-model
+- ng-class
+- ng-show
+- ng-hide
+- ng-if
+- ng-repeat
+- ng-click
+- ng-change
+
+`ng-app` e `ng-controller` já foram mostradas nos exemplos anteriores. A primeira diz o escopo da aplicação e a segunda *aplica* um determinado controller àquele elemento.
+
