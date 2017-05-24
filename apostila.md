@@ -2377,3 +2377,45 @@ Por exemplo:
 ```xml
 <p ng-class="{ 'verde': true, 'borda': true }">Verde com borda</p>
 ```
+
+### Diretivas customizadas
+
+Muitas vezes precisamos ter um controle maior sobre o DOM e para isso criamos nossas próprias diretivas.
+
+Para criar uma nova diretiva, mas chamar a função `directive` e informar seu nome e um objeto com algumas definições, chamado de `Directive Definition Object`.
+
+A estrutura da chamada é:
+
+```javascript
+directive('nomeDaDiretiva', funcaoRetornandoDDO);
+```
+
+Por exemplo, uma diretiva que exibe `Hello, World!` seria:
+
+```javascript
+angular.module('app', []);
+
+angular.module('app')
+    .directive('nome', helloWorldDirective);
+
+function helloWorldDirective() {
+	let definitionObject = {
+        template: '<span>Hello, World!</span>'
+    };
+    return definitionObject;
+}
+```
+
+Esse object definition possui diversas propriedades. Vejamos algumas delas:
+
+
+- template
+- templateUrl
+- restrict
+- link
+- controller
+- controllerAs
+- scope
+- bindToController
+
+> Para mais informações veja em: https://docs.angularjs.org/api/ng/service/$compile#directive-definition-object
