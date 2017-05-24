@@ -2236,6 +2236,8 @@ No exemplo abaixo, será escrito no console o nome digitado a cada alteração:
 
 Pode-se, por exemplo, existir uma diretiva que altera a cor da fonte do elemento onde for aplicada para azul, fazer todas as letras ficarem maiúsculas, etc.
 
+> Para mais detalhes, consulte a documentação oficial em: https://docs.angularjs.org/api/ng/directive
+
 ### Diretivas nativas
 
 O próprio AngularJS traz algumas diretivas por padrão.
@@ -2245,15 +2247,14 @@ Algumas delas são:
 - ng-app
 - ng-controller
 - ng-bind
-- ng-init
 - ng-model
-- ng-class
 - ng-show
 - ng-hide
 - ng-if
 - ng-repeat
 - ng-click
 - ng-change
+- ng-class
 
 `ng-app` e `ng-controller` já foram mostradas nos exemplos anteriores. A primeira diz o escopo da aplicação e a segunda *aplica* um determinado controller àquele elemento.
 
@@ -2265,5 +2266,17 @@ Exemplo:
 
 ```xml
 <h1 ng-bind="titulo"></h1>
+```
+
+#### ng-model
+
+Também usada para vincular um elemento a uma propriedade no escopo, porém restrita aos elementos `input`, `select` e `textarea`.
+
+Assim como a `ng-bind`, atualiza o elemento com a propriedade vincula. Mas também faz o inverso, atualiza a propriedade com o valor colocado no elemento.
+
+Exemplo:
+
+```xml
+<input type="text" ng-model="nome"></h1>
 ```
 
