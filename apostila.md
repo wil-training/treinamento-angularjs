@@ -2320,3 +2320,14 @@ Exemplo:
 <h3 ng-if="maior === true">Conteúdo permitido</h3>
 ```
 
+#### ng-repeat
+
+Usada para listar vários elementos de uma lista.
+
+Exemplo:
+
+```xml
+<ul>
+    <li ng-repeat="nome in nomes">{{ nome }}</li>
+</ul>
+```
