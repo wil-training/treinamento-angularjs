@@ -2190,3 +2190,43 @@ Ao executarmos no navegador, fica assim:
 ![Exemplo data binding com $scope](imagens/angularjs/scope_data_binding.png)
 
 > Para se aprofundar no assunto: https://github.com/angular/angular.js/wiki/Understanding-Scopes
+
+### *Escutando* alterações
+
+Além de ser a liga entre o controller e a view, o objeto $scope possui alguns funções que podem vir a ser úteis.
+
+O método `$watch` é um desses. Usado para avisar quando alguma propriedade é alterada.
+
+No exemplo abaixo, será escrito no console o nome digitado a cada alteração:
+
+```xml
+<html ng-app="app">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script>
+            angular.module('app', []);
+
+            angular.module('app')
+                .controller('PrimeiroController', PrimeiroController);
+
+            function PrimeiroController($scope) {
+                $scope.nome = 'João';
+
+                $scope.$watch('nome', aoHouverAlteracaoEmNome);
+                function aoHouverAlteracaoEmNome(novoValor, valorAntigo) {
+                    console.log('antes', $scope.nome);
+                }
+            }
+        </script>
+    </head>
+
+    <body ng-controller="PrimeiroController">
+        <label>Insira seu nome:</label>
+        <input type="text" ng-model="nome" />
+        <h1>Olá {{ nome }}!</h1>
+    </body>
+
+</html>
+```
+
