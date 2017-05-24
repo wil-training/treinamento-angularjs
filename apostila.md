@@ -2257,3 +2257,13 @@ Algumas delas são:
 
 `ng-app` e `ng-controller` já foram mostradas nos exemplos anteriores. A primeira diz o escopo da aplicação e a segunda *aplica* um determinado controller àquele elemento.
 
+#### ng-bind
+
+Essa diretiva serve para vincular um dado à um elemento. O conteúdo da espressão irá substituir o conteúdo do elemento vinculado.
+
+Exemplo:
+
+```xml
+<h1 ng-bind="titulo"></h1>
+```
+
