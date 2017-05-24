@@ -2153,3 +2153,40 @@ Ilustração do processo de Data Binding:
 
 ![Ilustração do processo de Data Binding](imagens/angularjs/data_binding.png)
 
+### $scope
+
+Scope é um objeto do AngularJS que se refere ao modelo de dados das views.
+
+É usado como uma cola entre a view e o controller, fazendo a intermediação de dados entre essas duas camadas.
+
+No exemplo abaixo podemos ver que criando a propriedade `nome` no `$scope` do controller reflete no elemento vinculado à ela na view.
+
+```xml
+<html ng-app="app">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script>
+            angular.module('app', []);
+
+            angular.module('app')
+                .controller('PrimeiroController', PrimeiroController);
+
+            function PrimeiroController($scope) {
+                $scope.nome = 'João';
+            }
+        </script>
+    </head>
+
+    <body ng-controller="PrimeiroController">
+        <h1>Olá, meu nome é {{ nome }}!</h1>
+    </body>
+
+</html>
+```
+
+Ao executarmos no navegador, fica assim:
+
+![Exemplo data binding com $scope](imagens/angularjs/scope_data_binding.png)
+
+> Para se aprofundar no assunto: https://github.com/angular/angular.js/wiki/Understanding-Scopes
