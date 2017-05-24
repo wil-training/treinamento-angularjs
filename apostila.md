@@ -2213,8 +2213,8 @@ No exemplo abaixo, será escrito no console o nome digitado a cada alteração:
             function PrimeiroController($scope) {
                 $scope.nome = 'João';
 
-                $scope.$watch('nome', aoHouverAlteracaoEmNome);
-                function aoHouverAlteracaoEmNome(novoValor, valorAntigo) {
+                $scope.$watch('nome', aoAlterarNome);
+                function aoAlterarNome(novoValor, valorAntigo) {
                     console.log($scope.nome);
                 }
             }
@@ -2338,5 +2338,13 @@ Define um método a ser executado quando elemento é clicado.
 
 ```xml
 <button ng-click="mostrarAlerta()">Mostrar alerta</button>
+```
+
+#### ng-change
+
+Define uma expressão a ser executada quando o valor do elemento é alterado.
+
+```xml
+<input type="text" ng-model="nome" ng-change="aoAlterarNome()" />
 ```
 
