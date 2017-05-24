@@ -2215,7 +2215,7 @@ No exemplo abaixo, será escrito no console o nome digitado a cada alteração:
 
                 $scope.$watch('nome', aoHouverAlteracaoEmNome);
                 function aoHouverAlteracaoEmNome(novoValor, valorAntigo) {
-                    console.log('antes', $scope.nome);
+                    console.log($scope.nome);
                 }
             }
         </script>
@@ -2229,4 +2229,10 @@ No exemplo abaixo, será escrito no console o nome digitado a cada alteração:
 
 </html>
 ```
+
+## Diretivas
+
+À grosso modo, diretivas são marcas interpretadas pelo AngularJS com a finalidade de adicionar ou alterar o comportamento do DOM ou seus elementos.
+
+Pode-se, por exemplo, existir uma diretiva que altera a cor da fonte do elemento onde for aplicada para azul, fazer todas as letras ficarem maiúsculas, etc.
 
