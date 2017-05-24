@@ -2041,3 +2041,66 @@ let pessoaEmJson = '{ "nome": "Nome", "idade": 15 }';
 let pessoaEmJs = JSON.parse(pessoaEmJson);
 console.log(pessoaEmJs.idade); // 15
 ```
+
+# AngularJS
+
+![Logotipo AngularJS](imagens/angularjs/logo.png)
+
+## Definição
+
+> Superheroic JavaScript MVW Framework
+
+AngularJS é um framework open-source mantido pelo Google com o objetivo de ajudar na criação de páginas dinâmicas.
+
+Faz uso do HTML para criação de templates e o estende com diversas funcionalidades.
+
+## Inicialização
+
+Para iniciarmos uma aplicação AngularJS, basta colocarmos a diretiva `ng-app` no elemento da página que vai conter a aplicação.
+
+Exemplo:
+
+```xml
+<html ng-app="app">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+    	<label>Insira seu nome:</label>
+        <input type="text" ng-model="nome" />
+        <h1>Olá {{ nome }}!</h1>
+    </body>
+</html>
+```
+
+Também é possível inicializar a aplicação manualmente.
+
+Para isso, criamos um módulo e iniciamos a aplicação com o método `bootstrap`:
+
+```javascript
+angular.module('app', []);
+angular.bootstrap(document, ['app']);
+```
+
+Exemplo:
+
+```xml
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script>
+            window.onload = inicializar;
+            function inicializar() {
+                angular.module('app', []);
+                angular.bootstrap(document, ['app']);
+            }
+        </script>
+    </head>
+    <body>
+    	<label>Insira seu nome:</label>
+        <input type="text" ng-model="nome" />
+        <h1>Olá {{ nome }}!</h1>
+    </body>
+</html>
+```
+
