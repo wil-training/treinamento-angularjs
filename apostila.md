@@ -2331,3 +2331,12 @@ Exemplo:
     <li ng-repeat="nome in nomes">{{ nome }}</li>
 </ul>
 ```
+
+#### ng-click
+
+Define um método a ser executado quando elemento é clicado.
+
+```xml
+<button ng-click="mostrarAlerta()">Mostrar alerta</button>
+```
+
