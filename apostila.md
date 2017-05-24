@@ -2348,3 +2348,32 @@ Define uma expressão a ser executada quando o valor do elemento é alterado.
 <input type="text" ng-model="nome" ng-change="aoAlterarNome()" />
 ```
 
+#### ng-class
+
+Atribui classes CSS dinamicamente ao elemento.
+
+Pode receber o nome das classes:
+
+```xml
+<p ng-class="'verde borda'">Verde com borda</p>
+```
+
+Um vetor as contendo:
+
+```xml
+<p ng-class="['verde', 'borda']">Verde com borda</p>
+```
+
+Ou um objeto com a seguinte estrutura:
+
+```javascript
+{
+    'nomeClasse': 'expressão'
+}
+```
+
+Por exemplo:
+
+```xml
+<p ng-class="{ 'verde': true, 'borda': true }">Verde com borda</p>
+```
