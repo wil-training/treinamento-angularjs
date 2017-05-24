@@ -2136,6 +2136,20 @@ Exemplo anterior usando um controller:
 </html>
 ```
 
-### $scope
+### Data binding
 
-### 
+Data binding é o processo de sincronização automática feito pelo AngularJS. Foi desenvolvido para facilitar o controle exibidos na página.
+
+Com esse processo, toda a alteração de dados feita na página é automaticamente refletida no objeto a ela vinculado.
+
+Nos exemplos anteriores podemos ver o AngularJS se encarregar de manter o `input[text]` e o texto contido no `h1` em sincronia, não sendo necessário que nos preocupemos com isso:
+
+```xml
+<input type="text" ng-model="nome" />
+<h1>Olá {{ nome }}!</h1>
+```
+
+Ilustração do processo de Data Binding:
+
+![Ilustração do processo de Data Binding](imagens/angularjs/data_binding.png)
+
