@@ -2104,3 +2104,38 @@ Exemplo:
 </html>
 ```
 
+## Controllers
+
+Controllers são objetos usados para controlar a página, também chamada de `view`. Neles colocamos todo o comportamento da view.
+
+Exemplo anterior usando um controller:
+
+```xml
+<html ng-app="app">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script>
+            angular.module('app', []);
+
+            angular.module('app')
+                .controller('PrimeiroController', PrimeiroController);
+
+            function PrimeiroController($scope) {
+                $scope.nome = 'João';
+            }
+        </script>
+    </head>
+
+    <body ng-controller="PrimeiroController">
+        <label>Insira seu nome:</label>
+        <input type="text" ng-model="nome" />
+        <h1>Olá {{ nome }}!</h1>
+    </body>
+
+</html>
+```
+
+### $scope
+
+### 
