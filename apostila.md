@@ -2236,7 +2236,7 @@ No exemplo abaixo, será escrito no console o nome digitado a cada alteração:
 
 Pode-se, por exemplo, existir uma diretiva que altera a cor da fonte do elemento onde for aplicada para azul, fazer todas as letras ficarem maiúsculas, etc.
 
-> Para mais detalhes, consulte a documentação oficial em: https://docs.angularjs.org/api/ng/directive
+> Para mais detalhes, consulte a documentação oficial em: https://docs.angularjs.org/guide/directive e https://docs.angularjs.org/api/ng/directive
 
 ### Diretivas nativas
 
@@ -2270,13 +2270,23 @@ Exemplo:
 
 #### ng-model
 
-Também usada para vincular um elemento a uma propriedade no escopo, porém restrita aos elementos `input`, `select` e `textarea`.
+Também é usada para vincular um elemento a uma propriedade no escopo, porém restrita aos elementos `input`, `select` e `textarea`.
 
-Assim como a `ng-bind`, atualiza o elemento com a propriedade vincula. Mas também faz o inverso, atualiza a propriedade com o valor colocado no elemento.
+Assim como a `ng-bind`, atualiza o elemento com a propriedade vinculada. Mas também faz o inverso, atualiza a propriedade com o valor colocado no elemento.
 
 Exemplo:
 
 ```xml
 <input type="text" ng-model="nome"></h1>
+```
+
+#### ng-show
+
+Faz o elemento aparecer ou sumir se a expressão atribuída for `true` ou `false`, respectivamente.
+
+Exemplo:
+
+```xml
+<h3 ng-show="nome === 'Wiley'">Que nome legal!</h3>
 ```
 
