@@ -2290,3 +2290,13 @@ Exemplo:
 <h3 ng-show="nome === 'Wiley'">Que nome legal!</h3>
 ```
 
+#### ng-hide
+
+Faz o oposto da `ng-show`. O elemento some quando a expressão tiver `true` como resultado.
+
+Exemplo:
+
+```xml
+<h3 ng-hide="time === 'Santo'">Time encontrado.</h3>
+```
+
