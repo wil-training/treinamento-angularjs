@@ -2277,7 +2277,17 @@ Assim como a `ng-bind`, atualiza o elemento com a propriedade vinculada. Mas tam
 Exemplo:
 
 ```xml
-<input type="text" ng-model="nome"></h1>
+<input type="text" ng-model="nome" />
+```
+
+#### ng-checked
+
+Vincula a propriedade ao atributo `checked` do elemento em questão.
+
+Exemplo:
+
+```xml
+<input type="checkbox" ng-checked="maior" />
 ```
 
 #### ng-show
@@ -2298,5 +2308,15 @@ Exemplo:
 
 ```xml
 <h3 ng-hide="time === 'Santo'">Time encontrado.</h3>
+```
+
+#### ng-if
+
+Essa diretiva faz um efeito parecido à `ng-show`, porém  ao invés de simplesmente fazer o elemento ficar invisível, o remove da DOM.
+
+Exemplo:
+
+```xml
+<h3 ng-if="maior === true">Conteúdo permitido</h3>
 ```
 
