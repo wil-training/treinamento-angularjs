@@ -2427,7 +2427,7 @@ Tendo duas opções, com uma string ou uma funcão que retorna o markup.
 
 Exemplo com string:
 
-```xml
+```javascript
 let definitionObject = {
     template: '<span>Hello, World!</span>'
 };
@@ -2435,10 +2435,34 @@ let definitionObject = {
 
 Exemplo com função:
 
-```xml
+```javascript
 let definitionObject = {
     template: function (elemento, atributos) {
         return '<span>Hello, World!</span>';
+    }
+};
+```
+
+#### templateUrl
+
+Tem o mesmo objetivo da `template`, porém esse template em um arquivo na URL aqui especificada.
+
+Também tendo as opções de string e função retornando a URL.
+
+Exemplo com string:
+
+```javascript
+let definitionObject = {
+    template: 'endereco/do/template.html'
+};
+```
+
+Exemplo com função:
+
+```javascript
+let definitionObject = {
+    template: function (elemento, atributos) {
+        return 'endereco/do/template.html';
     }
 };
 ```
