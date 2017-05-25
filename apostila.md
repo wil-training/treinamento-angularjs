@@ -2479,3 +2479,15 @@ Tendo como opções:
 | `A` | Atributo | `<div diretiva=""></div>` |
 | `C` | Classe | `<div class="diretiva: ''"></div>` |
 | `M` | Comentário | `<!-- directive: diretiva '' -->` |
+
+#### link
+
+A propriedade `link` é uma função responsável em registrar os eventos e controlar o DOM.
+
+A função pode receber os seguintes parâmetros, nessa ordem:
+
+- scope
+- elemento
+- atributos
+- controller
+- função de transclude
