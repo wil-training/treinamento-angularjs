@@ -2411,8 +2411,9 @@ Esse object definition possui diversas propriedades. Vejamos algumas delas:
 - template
 - templateUrl
 - restrict
-- link
 - controller
+- require
+- link
 - controllerAs
 - scope
 - bindToController
@@ -2480,6 +2481,36 @@ Tendo como opções:
 | `C` | Classe | `<div class="diretiva: ''"></div>` |
 | `M` | Comentário | `<!-- directive: diretiva '' -->` |
 
+#### controller
+
+Coomo o próprio nome diz, define o controller da diretiva.
+
+#### require
+
+Especifica quais outras diretivas são requeridas pela atual.
+
+O valor dessa propriedade pode ser:
+
+- string com o nome de uma diretiva
+- array contendo um ou mais nomes de diretivas
+- um objeto cujas propriedades refletem os nomes das diretivas
+
+Podemos usar alguns prefixos para dizer onde procurar as diretivas listadas nessa propriedade:
+
+| Prefixo | Onde procurar |
+| - | - |
+| nenhum | No próprio elemento da diretiva |
+| `^` | No elemento e em seus ancestrais |
+| `^^` | Apenas nos ancestrais do elemento |
+
+Um erro será disparado caso as diretivas listadas não sejam encontradas. Para torná-las opcionais, basta colocar um `?`. Exemplo:
+
+```javascript
+let definitionObject = {
+    require: ['?^ngModel']
+};
+```
+
 #### link
 
 A propriedade `link` é uma função responsável em registrar os eventos e controlar o DOM.
@@ -2490,4 +2521,8 @@ A função pode receber os seguintes parâmetros, nessa ordem:
 - elemento
 - atributos
 - controller
-- função de transclude
+- função do transclude
+
+O parâmetro `controller` recebe o próprio controller da diretiva caso esta não tenha definida a propriedade `require`.
+
+Caso `require` esteja definida, traz os controllers das diretivas ali mencionadas.
