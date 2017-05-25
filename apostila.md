@@ -2406,6 +2406,9 @@ function helloWorldDirective() {
 }
 ```
 
+> O nome da diretiva atribuído no método `directive` deve estar em `camelCase` e na view deve ser usada com `kebab-case`.
+> Tomemos a `ngModel` como exemplo, é usada na view como `ng-view`.
+
 Esse object definition possui diversas propriedades. Vejamos algumas delas:
 
 - template
@@ -2539,3 +2542,71 @@ Temos três opções:
 | `true` | Criará um novo escopo, herdando todo o escopo pai |
 | `{}` (objeto) | Cria um escopo isolado, com as propriedades definidas no objeto |
 
+##### Escopo isolado
+
+Caso a opção tenha sido criar um escopo isolado, a diretiva não terá acesso aos escopos "pais".
+
+A comunicação dela será dará por meio de propriedades definidas no objeto atribuído à propriedade `scope`.
+
+Exemplo, definindo o objeto:
+
+```javascript
+let definitionObject = {
+    scope: {
+        texto: '@'
+    }
+};
+```
+
+Essas propriedades são refletidas como atributos no elemento, ao ser usada na view. Exemplo:
+
+```xml
+<diretiva texto="Hello, World!"></diretiva>
+```
+
+###### Tipo de vínculo
+
+Também deve-se definir o tipo de vínculo a ser usado nessas propriedades. Para fazer essa definição, usamos símbolos no valor das propriedades.
+
+Essas são as opções disponíveis:
+
+| Símbolo | Significado |
+|- | - |
+| `@` | O valor será interpretado como texto |
+| `=` | Ligação bidirecional (two way binding) |
+| `<` | Ligação unidirecional |
+| `&` | Expressão que será traduzida para uma função no escopo da diretiva |
+
+###### Vínculo opcional
+
+Esses vínculos estabelecidos como necessários para o funcionamento da diretiva são obrigatórios. Um erro será disparado caso algum não seja informado.
+
+Porém, podemos deixá-los opcionais apenas colocando um `?` (ponto de interrogação) à frente do seu tipo de vínculo. Exemplo:
+
+```javascript
+let definitionObject = {
+    scope: {
+        texto: '?@'
+    }
+};
+```
+
+###### Nomeando vínculos
+
+Podemos definir nomes diferentes para os expostos pela diretiva e os usados internamente. Para isso, basta inserir o nome após o tipo de vínculo. Exemplo:
+
+```javascript
+let definitionObject = {
+    scope: {
+        texto: '@meuTexto'
+    }
+};
+```
+
+Dessa forma, a diretiva deverá ser usada assim:
+
+```xml
+<diretiva meu-texto="Hello, World!"></diretiva>
+```
+
+> Assim como o nome da diretiva, o nome da propriedade deve ser definido com `camelCase` e na view com `kebab-case`.
