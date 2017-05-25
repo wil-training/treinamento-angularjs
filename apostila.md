@@ -2041,3 +2041,381 @@ let pessoaEmJson = '{ "nome": "Nome", "idade": 15 }';
 let pessoaEmJs = JSON.parse(pessoaEmJson);
 console.log(pessoaEmJs.idade); // 15
 ```
+
+# AngularJS
+
+![Logotipo AngularJS](imagens/angularjs/logo.png)
+
+## Definição
+
+> Superheroic JavaScript MVW Framework
+
+AngularJS é um framework open-source mantido pelo Google com o objetivo de ajudar na criação de páginas dinâmicas.
+
+Faz uso do HTML para criação de templates e o estende com diversas funcionalidades.
+
+## Inicialização
+
+Para iniciarmos uma aplicação AngularJS, basta colocarmos a diretiva `ng-app` no elemento da página que vai conter a aplicação.
+
+Exemplo:
+
+```xml
+<html ng-app="app">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+    	<label>Insira seu nome:</label>
+        <input type="text" ng-model="nome" />
+        <h1>Olá {{ nome }}!</h1>
+    </body>
+</html>
+```
+
+Também é possível inicializar a aplicação manualmente.
+
+Para isso, criamos um módulo e iniciamos a aplicação com o método `bootstrap`:
+
+```javascript
+angular.module('app', []);
+angular.bootstrap(document, ['app']);
+```
+
+Exemplo:
+
+```xml
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script>
+            window.onload = inicializar;
+            function inicializar() {
+                angular.module('app', []);
+                angular.bootstrap(document, ['app']);
+            }
+        </script>
+    </head>
+    <body>
+    	<label>Insira seu nome:</label>
+        <input type="text" ng-model="nome" />
+        <h1>Olá {{ nome }}!</h1>
+    </body>
+</html>
+```
+
+## Controllers
+
+Controllers são objetos usados para controlar a página, também chamada de `view`. Neles colocamos todo o comportamento da view.
+
+Exemplo anterior usando um controller:
+
+```xml
+<html ng-app="app">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script>
+            angular.module('app', []);
+
+            angular.module('app')
+                .controller('PrimeiroController', PrimeiroController);
+
+            function PrimeiroController($scope) {
+                $scope.nome = 'João';
+            }
+        </script>
+    </head>
+
+    <body ng-controller="PrimeiroController">
+        <label>Insira seu nome:</label>
+        <input type="text" ng-model="nome" />
+        <h1>Olá {{ nome }}!</h1>
+    </body>
+
+</html>
+```
+
+### Data binding
+
+Data binding é o processo de sincronização automática feito pelo AngularJS. Foi desenvolvido para facilitar o controle exibidos na página.
+
+Com esse processo, toda a alteração de dados feita na página é automaticamente refletida no objeto a ela vinculado.
+
+Nos exemplos anteriores podemos ver o AngularJS se encarregar de manter o `input[text]` e o texto contido no `h1` em sincronia, não sendo necessário que nos preocupemos com isso:
+
+```xml
+<input type="text" ng-model="nome" />
+<h1>Olá {{ nome }}!</h1>
+```
+
+Ilustração do processo de Data Binding:
+
+![Ilustração do processo de Data Binding](imagens/angularjs/data_binding.png)
+
+### $scope
+
+Scope é um objeto do AngularJS que se refere ao modelo de dados das views.
+
+É usado como uma cola entre a view e o controller, fazendo a intermediação de dados entre essas duas camadas.
+
+No exemplo abaixo podemos ver que criando a propriedade `nome` no `$scope` do controller reflete no elemento vinculado à ela na view.
+
+```xml
+<html ng-app="app">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script>
+            angular.module('app', []);
+
+            angular.module('app')
+                .controller('PrimeiroController', PrimeiroController);
+
+            function PrimeiroController($scope) {
+                $scope.nome = 'João';
+            }
+        </script>
+    </head>
+
+    <body ng-controller="PrimeiroController">
+        <h1>Olá, meu nome é {{ nome }}!</h1>
+    </body>
+
+</html>
+```
+
+Ao executarmos no navegador, fica assim:
+
+![Exemplo data binding com $scope](imagens/angularjs/scope_data_binding.png)
+
+> Para se aprofundar no assunto: https://github.com/angular/angular.js/wiki/Understanding-Scopes
+
+### *Escutando* alterações
+
+Além de ser a liga entre o controller e a view, o objeto $scope possui alguns funções que podem vir a ser úteis.
+
+O método `$watch` é um desses. Usado para avisar quando alguma propriedade é alterada.
+
+No exemplo abaixo, será escrito no console o nome digitado a cada alteração:
+
+```xml
+<html ng-app="app">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script>
+            angular.module('app', []);
+
+            angular.module('app')
+                .controller('PrimeiroController', PrimeiroController);
+
+            function PrimeiroController($scope) {
+                $scope.nome = 'João';
+
+                $scope.$watch('nome', aoAlterarNome);
+                function aoAlterarNome(novoValor, valorAntigo) {
+                    console.log($scope.nome);
+                }
+            }
+        </script>
+    </head>
+
+    <body ng-controller="PrimeiroController">
+        <label>Insira seu nome:</label>
+        <input type="text" ng-model="nome" />
+        <h1>Olá {{ nome }}!</h1>
+    </body>
+
+</html>
+```
+
+## Diretivas
+
+À grosso modo, diretivas são marcas interpretadas pelo AngularJS com a finalidade de adicionar ou alterar o comportamento do DOM ou seus elementos.
+
+Pode-se, por exemplo, existir uma diretiva que altera a cor da fonte do elemento onde for aplicada para azul, fazer todas as letras ficarem maiúsculas, etc.
+
+> Para mais detalhes, consulte a documentação oficial em: https://docs.angularjs.org/guide/directive e https://docs.angularjs.org/api/ng/directive
+
+### Diretivas nativas
+
+O próprio AngularJS traz algumas diretivas por padrão.
+
+Algumas delas são:
+
+- ng-app
+- ng-controller
+- ng-bind
+- ng-model
+- ng-show
+- ng-hide
+- ng-if
+- ng-repeat
+- ng-click
+- ng-change
+- ng-class
+
+`ng-app` e `ng-controller` já foram mostradas nos exemplos anteriores. A primeira diz o escopo da aplicação e a segunda *aplica* um determinado controller àquele elemento.
+
+#### ng-bind
+
+Essa diretiva serve para vincular um dado à um elemento. O conteúdo da espressão irá substituir o conteúdo do elemento vinculado.
+
+Exemplo:
+
+```xml
+<h1 ng-bind="titulo"></h1>
+```
+
+#### ng-model
+
+Também é usada para vincular um elemento a uma propriedade no escopo, porém restrita aos elementos `input`, `select` e `textarea`.
+
+Assim como a `ng-bind`, atualiza o elemento com a propriedade vinculada. Mas também faz o inverso, atualiza a propriedade com o valor colocado no elemento.
+
+Exemplo:
+
+```xml
+<input type="text" ng-model="nome" />
+```
+
+#### ng-checked
+
+Vincula a propriedade ao atributo `checked` do elemento em questão.
+
+Exemplo:
+
+```xml
+<input type="checkbox" ng-checked="maior" />
+```
+
+#### ng-show
+
+Faz o elemento aparecer ou sumir se a expressão atribuída for `true` ou `false`, respectivamente.
+
+Exemplo:
+
+```xml
+<h3 ng-show="nome === 'Wiley'">Que nome legal!</h3>
+```
+
+#### ng-hide
+
+Faz o oposto da `ng-show`. O elemento some quando a expressão tiver `true` como resultado.
+
+Exemplo:
+
+```xml
+<h3 ng-hide="time === 'Santo'">Time encontrado.</h3>
+```
+
+#### ng-if
+
+Essa diretiva faz um efeito parecido à `ng-show`, porém  ao invés de simplesmente fazer o elemento ficar invisível, o remove da DOM.
+
+Exemplo:
+
+```xml
+<h3 ng-if="maior === true">Conteúdo permitido</h3>
+```
+
+#### ng-repeat
+
+Usada para listar vários elementos de uma lista.
+
+Exemplo:
+
+```xml
+<ul>
+    <li ng-repeat="nome in nomes">{{ nome }}</li>
+</ul>
+```
+
+#### ng-click
+
+Define um método a ser executado quando elemento é clicado.
+
+```xml
+<button ng-click="mostrarAlerta()">Mostrar alerta</button>
+```
+
+#### ng-change
+
+Define uma expressão a ser executada quando o valor do elemento é alterado.
+
+```xml
+<input type="text" ng-model="nome" ng-change="aoAlterarNome()" />
+```
+
+#### ng-class
+
+Atribui classes CSS dinamicamente ao elemento.
+
+Pode receber o nome das classes:
+
+```xml
+<p ng-class="'verde borda'">Verde com borda</p>
+```
+
+Um vetor as contendo:
+
+```xml
+<p ng-class="['verde', 'borda']">Verde com borda</p>
+```
+
+Ou um objeto com a seguinte estrutura:
+
+```javascript
+{
+    'nomeClasse': 'expressão'
+}
+```
+
+Por exemplo:
+
+```xml
+<p ng-class="{ 'verde': true, 'borda': true }">Verde com borda</p>
+```
+
+### Diretivas customizadas
+
+Muitas vezes precisamos ter um controle maior sobre o DOM e para isso criamos nossas próprias diretivas.
+
+Para criar uma nova diretiva, mas chamar a função `directive` e informar seu nome e um objeto com algumas definições, chamado de `Directive Definition Object`.
+
+A estrutura da chamada é:
+
+```javascript
+directive('nomeDaDiretiva', funcaoRetornandoDDO);
+```
+
+Por exemplo, uma diretiva que exibe `Hello, World!` seria:
+
+```javascript
+angular.module('app', []);
+
+angular.module('app')
+    .directive('nome', helloWorldDirective);
+
+function helloWorldDirective() {
+	let definitionObject = {
+        template: '<span>Hello, World!</span>'
+    };
+    return definitionObject;
+}
+```
+
+Esse object definition possui diversas propriedades. Vejamos algumas delas:
+
+
+- template
+- templateUrl
+- restrict
+- link
+- controller
+- controllerAs
+- scope
+- bindToController
+
+> Para mais informações veja em: https://docs.angularjs.org/api/ng/service/$compile#directive-definition-object
