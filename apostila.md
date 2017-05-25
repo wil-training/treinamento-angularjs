@@ -2466,3 +2466,16 @@ let definitionObject = {
     }
 };
 ```
+
+#### restrict
+
+Serve para definir o tipo da diretiva, como ela poderá ser referenciada na view.
+
+Tendo como opções:
+
+| Opção | Significado | Exemplo |
+| - | - | - |
+| `E` | Nome do elemento | `<diretiva></diretiva>` |
+| `A` | Atributo | `<div diretiva=""></div>` |
+| `C` | Classe | `<div class="diretiva: ''"></div>` |
+| `M` | Comentário | `<!-- directive: diretiva '' -->` |
