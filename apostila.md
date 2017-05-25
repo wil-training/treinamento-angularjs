@@ -2610,3 +2610,85 @@ Dessa forma, a diretiva deverá ser usada assim:
 ```
 
 > Assim como o nome da diretiva, o nome da propriedade deve ser definido com `camelCase` e na view com `kebab-case`.
+
+## ControllerAs
+
+Para facilitar a identificação das propriedades usadas na views, podemos dar nomes aos nossos controllers nela. Exemplo:
+
+```xml
+<body ng-controller="NomeController as nomeCtrl">
+    <label>Insira seu nome:</label>
+    <input type="text" ng-model="nomeCtrl.nome" />
+    <h1>Olá {{ nomeCtrl.nome }}!</h1>
+</body>
+```
+
+Com essa mudança, as propriedades são adicionadas diretamente na instância do controller. Assim não sendo necessário o uso de `$scope`:
+
+```javascript
+angular
+    .module('app')
+    .controller('NomeController', NomeController);
+
+function NomeController() {
+	this.nome = 'João';
+}
+```
+
+### Diretivas
+
+Também é possível nomear os controllers nas diretivas, usando a propriedade `controllerAs` do objeto de definição:
+
+```javascript
+let objectDefinition = {
+    controllerAs: 'diretivaCtrl'
+}
+```
+
+Mas com uma particularidade, as propriedades definidas em `scope` não são vinculadas à controller automaticamente. Ainda são acessadas via `$scope`:
+
+```javascript
+let objectDefinition = {
+	scope: {
+        texto: '@'
+    },
+    controller: function($scope) {
+        console.log(this.texto); // undefined
+        console.log($scope.texto); // Hello, World!
+    },
+    controllerAs: 'diretivaCtrl'
+}
+```
+
+#### bindToController
+
+Esse comportamento pode ser mudado com a propriedade `bindToController`. A definindo como `true` tem o efeito esperado:
+
+```javascript
+let objectDefinition = {
+	scope: {
+        texto: '@'
+    },
+    controller: function() {
+        console.log(this.texto); // Hello, World!
+    },
+    controllerAs: 'diretivaCtrl',
+    bindToController: true
+}
+```
+
+Também podemos simplificar simplesmente removendo o objeto `scope` e o colocando em `bindToController`:
+
+```javascript
+let objectDefinition = {
+	bindToController: {
+        texto: '@'
+    },
+    controller: function() {
+        this.$onInit = function() {
+            console.log(this.texto); // Hello, World!
+        };
+    },
+    controllerAs: 'diretivaCtrl'
+}
+```
