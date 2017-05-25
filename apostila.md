@@ -2483,7 +2483,7 @@ Tendo como opções:
 
 #### controller
 
-Coomo o próprio nome diz, define o controller da diretiva.
+Coomo o próprio nome diz, define o controller da diretiva. Podendo ser seu nome ou uma função construtora.
 
 #### require
 
@@ -2526,3 +2526,16 @@ A função pode receber os seguintes parâmetros, nessa ordem:
 O parâmetro `controller` recebe o próprio controller da diretiva caso esta não tenha definida a propriedade `require`.
 
 Caso `require` esteja definida, traz os controllers das diretivas ali mencionadas.
+
+#### scope
+
+Nessa propriedade definimos se e como será criado o escopo dessa diretiva, quando for usada em uma view.
+
+Temos três opções:
+
+| Opção | Significado |
+| - | - |
+| `false` | Não criará escopo próprio, usará o do elemento superior |
+| `true` | Criará um novo escopo, herdando todo o escopo pai |
+| `{}` (objeto) | Cria um escopo isolado, com as propriedades definidas no objeto |
+
