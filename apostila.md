@@ -2408,7 +2408,6 @@ function helloWorldDirective() {
 
 Esse object definition possui diversas propriedades. Vejamos algumas delas:
 
-
 - template
 - templateUrl
 - restrict
@@ -2419,3 +2418,27 @@ Esse object definition possui diversas propriedades. Vejamos algumas delas:
 - bindToController
 
 > Para mais informações veja em: https://docs.angularjs.org/api/ng/service/$compile#directive-definition-object
+
+#### template
+
+Aqui definimos o corpo da diretiva, em HTML.
+
+Tendo duas opções, com uma string ou uma funcão que retorna o markup.
+
+Exemplo com string:
+
+```xml
+let definitionObject = {
+    template: '<span>Hello, World!</span>'
+};
+```
+
+Exemplo com função:
+
+```xml
+let definitionObject = {
+    template: function (elemento, atributos) {
+        return '<span>Hello, World!</span>';
+    }
+};
+```
