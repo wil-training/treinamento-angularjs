@@ -2796,3 +2796,7 @@ A propriedade `controllerAs` ainda existe, porém o valor padrão passou a ser `
 #### Escopo
 
 Todo componente tem seu escopo isolado por padrão, não podendo ser alterado.
+
+#### link
+
+A função não existe em componentes. Sendo assim, caso seja necessário controlar o DOM uma diretiva deve ser usada.
