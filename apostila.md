@@ -2752,3 +2752,43 @@ let objectDefinition = {
     }
 }
 ```
+
+### Componente vs Diretiva
+
+Além do já mencionado, existem algumas diferenças entre  uma diretiva e um componente.
+
+Como podemos ver no exemplo abaixo, tudo declarado no objeto `bindings` é automaticamente vinculado ao controller. Com isso, foram retiraddas as propriedades `scope` e `bindToController`.
+
+#### bindings
+
+O objeto `bindings` é a união dessas duas propriedades, logo um componente assim:
+
+```javascript
+angular
+	.module('app')
+    .component('helloWorld', {
+        bindings: {
+			texto: '@'
+		},
+		controller: function() { }
+    });
+```
+
+Funciona exatamente como uma diretiva usando `bindToController`:
+
+```javascript
+angular
+	.module('app')
+    .directive('helloWorld', function () {
+		return {
+			bindToController: {
+				texto: '@'
+			},
+			controller: function() { }
+		}
+    });
+```
+
+#### controllerAs
+
+A propriedade `controllerAs` ainda existe, porém o valor padrão passou a ser `$ctrl`.
