@@ -2810,3 +2810,19 @@ Esses dados normalmente estão em algum servidor, podendo ser acessados através
 Para obtermos esses dados, fazemos uma requisição para o servidor, tratamos o retorno e mostramos os dados ao usuário, caso necessário.
 
 Essa requisição normalmente é assíncrona, chamada de requisição AJAX.
+
+### AJAX
+
+AJAX é um acrônimo para *Asynchronous JavaScript And XML*.
+
+Como o próprio nome sugere, é uma técnica para fazer requisições assíncronas pelo JavaScript usando XML.
+
+Apesar de referenciar XML no nome, hoje em dia JSON é muito mais usado para esse tipo de requisição por conta da sua praticidade.
+
+Por ser assíncrona, podemos realizar requisições desse tipo sem deixar o usuário esperando o carregamento da página em si.
+
+Podemos, por exemplo carregar todo o HTML e CSS para exibirmos uma página básica e depois carregar os dados para assim o usuário poder interagir com a página.
+
+Exemplo. Facebook carregando dados de forma assíncrona:
+
+![Facebook carregando dados de forma assíncrona](imagens/angularjs/carregando_dados_ajax.png)
