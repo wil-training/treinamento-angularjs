@@ -2880,3 +2880,32 @@ function aoMudarStatus() {
     }
 }
 ```
+
+### jQuery.ajax
+
+Com o inttuito de facilitar a vida dos desenvolvedores, várias bibliotecas surgiram. Uma delas era a jQuery.
+
+jQuery trouxe uma infinidade de ferramentas úteis à época para o desenvolvimento web, ficando popular rapidamente. Muitos ainda a usam hoje em dia.
+
+Dentre todas as facilidades, o método `ajax` diminuia consideravelmente o tamanho do código para fazer uma requisição ajax. O próprio jQuery tratava de verificar qual era o navegador e usava o objeto certo para fazer a requisição.
+
+Exemplo com a mesma chamada AJAX feita anteriormente com JS nativo, com jQuery:
+
+```javascript
+jQuery.ajax({
+    type: 'GET',
+    url: 'url/para/requisicao',
+    async: true,
+    success: function(data) {
+        console.log(data);
+    }
+});
+```
+
+Ou ainda:
+
+```javascript
+jQuery.get('url/para/requisicao', function(data) {
+    console.log(data);
+});
+```
