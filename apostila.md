@@ -2909,3 +2909,54 @@ jQuery.get('url/para/requisicao', function(data) {
     console.log(data);
 });
 ```
+
+### $http
+
+O AngularJS é um framework completo e também traz uma solução para realizarmos requisições AJAX: `$http`.
+
+Esse objeto é um serviço baseado nos providos pelo jQuery, portanto possui muita semelhança.
+
+Exemplo de uma simples requisição:
+
+```javascript
+$http({
+    method: 'GET',
+    url: 'url/para/requisicao'
+}).then(function(response) {
+    console.log(response.data);
+});
+```
+
+Também tendo formas simplificadas:
+
+```javascript
+$http
+    .get('url/para/requisicao')
+    .then(function(response) {
+        console.log(response.data);
+    });
+```
+
+Alguns dos métodos disponíveis nesse serviço e sua descrição:
+
+Método | Descrição
+---------|----------
+ `GET` | Obter informações do servidor
+ `POST` | Criar informações no servidor
+ `PUT` | Atualizar informações no servidor
+ `DELETE` | Excluir informações do servidor
+
+Os métodos de criação, atualização ou exclusão devem enviar quais informações no servidor devem ser alteradas.
+
+Para isso, basta informar na propriedade `data` do objeto de configuração:
+
+```javascript
+$http({
+    method: 'POST',
+    url: 'url/para/criar/usuario',
+    data: {
+        nome: 'João',
+        idade: 15
+    }
+});
+```
