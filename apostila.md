@@ -2998,10 +2998,104 @@ function aoOcorrerFalha(response) {}
 
 Ambos os métodos recebem um objeto `response`, o qual possui as seguintes propriedades:
 
-Propriedade | Significado
-- | -
-`data` | O corpo da resposta, contém os dados requisitados
-`status` | Um código HTTP informando o status da requisição
-`headers` | O Cabeçalho da requisição
-`config` | O objeto de configuração usado
-`statusText` | O texto referente ao `status`
+| Propriedade | Significado |
+| - | - |
+| `data` | O corpo da resposta, contém os dados requisitados |
+| `status` | Um código HTTP informando o status da requisição |
+| `headers` | O Cabeçalho da requisição |
+| `config` | O objeto de configuração usado |
+| `statusText` | O texto referente ao `status` |
+
+## Serviços
+
+Serviços são objetos providos pelo AngularJS, ou criados por nós, para prover alguma funcionalidade.
+
+`$http` é um exemplo de serviço nativo  do AngularJS.
+
+> Para saber sobre todos os serviços nativos veja em: https://docs.angularjs.org/api/ng/service
+
+Existem três tipos de serviços no AngularJS:
+
+- Providers
+- Factories
+- Services
+
+Todo serviço é um objeto `singleton`, ou seja, a mesma instância é usada em toda a aplicação.
+
+Vamos focar nos dois últimos tipos.
+
+### Factories
+
+É a principal forma de se fazer serviços no AngularJS.
+
+Como o próprio nome diz, funciona como uma fábrica de objetos, pode retornar qualquer tipo de objeto.
+
+Exemplo:
+
+```javascript
+angular
+    .module('app')
+    .factory('minhaFactory', minhaFactory);
+
+function minhaFactory() {
+    const objeto = {
+        nome: 'João'
+    };
+    return objeto;
+}
+```
+
+Com isso, podemos usar essa factory em nossos controllers:
+
+```javascript
+angular
+    .module('app')
+    .controller('meuController', meuController);
+
+function meuController(minhaFactory) {
+    console.log(minhaFactory.nome); // João
+}
+```
+
+Podemos, por exemplo, fazer a factory retornar uma simples função:
+
+```javascript
+angular
+    .module('app')
+    .factory('minhaFactory', minhaFactory);
+
+function minhaFactory() {
+    return function() {
+        console.log('sou uma função');
+    };
+}
+
+angular
+    .module('app')
+    .controller('meuController', meuController);
+
+function meuController(minhaFactory) {
+    // Podemos executar a factory
+    minhaFactory(); // sou uma função
+}
+```
+
+### Services
+
+Diferentemente de uma factory, um service não pode ser usado para retornar qualquer tipo de dado.
+
+O AngularJS trata esse tipo de serviço como uma classe, construindo um objeto a partir dela quando for requisitada por algum outro serviço ou controller.
+
+Sendo assim, podemos definir um service como uma classe:
+
+```javascript
+angular
+    .module('app')
+    .service('meuService', meuService);
+
+class meuService() {
+    constructor() {
+        this.nome = 'Joào';
+    }
+}
+```
