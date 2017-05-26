@@ -2792,3 +2792,7 @@ angular
 #### controllerAs
 
 A propriedade `controllerAs` ainda existe, porém o valor padrão passou a ser `$ctrl`.
+
+#### Escopo
+
+Todo componente tem seu escopo isolado por padrão, não podendo ser alterado.
