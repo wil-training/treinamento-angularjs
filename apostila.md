@@ -2692,3 +2692,46 @@ let objectDefinition = {
     controllerAs: 'diretivaCtrl'
 }
 ```
+
+## Componentes
+
+Apesar de o *Angular 2+* ter sido lançado, o *AngularJS 1.x* vem sendo atualizado com algumas melhorias.
+
+Essas atualizações vem tanto para facilitar a migração para a versão 2+ quanto para deixar a aplicação melhor.
+
+Uma delas trouxe os chamados componentes. Agora além do método `directive`, temos `component` como opção para criarmos *pedaços* de tela.
+
+> Apesar de ter outro nome, `component` é apenas uma diretiva com comportamento diferente do padrão. Portanto, uma diretiva pode fazer tudo que um componente faz
+
+A adição desse método pode reduzir a quantidade de código escrito e a chance de introduzirmos *bugs* na aplicação.
+
+### Utilização
+
+Como dito anteriomente, para criar um componente é usado o método `component`.
+
+Vamos usar como exemplo a nossa diretiva `helloWorld`:
+
+```javascript
+angular
+	.module('app')
+    .directive('helloWorld', helloWorldDirective);
+
+function helloWorldDirective() {
+	let definitionObject = {
+        template: '<span>Hello, World!</span>'
+    };
+    return definitionObject;
+}
+```
+
+*Transformando-a* em componente ficaria assim:
+
+```javascript
+angular
+	.module('app')
+    .component('helloWorld', {
+        template: '<span>Hello, World!</span>'
+    });
+```
+
+Veja que agora o segundo parâmetro deve ser um object definition, não uma função que o retorna como na diretiva.
