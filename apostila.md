@@ -2826,3 +2826,57 @@ Podemos, por exemplo carregar todo o HTML e CSS para exibirmos uma página bási
 Exemplo. Facebook carregando dados de forma assíncrona:
 
 ![Facebook carregando dados de forma assíncrona](imagens/angularjs/carregando_dados_ajax.png)
+
+### XMLHttpRequest
+
+Para fazermos uma requisição AJAX, basta usarmos um objeto já presente nos navegadores: `XMLHttpRequest`.
+
+Exemplo:
+
+```javascript
+let httpRequest = new XMLHttpRequest();
+httpRequest.onreadystatechange = aoMudarStatus;
+httpRequest.open('GET', 'url/para/requisicao', true);
+httpRequest.send(null);
+
+function aoMudarStatus() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        alert(httpRequest.responseText); // mostra resposta do servidor
+    }
+}
+```
+
+Não precisamos de nenhum framewok ou biblioteca para fazer requisições AJAX, porém esse código pode ficar bem grande dependendo do seu objetivo.
+
+Caso precise rodar em outros navegadores, pode ficar assim:
+
+> Exemplo baseado na documentação da MDN: https://developer.mozilla.org/pt-BR/docs/AJAX/Getting_Started#O_que_%C3%A9_AJAX
+
+```javascript
+let httpRequest;
+
+if (window.XMLHttpRequest) {
+    httpRequest = new XMLHttpRequest();
+} else if (window.ActiveXObject) { // IE
+    try {
+        httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+    } 
+    catch (e) {
+        try {
+            httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        } 
+        catch (e) {}
+    }
+}
+
+httpRequest.onreadystatechange = aoMudarStatus;
+httpRequest.open('GET', 'url/para/requisicao', true);
+httpRequest.send(null);
+
+function aoMudarStatus() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        // mostra resposta do servidor no console
+        console.log(httpRequest.responseText);
+    }
+}
+```
