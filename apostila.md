@@ -2735,3 +2735,20 @@ angular
 ```
 
 Veja que agora o segundo parâmetro deve ser um object definition, não uma função que o retorna como na diretiva.
+
+### bindings
+
+Assim como diretivas, componentes podem receber parâmetros na sua chamada. A definição desses parâmetros agora se dá pela propriedade `bindings`:
+
+```javascript
+let objectDefinition = {
+	bindings: {
+        texto: '@'
+    },
+    controller: function() {
+        this.$onInit = function() {
+            console.log(this.texto); // Hello, World!
+        };
+    }
+}
+```
