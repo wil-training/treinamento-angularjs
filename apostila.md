@@ -2960,3 +2960,48 @@ $http({
     }
 });
 ```
+
+### Promises
+
+Promise é um objeto usado para fazermos chamadas assíncronas e esperar sua resolução (ou falha) para continuar o trabalho.
+
+Uma requisição AJAX é o típico cenário onde a aplicação pode ter de esperar muito tempo até os dados serem retornados pelo servidor, principalmente com uma conexão lenta.
+
+O serviço `$http` do AngularJS já implementa uma interface de promise e a expõe para usarmos, basta usar um método `then` no objeto retornado pelo serviço. Exemplo:
+
+```javascript
+// O serviço $http retorna um objeto de promise, o qual podemos guardar em uma variável qualquer
+let requisicaoPromise = $http({
+    method: 'GET',
+    url: 'url/para/requisicao'
+});
+
+// Assim podemos usar o método exposto nesse objeto para esperarmos a conclusão da requisição
+requisicaoPromise.then(function (response) {
+    // essa função será executada com os dados retornados pelo servidor
+});
+```
+
+O método `then` recebe dois parâmetros, um para quando a chamada terminou com sucesso e outra para a ocorrência de alguma falha. Exemplo:
+
+```javascript
+let requisicaoPromise = $http({
+    method: 'GET',
+    url: 'url/para/requisicao'
+});
+
+requisicaoPromise.then(aoObterSucesso, aoOcorrerFalha);
+
+function aoObterSucesso(response) {}
+function aoOcorrerFalha(response) {}
+```
+
+Ambos os métodos recebem um objeto `response`, o qual possui as seguintes propriedades:
+
+Propriedade | Significado
+- | -
+`data` | O corpo da resposta, contém os dados requisitados
+`status` | Um código HTTP informando o status da requisição
+`headers` | O Cabeçalho da requisição
+`config` | O objeto de configuração usado
+`statusText` | O texto referente ao `status`
