@@ -2800,3 +2800,13 @@ Todo componente tem seu escopo isolado por padrão, não podendo ser alterado.
 #### link
 
 A função não existe em componentes. Sendo assim, caso seja necessário controlar o DOM uma diretiva deve ser usada.
+
+## Obtendo dados
+
+Praticamente toda aplicação necessita de dados para funcionar. Seja o nome de quem está usando o sistema, uma lista de tarefas, os dados para o cadastro de um cliente, etc.
+
+Esses dados normalmente estão em algum servidor, podendo ser acessados através de uma URL.
+
+Para obtermos esses dados, fazemos uma requisição para o servidor, tratamos o retorno e mostramos os dados ao usuário, caso necessário.
+
+Essa requisição normalmente é assíncrona, chamada de requisição AJAX.
