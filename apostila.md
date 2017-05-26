@@ -2406,16 +2406,397 @@ function helloWorldDirective() {
 }
 ```
 
-Esse object definition possui diversas propriedades. Vejamos algumas delas:
+> O nome da diretiva atribuído no método `directive` deve estar em `camelCase` e na view deve ser usada com `kebab-case`.
+> Tomemos a `ngModel` como exemplo, é usada na view como `ng-view`.
 
+Esse object definition possui diversas propriedades. Vejamos algumas delas:
 
 - template
 - templateUrl
 - restrict
-- link
 - controller
+- require
+- link
 - controllerAs
 - scope
 - bindToController
 
 > Para mais informações veja em: https://docs.angularjs.org/api/ng/service/$compile#directive-definition-object
+
+#### template
+
+Aqui definimos o corpo da diretiva, em HTML.
+
+Tendo duas opções, com uma string ou uma funcão que retorna o markup.
+
+Exemplo com string:
+
+```javascript
+let definitionObject = {
+    template: '<span>Hello, World!</span>'
+};
+```
+
+Exemplo com função:
+
+```javascript
+let definitionObject = {
+    template: function (elemento, atributos) {
+        return '<span>Hello, World!</span>';
+    }
+};
+```
+
+#### templateUrl
+
+Tem o mesmo objetivo da `template`, porém esse template em um arquivo na URL aqui especificada.
+
+Também tendo as opções de string e função retornando a URL.
+
+Exemplo com string:
+
+```javascript
+let definitionObject = {
+    template: 'endereco/do/template.html'
+};
+```
+
+Exemplo com função:
+
+```javascript
+let definitionObject = {
+    template: function (elemento, atributos) {
+        return 'endereco/do/template.html';
+    }
+};
+```
+
+#### restrict
+
+Serve para definir o tipo da diretiva, como ela poderá ser referenciada na view.
+
+Tendo como opções:
+
+| Opção | Significado | Exemplo |
+| - | - | - |
+| `E` | Nome do elemento | `<diretiva></diretiva>` |
+| `A` | Atributo | `<div diretiva=""></div>` |
+| `C` | Classe | `<div class="diretiva: ''"></div>` |
+| `M` | Comentário | `<!-- directive: diretiva '' -->` |
+
+#### controller
+
+Coomo o próprio nome diz, define o controller da diretiva. Podendo ser seu nome ou uma função construtora.
+
+#### require
+
+Especifica quais outras diretivas são requeridas pela atual.
+
+O valor dessa propriedade pode ser:
+
+- string com o nome de uma diretiva
+- array contendo um ou mais nomes de diretivas
+- um objeto cujas propriedades refletem os nomes das diretivas
+
+Podemos usar alguns prefixos para dizer onde procurar as diretivas listadas nessa propriedade:
+
+| Prefixo | Onde procurar |
+| - | - |
+| nenhum | No próprio elemento da diretiva |
+| `^` | No elemento e em seus ancestrais |
+| `^^` | Apenas nos ancestrais do elemento |
+
+Um erro será disparado caso as diretivas listadas não sejam encontradas. Para torná-las opcionais, basta colocar um `?`. Exemplo:
+
+```javascript
+let definitionObject = {
+    require: ['?^ngModel']
+};
+```
+
+#### link
+
+A propriedade `link` é uma função responsável em registrar os eventos e controlar o DOM.
+
+A função pode receber os seguintes parâmetros, nessa ordem:
+
+- scope
+- elemento
+- atributos
+- controller
+- função do transclude
+
+O parâmetro `controller` recebe o próprio controller da diretiva caso esta não tenha definida a propriedade `require`.
+
+Caso `require` esteja definida, traz os controllers das diretivas ali mencionadas.
+
+#### scope
+
+Nessa propriedade definimos se e como será criado o escopo dessa diretiva, quando for usada em uma view.
+
+Temos três opções:
+
+| Opção | Significado |
+| - | - |
+| `false` | Não criará escopo próprio, usará o do elemento superior |
+| `true` | Criará um novo escopo, herdando todo o escopo pai |
+| `{}` (objeto) | Cria um escopo isolado, com as propriedades definidas no objeto |
+
+##### Escopo isolado
+
+Caso a opção tenha sido criar um escopo isolado, a diretiva não terá acesso aos escopos "pais".
+
+A comunicação dela será dará por meio de propriedades definidas no objeto atribuído à propriedade `scope`.
+
+Exemplo, definindo o objeto:
+
+```javascript
+let definitionObject = {
+    scope: {
+        texto: '@'
+    }
+};
+```
+
+Essas propriedades são refletidas como atributos no elemento, ao ser usada na view. Exemplo:
+
+```xml
+<diretiva texto="Hello, World!"></diretiva>
+```
+
+###### Tipo de vínculo
+
+Também deve-se definir o tipo de vínculo a ser usado nessas propriedades. Para fazer essa definição, usamos símbolos no valor das propriedades.
+
+Essas são as opções disponíveis:
+
+| Símbolo | Significado |
+|- | - |
+| `@` | O valor será interpretado como texto |
+| `=` | Ligação bidirecional (two way binding) |
+| `<` | Ligação unidirecional |
+| `&` | Expressão que será traduzida para uma função no escopo da diretiva |
+
+###### Vínculo opcional
+
+Esses vínculos estabelecidos como necessários para o funcionamento da diretiva são obrigatórios. Um erro será disparado caso algum não seja informado.
+
+Porém, podemos deixá-los opcionais apenas colocando um `?` (ponto de interrogação) à frente do seu tipo de vínculo. Exemplo:
+
+```javascript
+let definitionObject = {
+    scope: {
+        texto: '?@'
+    }
+};
+```
+
+###### Nomeando vínculos
+
+Podemos definir nomes diferentes para os expostos pela diretiva e os usados internamente. Para isso, basta inserir o nome após o tipo de vínculo. Exemplo:
+
+```javascript
+let definitionObject = {
+    scope: {
+        texto: '@meuTexto'
+    }
+};
+```
+
+Dessa forma, a diretiva deverá ser usada assim:
+
+```xml
+<diretiva meu-texto="Hello, World!"></diretiva>
+```
+
+> Assim como o nome da diretiva, o nome da propriedade deve ser definido com `camelCase` e na view com `kebab-case`.
+
+## ControllerAs
+
+Para facilitar a identificação das propriedades usadas na views, podemos dar nomes aos nossos controllers nela. Exemplo:
+
+```xml
+<body ng-controller="NomeController as nomeCtrl">
+    <label>Insira seu nome:</label>
+    <input type="text" ng-model="nomeCtrl.nome" />
+    <h1>Olá {{ nomeCtrl.nome }}!</h1>
+</body>
+```
+
+Com essa mudança, as propriedades são adicionadas diretamente na instância do controller. Assim não sendo necessário o uso de `$scope`:
+
+```javascript
+angular
+    .module('app')
+    .controller('NomeController', NomeController);
+
+function NomeController() {
+	this.nome = 'João';
+}
+```
+
+### Diretivas
+
+Também é possível nomear os controllers nas diretivas, usando a propriedade `controllerAs` do objeto de definição:
+
+```javascript
+let objectDefinition = {
+    controllerAs: 'diretivaCtrl'
+}
+```
+
+Mas com uma particularidade, as propriedades definidas em `scope` não são vinculadas à controller automaticamente. Ainda são acessadas via `$scope`:
+
+```javascript
+let objectDefinition = {
+	scope: {
+        texto: '@'
+    },
+    controller: function($scope) {
+        console.log(this.texto); // undefined
+        console.log($scope.texto); // Hello, World!
+    },
+    controllerAs: 'diretivaCtrl'
+}
+```
+
+#### bindToController
+
+Esse comportamento pode ser mudado com a propriedade `bindToController`. A definindo como `true` tem o efeito esperado:
+
+```javascript
+let objectDefinition = {
+	scope: {
+        texto: '@'
+    },
+    controller: function() {
+        console.log(this.texto); // Hello, World!
+    },
+    controllerAs: 'diretivaCtrl',
+    bindToController: true
+}
+```
+
+Também podemos simplificar simplesmente removendo o objeto `scope` e o colocando em `bindToController`:
+
+```javascript
+let objectDefinition = {
+	bindToController: {
+        texto: '@'
+    },
+    controller: function() {
+        this.$onInit = function() {
+            console.log(this.texto); // Hello, World!
+        };
+    },
+    controllerAs: 'diretivaCtrl'
+}
+```
+
+## Componentes
+
+Apesar de o *Angular 2+* ter sido lançado, o *AngularJS 1.x* vem sendo atualizado com algumas melhorias.
+
+Essas atualizações vem tanto para facilitar a migração para a versão 2+ quanto para deixar a aplicação melhor.
+
+Uma delas trouxe os chamados componentes. Agora além do método `directive`, temos `component` como opção para criarmos *pedaços* de tela.
+
+> Apesar de ter outro nome, `component` é apenas uma diretiva com comportamento diferente do padrão. Portanto, uma diretiva pode fazer tudo que um componente faz
+
+A adição desse método pode reduzir a quantidade de código escrito e a chance de introduzirmos *bugs* na aplicação.
+
+### Utilização
+
+Como dito anteriomente, para criar um componente é usado o método `component`.
+
+Vamos usar como exemplo a nossa diretiva `helloWorld`:
+
+```javascript
+angular
+	.module('app')
+    .directive('helloWorld', helloWorldDirective);
+
+function helloWorldDirective() {
+	let definitionObject = {
+        template: '<span>Hello, World!</span>'
+    };
+    return definitionObject;
+}
+```
+
+*Transformando-a* em componente ficaria assim:
+
+```javascript
+angular
+	.module('app')
+    .component('helloWorld', {
+        template: '<span>Hello, World!</span>'
+    });
+```
+
+Veja que agora o segundo parâmetro deve ser um object definition, não uma função que o retorna como na diretiva.
+
+### bindings
+
+Assim como diretivas, componentes podem receber parâmetros na sua chamada. A definição desses parâmetros agora se dá pela propriedade `bindings`:
+
+```javascript
+let objectDefinition = {
+	bindings: {
+        texto: '@'
+    },
+    controller: function() {
+        this.$onInit = function() {
+            console.log(this.texto); // Hello, World!
+        };
+    }
+}
+```
+
+### Componente vs Diretiva
+
+Além do já mencionado, existem algumas diferenças entre  uma diretiva e um componente.
+
+Como podemos ver no exemplo abaixo, tudo declarado no objeto `bindings` é automaticamente vinculado ao controller. Com isso, foram retiraddas as propriedades `scope` e `bindToController`.
+
+#### bindings
+
+O objeto `bindings` é a união dessas duas propriedades, logo um componente assim:
+
+```javascript
+angular
+	.module('app')
+    .component('helloWorld', {
+        bindings: {
+			texto: '@'
+		},
+		controller: function() { }
+    });
+```
+
+Funciona exatamente como uma diretiva usando `bindToController`:
+
+```javascript
+angular
+	.module('app')
+    .directive('helloWorld', function () {
+		return {
+			bindToController: {
+				texto: '@'
+			},
+			controller: function() { }
+		}
+    });
+```
+
+#### controllerAs
+
+A propriedade `controllerAs` ainda existe, porém o valor padrão passou a ser `$ctrl`.
+
+#### Escopo
+
+Todo componente tem seu escopo isolado por padrão, não podendo ser alterado.
+
+#### link
+
+A função não existe em componentes. Sendo assim, caso seja necessário controlar o DOM uma diretiva deve ser usada.
