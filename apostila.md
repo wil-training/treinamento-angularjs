@@ -2800,3 +2800,208 @@ Todo componente tem seu escopo isolado por padrão, não podendo ser alterado.
 #### link
 
 A função não existe em componentes. Sendo assim, caso seja necessário controlar o DOM uma diretiva deve ser usada.
+
+## Obtendo dados
+
+Praticamente toda aplicação necessita de dados para funcionar. Seja o nome de quem está usando o sistema, uma lista de tarefas, os dados para o cadastro de um cliente, etc.
+
+Esses dados normalmente estão em algum servidor, podendo ser acessados através de uma URL.
+
+Para obtermos esses dados, fazemos uma requisição para o servidor, tratamos o retorno e mostramos os dados ao usuário, caso necessário.
+
+Essa requisição normalmente é assíncrona, chamada de requisição AJAX.
+
+### AJAX
+
+AJAX é um acrônimo para *Asynchronous JavaScript And XML*.
+
+Como o próprio nome sugere, é uma técnica para fazer requisições assíncronas pelo JavaScript usando XML.
+
+Apesar de referenciar XML no nome, hoje em dia JSON é muito mais usado para esse tipo de requisição por conta da sua praticidade.
+
+Por ser assíncrona, podemos realizar requisições desse tipo sem deixar o usuário esperando o carregamento da página em si.
+
+Podemos, por exemplo carregar todo o HTML e CSS para exibirmos uma página básica e depois carregar os dados para assim o usuário poder interagir com a página.
+
+Exemplo. Facebook carregando dados de forma assíncrona:
+
+![Facebook carregando dados de forma assíncrona](imagens/angularjs/carregando_dados_ajax.png)
+
+### XMLHttpRequest
+
+Para fazermos uma requisição AJAX, basta usarmos um objeto já presente nos navegadores: `XMLHttpRequest`.
+
+Exemplo:
+
+```javascript
+let httpRequest = new XMLHttpRequest();
+httpRequest.onreadystatechange = aoMudarStatus;
+httpRequest.open('GET', 'url/para/requisicao', true);
+httpRequest.send(null);
+
+function aoMudarStatus() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        alert(httpRequest.responseText); // mostra resposta do servidor
+    }
+}
+```
+
+Não precisamos de nenhum framewok ou biblioteca para fazer requisições AJAX, porém esse código pode ficar bem grande dependendo do seu objetivo.
+
+Caso precise rodar em outros navegadores, pode ficar assim:
+
+> Exemplo baseado na documentação da MDN: https://developer.mozilla.org/pt-BR/docs/AJAX/Getting_Started#O_que_%C3%A9_AJAX
+
+```javascript
+let httpRequest;
+
+if (window.XMLHttpRequest) {
+    httpRequest = new XMLHttpRequest();
+} else if (window.ActiveXObject) { // IE
+    try {
+        httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+    } 
+    catch (e) {
+        try {
+            httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        } 
+        catch (e) {}
+    }
+}
+
+httpRequest.onreadystatechange = aoMudarStatus;
+httpRequest.open('GET', 'url/para/requisicao', true);
+httpRequest.send(null);
+
+function aoMudarStatus() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        // mostra resposta do servidor no console
+        console.log(httpRequest.responseText);
+    }
+}
+```
+
+### jQuery.ajax
+
+Com o inttuito de facilitar a vida dos desenvolvedores, várias bibliotecas surgiram. Uma delas era a jQuery.
+
+jQuery trouxe uma infinidade de ferramentas úteis à época para o desenvolvimento web, ficando popular rapidamente. Muitos ainda a usam hoje em dia.
+
+Dentre todas as facilidades, o método `ajax` diminuia consideravelmente o tamanho do código para fazer uma requisição ajax. O próprio jQuery tratava de verificar qual era o navegador e usava o objeto certo para fazer a requisição.
+
+Exemplo com a mesma chamada AJAX feita anteriormente com JS nativo, com jQuery:
+
+```javascript
+jQuery.ajax({
+    type: 'GET',
+    url: 'url/para/requisicao',
+    async: true,
+    success: function(data) {
+        console.log(data);
+    }
+});
+```
+
+Ou ainda:
+
+```javascript
+jQuery.get('url/para/requisicao', function(data) {
+    console.log(data);
+});
+```
+
+### $http
+
+O AngularJS é um framework completo e também traz uma solução para realizarmos requisições AJAX: `$http`.
+
+Esse objeto é um serviço baseado nos providos pelo jQuery, portanto possui muita semelhança.
+
+Exemplo de uma simples requisição:
+
+```javascript
+$http({
+    method: 'GET',
+    url: 'url/para/requisicao'
+}).then(function(response) {
+    console.log(response.data);
+});
+```
+
+Também tendo formas simplificadas:
+
+```javascript
+$http
+    .get('url/para/requisicao')
+    .then(function(response) {
+        console.log(response.data);
+    });
+```
+
+Alguns dos métodos disponíveis nesse serviço e sua descrição:
+
+Método | Descrição
+---------|----------
+ `GET` | Obter informações do servidor
+ `POST` | Criar informações no servidor
+ `PUT` | Atualizar informações no servidor
+ `DELETE` | Excluir informações do servidor
+
+Os métodos de criação, atualização ou exclusão devem enviar quais informações no servidor devem ser alteradas.
+
+Para isso, basta informar na propriedade `data` do objeto de configuração:
+
+```javascript
+$http({
+    method: 'POST',
+    url: 'url/para/criar/usuario',
+    data: {
+        nome: 'João',
+        idade: 15
+    }
+});
+```
+
+### Promises
+
+Promise é um objeto usado para fazermos chamadas assíncronas e esperar sua resolução (ou falha) para continuar o trabalho.
+
+Uma requisição AJAX é o típico cenário onde a aplicação pode ter de esperar muito tempo até os dados serem retornados pelo servidor, principalmente com uma conexão lenta.
+
+O serviço `$http` do AngularJS já implementa uma interface de promise e a expõe para usarmos, basta usar um método `then` no objeto retornado pelo serviço. Exemplo:
+
+```javascript
+// O serviço $http retorna um objeto de promise, o qual podemos guardar em uma variável qualquer
+let requisicaoPromise = $http({
+    method: 'GET',
+    url: 'url/para/requisicao'
+});
+
+// Assim podemos usar o método exposto nesse objeto para esperarmos a conclusão da requisição
+requisicaoPromise.then(function (response) {
+    // essa função será executada com os dados retornados pelo servidor
+});
+```
+
+O método `then` recebe dois parâmetros, um para quando a chamada terminou com sucesso e outra para a ocorrência de alguma falha. Exemplo:
+
+```javascript
+let requisicaoPromise = $http({
+    method: 'GET',
+    url: 'url/para/requisicao'
+});
+
+requisicaoPromise.then(aoObterSucesso, aoOcorrerFalha);
+
+function aoObterSucesso(response) {}
+function aoOcorrerFalha(response) {}
+```
+
+Ambos os métodos recebem um objeto `response`, o qual possui as seguintes propriedades:
+
+Propriedade | Significado
+- | -
+`data` | O corpo da resposta, contém os dados requisitados
+`status` | Um código HTTP informando o status da requisição
+`headers` | O Cabeçalho da requisição
+`config` | O objeto de configuração usado
+`statusText` | O texto referente ao `status`
