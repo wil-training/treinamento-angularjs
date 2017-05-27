@@ -4,7 +4,7 @@
 
 A *World Wide Web*, também conhecida como *WWW* ou apenas *web*, foi criada para exibição de documentos em hipermídia interligados na internet, a fim de tornar mais fácil o compartilhamento de documentos de pesquisas.
 
-O primeiro site é o hoje disponibilizado no endereço: http://info.cern.ch/hypertext/WWW/TheProject.html
+O primeiro site é o hoje disponibilizado no endereço: <http://info.cern.ch/hypertext/WWW/TheProject.html>
 
 Nesse site é possível obter diversas informações sobre o seu surgimento.
 
@@ -12,7 +12,7 @@ Há inúmeras referências na sua base, código e documentação sobre a sua rea
 
 Site da Microsoft em 1994:
 
-![Site da Microsoft em 1994](imagens/site_microsoft_1994.png)
+![Site da Microsoft em 1994](imagens/web/site_microsoft_1994.png)
 
 ## Como funciona
 
@@ -24,7 +24,7 @@ A grosso modo, o usuário digita um endereço no navegador e este envia uma requ
 
 Ilustração de uma requisição web:
 
-![Ilustração de uma requisição web](imagens/web_request.png)
+![Ilustração de uma requisição web](imagens/web/web_request.png)
 
 ## WEB 2.0 e SPAs
 
@@ -50,7 +50,7 @@ O Google foi um dos pioneiros nesse conceito, tendo o Gmail como seu carro chefe
 
 Ilustração do Gmail:
 
-![Gmail](imagens/gmail.png)
+![Gmail](imagens/web/gmail.png)
 
 ## Camadas
 
@@ -72,7 +72,7 @@ Sua estrutura é composta por *tags* (marcadores), delimitadas pelos sinais de m
 
 Exemplo de um parágrafo em HTML:
 
-```xml
+```html
 <p>Um parágrafo em HTML é representado pela tag *p*.</p>
 ```
 
@@ -86,7 +86,7 @@ No corpo vai o documento visto pelo usuário. Nele é possível definir toda a e
 
 Exemplo de uma página HTML:
 
-```xml
+```html
 <html>
     <head>
         <title>Título da página</title>
@@ -100,7 +100,7 @@ Exemplo de uma página HTML:
 
 O exemplo acima será renderizado como a seguir:
 
-![Página de exemplo renderizada no Chrome](imagens/exemplo_pagina.png)
+![Página de exemplo renderizada no Chrome](imagens/html/exemplo_pagina.png)
 
 ## Elementos e tags existentes
 
@@ -108,24 +108,24 @@ Essas são os elementos e suas tags HTML suportados pelos navegadores atuais:
 
 | Nome | Significado |
 |--------|--------|
-| `<a>` | 	Âncora: usado para ligar a outro recurso web |
-| `<abbr>` | 	Abreviação |
-| `<address>` | 	Endereço |
-| `<area>` | 	Área |
-| `<article>` | 	Elemento artigo |
-| `<aside>` | 	Elemento à parte |
-| `<audio>` | 	Conteúdo de som |
-| `<b>` | 	Texto em negrito |
-| `<base>` | 	Elemento base |
-| `<bdo>` | 	Representa explicitamente a direção do texto |
-| `<blockquote>` | 	Bloco de citação |
-| `<body>` | 	Corpo da página |
-| `<br>` | 	Insere uma quebra de linha |
-| `<button>` | 	Botão |
-| `<canvas>` | 	Utilizado para a renderização de gráficos |
-| `<caption>` | 	Legenda da tabela |
-| `<cite>` | 	Citação |
-| `<code>` | 	Texto de código computacional |
+| `<a>` | Âncora: usado para ligar a outro recurso web |
+| `<abbr>` | Abreviação |
+| `<address>` | Endereço |
+| `<area>` | Área |
+| `<article>` | Elemento artigo |
+| `<aside>` | Elemento à parte |
+| `<audio>` | Conteúdo de som |
+| `<b>` | Texto em negrito |
+| `<base>` | Elemento base |
+| `<bdo>` | Representa explicitamente a direção do texto |
+| `<blockquote>` | Bloco de citação |
+| `<body>` | Corpo da página |
+| `<br>` | Insere uma quebra de linha |
+| `<button>` | Botão |
+| `<canvas>` | Utilizado para a renderização de gráficos |
+| `<caption>` | Legenda da tabela |
+| `<cite>` | Citação |
+| `<code>` | Texto de código computacional |
 | `<col>` |  Coluna |
 | `<colgroup>` | Grupo de colunas |
 | `<command>` | Botão de comando |
@@ -134,74 +134,74 @@ Essas são os elementos e suas tags HTML suportados pelos navegadores atuais:
 | `<del>` | Texto suprimido |
 | `<details>` | Detalhes |
 | `<div>` | Bloco de documento |
-| `<dl>` | 	Lista de definição |
-| `<dt>` | 	Termo de definição |
-| `<em>` | 	Texto enfatizado |
+| `<dl>` | Lista de definição |
+| `<dt>` | Termo de definição |
+| `<em>` | Texto enfatizado |
 | `<embed>` | Elemento embutido |
 | `<fieldset>` | Grupo de campos |
 | `<figcaption>` | Legenda de uma figura |
-| `<figure>` | 	Figura |
-| `<footer>` | 	Rodapé da página |
-| `<form>` | 	Formulário |
-| `<h1>` à `<h6>` |	Títulos, onde o valor 1 representa um título maior do que o valor 6 |
-| `<head>` | 	Cabeçalho principal do documento |
-| `<header>` | 	Cabeçalho principal da página |
-| `<hgroup>` | 	Grupo de títulos |
-| `<hr>` | 	Linha horizontal |
-| `<html>` | 	Raiz de um documento HTML |
-| `<i>` | 	Texto em itálico |
-| `<iframe>` | 	Janela de navegação aninhada |
-| `<img>` | 	Inclui um imagem |
-| `<input>` | 	Campo de entrada |
-| `<ins>` | 	Texto inserido |
-| `<kbd>` | 	Texto do teclado |
-| `<label>` | 	Etiqueta |
-| `<legend>` | 	Título de um grupo de controles formulário |
-| `<li>` | 	Item de uma lista |
-| `<link>` | 	Link de recursos |
-| `<map>` | 	Mapa de imagens |
-| `<mark>` | 	Marcação |
-| `<menu>` | 	Menu de comandos |
-| `<meta>` | 	Define um meta-informação |
-| `<meter>` | 	Elemento de medida |
-| `<nav>` | 	Elemento de navegação |
-| `<noscript>` | 	Exibido se scripts estiver desativados |
-| `<object>` | 	Objeto incorporado |
-| `<ol>` | 	Lista ordenada |
-| `<optgroup>` | 	Grupo de opções |
-| `<option>` | 	Opção |
-| `<output>` | 	Resultado/saída de um cálculo |
-| `<p>` | 	Parágrafo |
-| `<param>` | 	Define parâmetro de plugins invocados pelos elementos object, não representando nada por si só |
-| `<pre>` | 	Texto pré-formatado |
-| `<progress>` | 	Progresso da conclusão de uma ação, como por exemplo um download |
-| `<q>` | 	Breve citação |
-| `<ruby>` | 	Anotação ruby |
-| `<rp>` | 	Parenteses de texto ruby |
-| `<rt>` | 	Componentes de texto ruby |
-| `<samp>` | 	Amostra de programa ou sistema de computação |
-| `<script>` | 	Representa um script |
-| `<section>` | 	Seção do documento |
-| `<select>` | 	Lista selecionável |
-| `<small>` | 	Texto pequeno |
-| `<source>` | 	Permite indicar diversas fontes para elentos de midia |
-| `<span>` | 	Utilizado para um elemento dentro do fluxo de texto |
-| `<strong>` | 	Texto grande |
-| `<style>` | 	Define um estilo |
-| `<sub>` | 	Texto com subscrição |
-| `<sup>` | 	Texto sobrescrito |
-| `<tbody>` | 	Corpo da tabela |
-| `<td>` | 	Célula da tabela |
-| `<textarea>` | 	Área de texto |
-| `<tfoot>` | 	Rodapé da tabela |
-| `<th>` | 	Célula de cabeçalho da tabela |
-| `<thead>` | 	Representa o cabeçalho da tabela |
-| `<time>` | 	Indica horas |
-| `<title>` | 	Título da pagina |
-| `<tr>` | 	Linha da tabela |
-| `<ul>` | 	Lista não ordenada |
-| `<var>` | 	Variável |
-| `<video>` | 	Elemento de vídeo ou filme |
+| `<figure>` | Figura |
+| `<footer>` | Rodapé da página |
+| `<form>` | Formulário |
+| `<h1>` à `<h6>` | Títulos, onde o valor 1 representa um título maior do que o valor 6 |
+| `<head>` | Cabeçalho principal do documento |
+| `<header>` | Cabeçalho principal da página |
+| `<hgroup>` | Grupo de títulos |
+| `<hr>` | Linha horizontal |
+| `<html>` | Raiz de um documento HTML |
+| `<i>` | Texto em itálico |
+| `<iframe>` | Janela de navegação aninhada |
+| `<img>` | Inclui um imagem |
+| `<input>` | Campo de entrada |
+| `<ins>` | Texto inserido |
+| `<kbd>` | Texto do teclado |
+| `<label>` | Etiqueta |
+| `<legend>` | Título de um grupo de controles formulário |
+| `<li>` | Item de uma lista |
+| `<link>` | Link de recursos |
+| `<map>` | Mapa de imagens |
+| `<mark>` | Marcação |
+| `<menu>` | Menu de comandos |
+| `<meta>` | Define um meta-informação |
+| `<meter>` | Elemento de medida |
+| `<nav>` | Elemento de navegação |
+| `<noscript>` | Exibido se scripts estiver desativados |
+| `<object>` | Objeto incorporado |
+| `<ol>` | Lista ordenada |
+| `<optgroup>` | Grupo de opções |
+| `<option>` | Opção |
+| `<output>` | Resultado/saída de um cálculo |
+| `<p>` | Parágrafo |
+| `<param>` | Define parâmetro de plugins invocados pelos elementos object, não representando nada por si só |
+| `<pre>` | Texto pré-formatado |
+| `<progress>` | Progresso da conclusão de uma ação, como por exemplo um download |
+| `<q>` | Breve citação |
+| `<ruby>` | Anotação ruby |
+| `<rp>` | Parenteses de texto ruby |
+| `<rt>` | Componentes de texto ruby |
+| `<samp>` | Amostra de programa ou sistema de computação |
+| `<script>` | Representa um script |
+| `<section>` | Seção do documento |
+| `<select>` | Lista selecionável |
+| `<small>` | Texto pequeno |
+| `<source>` | Permite indicar diversas fontes para elentos de midia |
+| `<span>` | Utilizado para um elemento dentro do fluxo de texto |
+| `<strong>` | Texto grande |
+| `<style>` | Define um estilo |
+| `<sub>` | Texto com subscrição |
+| `<sup>` | Texto sobrescrito |
+| `<tbody>` | Corpo da tabela |
+| `<td>` | Célula da tabela |
+| `<textarea>` | Área de texto |
+| `<tfoot>` | Rodapé da tabela |
+| `<th>` | Célula de cabeçalho da tabela |
+| `<thead>` | Representa o cabeçalho da tabela |
+| `<time>` | Indica horas |
+| `<title>` | Título da pagina |
+| `<tr>` | Linha da tabela |
+| `<ul>` | Lista não ordenada |
+| `<var>` | Variável |
+| `<video>` | Elemento de vídeo ou filme |
 
 ## Comentários
 
@@ -211,13 +211,13 @@ Em HTML, um comentário é iniciado com `<!--` e finalizado com `-->`. Tudo entr
 
 Exemplo de comentário:
 
-```xml
+```html
 <!-- Aqui vai um comentário -->
 ```
 
 ## HTML5
 
-![Logotipo do HTML5](imagens/html5_logo.png)
+![Logotipo do HTML5](imagens/html/html5_logo.png)
 
 ### Surgimento
 
@@ -234,13 +234,13 @@ A declaração da DOCTYPE no HTML5 é extremamente simples, diferentemente de co
 
 Exemplo de DOCTYPE antes do HTML5:
 
-```xml
+```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 ```
 
 DOCTYPE em HTML5:
 
-```xml
+```html
 <!DOCTYPE html>
 ```
 
@@ -250,7 +250,7 @@ Antes do HTML5, tentávamos identificar as partes de um documento usando classes
 
 Exemplo:
 
-```xml
+```html
 <body>
 
   <div id="cabecalho">
@@ -276,7 +276,7 @@ Agora com essa *nova* versão de HTML, podemos utilizar novas tags que podem ide
 
 Exemplo:
 
-```xml
+```html
 <body>
 
   <header>
@@ -306,7 +306,7 @@ Os motores de busca também podem utilizar esse código semântico para buscar e
 
 As *divs* não deixarão de existir pois ainda cumprem bem seu papel, mas não são mais necessárias para identificar a estrutura semântica da página.
 
-Para explicar todo esse conceito o WHATWG fez um documento sobre o assunto. O qual pode ser conferido no seguinte endereço: https://html.spec.whatwg.org/multipage/semantics.html
+Para explicar todo esse conceito o WHATWG fez um documento sobre o assunto. O qual pode ser conferido no seguinte endereço: <https://html.spec.whatwg.org/multipage/semantics.html>
 
 # Cascading Style Sheets
 
@@ -322,7 +322,7 @@ Hoje, a linguagem em si não é mais baseada em versões, apenas seus módulos. 
 
 Logotipo do CSS3:
 
-![Logotipo do CSS3](imagens/css3_logo.png)
+![Logotipo do CSS3](imagens/css/css3_logo.png)
 
 ## Estrutura
 
@@ -362,7 +362,7 @@ Para inserir esse tipo de estilo, é necessário um atributo `style` no elemento
 
 Exemplo de CSS inline:
 
-```xml
+```html
 <p style="color:blue;">Sou um parágrafo com o texto em azul</p>
 ```
 
@@ -376,19 +376,20 @@ Para isso, basta indicar uma tag `style` no `head` do documento.
 
 Exemplo:
 
-```xml
+```html
+<!DOCTYPE html>
 <html>
 
-	<head>
-    	<style>
-        	p {
-            	color: blue;
+    <head>
+        <style>
+            p {
+                color: blue;
             }
         </style>
     </head>
 
     <body>
-    	<p>Sou um parágrafo com o texto em azul</p>
+        <p>Sou um parágrafo com o texto em azul</p>
         <p>Também tenho o texto em azul!</p>
         <p>Eu também!!</p>
     </body>
@@ -406,15 +407,16 @@ Com uma folha de estilos externa, ou external style sheet, os estilos podem ser 
 
 Conseguimos vincular uma folha de estilos a uma página simplesmente a referenciando no `head` da página com uma tag `link`.
 
-```xml
+```html
+<!DOCTYPE html>
 <html>
 
     <head>
-    	<link rel="stylesheet" type="text/css" href="meus_paragrafos_azuis.css">
+        <link rel="stylesheet" type="text/css" href="meus_paragrafos_azuis.css">
     </head>
 
     <body>
-    	<p>Sou um parágrafo com o texto em azul</p>
+        <p>Sou um parágrafo com o texto em azul</p>
         <p>Também tenho o texto em azul!</p>
         <p>Eu também!!</p>
     </body>
@@ -424,17 +426,18 @@ Conseguimos vincular uma folha de estilos a uma página simplesmente a referenci
 
 Também podemos referenciar mais de uma folha de estilos na mesma página:
 
-```xml
+```html
+<!DOCTYPE html>
 <html>
 
-	<head>
-    	<link rel="stylesheet" type="text/css" href="meus_paragrafos_azuis.css">
+    <head>
+        <link rel="stylesheet" type="text/css" href="meus_paragrafos_azuis.css">
         <link rel="stylesheet" type="text/css" href="titulos_sao_verdes.css">
     </head>
 
     <body>
-    	<h1>Título é verde!</h1>
-    	<p>Sou um parágrafo com o texto em azul</p>
+        <h1>Título é verde!</h1>
+        <p>Sou um parágrafo com o texto em azul</p>
         <p>Também tenho o texto em azul!</p>
         <p>Eu também!!</p>
     </body>
@@ -444,7 +447,7 @@ Também podemos referenciar mais de uma folha de estilos na mesma página:
 
 Assim será reproduzido esse documento no navegador:
 
-![Página estilizada](imagens/pagina_estilizada.png)
+![Página estilizada](imagens/css/pagina_estilizada.png)
 
 ### Cores
 
@@ -477,160 +480,11 @@ Como pode ver, basta inserir o nome da cor e o navegador irá reproduzí-la ao u
 
 #### Keyword
 
-Como vimos anteriormente, um keyword é nada além de o nome em inglês da cor. Aqui segue uma tabela completa das keywords disponíveis:
+Como vimos anteriormente, um keyword é nada além de o nome em inglês da cor. Exemplo de algumas cores e suas representações:
 
-| Keyword | Representação |
-| ------ | ------ |
-| `black` | <div style="color:transparent;background-color:#000000;">&nbsp</div> |
-| `silver` | <div style="color:transparent;background-color:#c0c0c0;">&nbsp</div> |
-| `gray` | <div style="color:transparent;background-color:#808080;">&nbsp</div> |
-| `white` | <div style="color:transparent;background-color:#ffffff;">&nbsp</div> |
-| `maroon` | <div style="color:transparent;background-color:#800000;">&nbsp</div> |
-| `red` | <div style="color:transparent;background-color:#ff0000;">&nbsp</div> |
-| `purple` | <div style="color:transparent;background-color:#800080;">&nbsp</div> |
-| `fuchsia` | <div style="color:transparent;background-color:#ff00ff;">&nbsp</div> |
-| `green` | <div style="color:transparent;background-color:#008000;">&nbsp</div> |
-| `lime` | <div style="color:transparent;background-color:#00ff00;">&nbsp</div> |
-| `olive` | <div style="color:transparent;background-color:#808000;">&nbsp</div> |
-| `yellow` | <div style="color:transparent;background-color:#ffff00;">&nbsp</div> |
-| `navy` | <div style="color:transparent;background-color:#000080;">&nbsp</div> |
-| `blue` | <div style="color:transparent;background-color:#0000ff;">&nbsp</div> |
-| `teal` | <div style="color:transparent;background-color:#008080;">&nbsp</div> |
-| `aqua` | <div style="color:transparent;background-color:#00ffff;">&nbsp</div> |
-| `orange` | <div style="color:transparent;background-color:#ffa500;">&nbsp</div> |
-| `aliceblue` | <div style="color:transparent;background-color:#f0f8ff;">&nbsp</div> |
-| `antiquewhite` | <div style="color:transparent;background-color:#faebd7;">&nbsp</div> |
-| `aquamarine` | <div style="color:transparent;background-color:#7fffd4;">&nbsp</div> |
-| `azure` | <div style="color:transparent;background-color:#f0ffff;">&nbsp</div> |
-| `beige` | <div style="color:transparent;background-color:#f5f5dc;">&nbsp</div> |
-| `bisque` | <div style="color:transparent;background-color:#ffe4c4;">&nbsp</div> |
-| `blanchedalmond` | <div style="color:transparent;background-color:#ffebcd;">&nbsp</div> |
-| `blueviolet` | <div style="color:transparent;background-color:#8a2be2;">&nbsp</div> |
-| `brown` | <div style="color:transparent;background-color:#a52a2a;">&nbsp</div> |
-| `burlywood` | <div style="color:transparent;background-color:#deb887;">&nbsp</div> |
-| `cadetblue` | <div style="color:transparent;background-color:#5f9ea0;">&nbsp</div> |
-| `chartreuse` | <div style="color:transparent;background-color:#7fff00;">&nbsp</div> |
-| `chocolate` | <div style="color:transparent;background-color:#d2691e;">&nbsp</div> |
-| `coral` | <div style="color:transparent;background-color:#ff7f50;">&nbsp</div> |
-| `cornflowerblue` | <div style="color:transparent;background-color:#6495ed;">&nbsp</div> |
-| `cornsilk` | <div style="color:transparent;background-color:#fff8dc;">&nbsp</div> |
-| `crimson` | <div style="color:transparent;background-color:#dc143c;">&nbsp</div> |
-| `cyan` ou `aqua` | <div style="color:transparent;background-color:#00ffff;">&nbsp</div> |
-| `darkblue` | <div style="color:transparent;background-color:#00008b;">&nbsp</div> |
-| `darkcyan` | <div style="color:transparent;background-color:#008b8b;">&nbsp</div> |
-| `darkgoldenrod` | <div style="color:transparent;background-color:#b8860b;">&nbsp</div> |
-| `darkgray` | <div style="color:transparent;background-color:#a9a9a9;">&nbsp</div> |
-| `darkgreen` | <div style="color:transparent;background-color:#006400;">&nbsp</div> |
-| `darkgrey` | <div style="color:transparent;background-color:#a9a9a9;">&nbsp</div> |
-| `darkkhaki` | <div style="color:transparent;background-color:#bdb76b;">&nbsp</div> |
-| `darkmagenta` | <div style="color:transparent;background-color:#8b008b;">&nbsp</div> |
-| `darkolivegreen` | <div style="color:transparent;background-color:#556b2f;">&nbsp</div> |
-| `darkorange` | <div style="color:transparent;background-color:#ff8c00;">&nbsp</div> |
-| `darkorchid` | <div style="color:transparent;background-color:#9932cc;">&nbsp</div> |
-| `darkred` | <div style="color:transparent;background-color:#8b0000;">&nbsp</div> |
-| `darksalmon` | <div style="color:transparent;background-color:#e9967a;">&nbsp</div> |
-| `darkseagreen` | <div style="color:transparent;background-color:#8fbc8f;">&nbsp</div> |
-| `darkslateblue` | <div style="color:transparent;background-color:#483d8b;">&nbsp</div> |
-| `darkslategray` | <div style="color:transparent;background-color:#2f4f4f;">&nbsp</div> |
-| `darkslategrey` | <div style="color:transparent;background-color:#2f4f4f;">&nbsp</div> |
-| `darkturquoise` | <div style="color:transparent;background-color:#00ced1;">&nbsp</div> |
-| `darkviolet` | <div style="color:transparent;background-color:#9400d3;">&nbsp</div> |
-| `deeppink` | <div style="color:transparent;background-color:#ff1493;">&nbsp</div> |
-| `deepskyblue` | <div style="color:transparent;background-color:#00bfff;">&nbsp</div> |
-| `dimgray` | <div style="color:transparent;background-color:#696969;">&nbsp</div> |
-| `dimgrey` | <div style="color:transparent;background-color:#696969;">&nbsp</div> |
-| `dodgerblue` | <div style="color:transparent;background-color:#1e90ff;">&nbsp</div> |
-| `firebrick` | <div style="color:transparent;background-color:#b22222;">&nbsp</div> |
-| `floralwhite` | <div style="color:transparent;background-color:#fffaf0;">&nbsp</div> |
-| `forestgreen` | <div style="color:transparent;background-color:#228b22;">&nbsp</div> |
-| `gainsboro` | <div style="color:transparent;background-color:#dcdcdc;">&nbsp</div> |
-| `ghostwhite` | <div style="color:transparent;background-color:#f8f8ff;">&nbsp</div> |
-| `gold` | <div style="color:transparent;background-color:#ffd700;">&nbsp</div> |
-| `goldenrod` | <div style="color:transparent;background-color:#daa520;">&nbsp</div> |
-| `greenyellow` | <div style="color:transparent;background-color:#adff2f;">&nbsp</div> |
-| `grey` | <div style="color:transparent;background-color:#808080;">&nbsp</div> |
-| `honeydew` | <div style="color:transparent;background-color:#f0fff0;">&nbsp</div> |
-| `hotpink` | <div style="color:transparent;background-color:#ff69b4;">&nbsp</div> |
-| `indianred` | <div style="color:transparent;background-color:#cd5c5c;">&nbsp</div> |
-| `indigo` | <div style="color:transparent;background-color:#4b0082;">&nbsp</div> |
-| `ivory` | <div style="color:transparent;background-color:#fffff0;">&nbsp</div> |
-| `khaki` | <div style="color:transparent;background-color:#f0e68c;">&nbsp</div> |
-| `lavender` | <div style="color:transparent;background-color:#e6e6fa;">&nbsp</div> |
-| `lavenderblush` | <div style="color:transparent;background-color:#fff0f5;">&nbsp</div> |
-| `lawngreen` | <div style="color:transparent;background-color:#7cfc00;">&nbsp</div> |
-| `lemonchiffon` | <div style="color:transparent;background-color:#fffacd;">&nbsp</div> |
-| `lightblue` | <div style="color:transparent;background-color:#add8e6;">&nbsp</div> |
-| `lightcoral` | <div style="color:transparent;background-color:#f08080;">&nbsp</div> |
-| `lightcyan` | <div style="color:transparent;background-color:#e0ffff;">&nbsp</div> |
-| `lightgoldenrodyellow` | <div style="color:transparent;background-color:#fafad2;">&nbsp</div> |
-| `lightgray` | <div style="color:transparent;background-color:#d3d3d3;">&nbsp</div> |
-| `lightgreen` | <div style="color:transparent;background-color:#90ee90;">&nbsp</div> |
-| `lightgrey` | <div style="color:transparent;background-color:#d3d3d3;">&nbsp</div> |
-| `lightpink` | <div style="color:transparent;background-color:#ffb6c1;">&nbsp</div> |
-| `lightsalmon` | <div style="color:transparent;background-color:#ffa07a;">&nbsp</div> |
-| `lightseagreen` | <div style="color:transparent;background-color:#20b2aa;">&nbsp</div> |
-| `lightskyblue` | <div style="color:transparent;background-color:#87cefa;">&nbsp</div> |
-| `lightslategray` | <div style="color:transparent;background-color:#778899;">&nbsp</div> |
-| `lightslategrey` | <div style="color:transparent;background-color:#778899;">&nbsp</div> |
-| `lightsteelblue` | <div style="color:transparent;background-color:#b0c4de;">&nbsp</div> |
-| `lightyellow` | <div style="color:transparent;background-color:#ffffe0;">&nbsp</div> |
-| `limegreen` | <div style="color:transparent;background-color:#32cd32;">&nbsp</div> |
-| `linen` | <div style="color:transparent;background-color:#faf0e6;">&nbsp</div> |
-| `magenta` ou `fuchsia` | <div style="color:transparent;background-color:#ff00ff;">&nbsp</div> |
-| `mediumaquamarine` | <div style="color:transparent;background-color:#66cdaa;">&nbsp</div> |
-| `mediumblue` | <div style="color:transparent;background-color:#0000cd;">&nbsp</div> |
-| `mediumorchid` | <div style="color:transparent;background-color:#ba55d3;">&nbsp</div> |
-| `mediumpurple` | <div style="color:transparent;background-color:#9370db;">&nbsp</div> |
-| `mediumseagreen` | <div style="color:transparent;background-color:#3cb371;">&nbsp</div> |
-| `mediumslateblue` | <div style="color:transparent;background-color:#7b68ee;">&nbsp</div> |
-| `mediumspringgreen` | <div style="color:transparent;background-color:#00fa9a;">&nbsp</div> |
-| `mediumturquoise` | <div style="color:transparent;background-color:#48d1cc;">&nbsp</div> |
-| `mediumvioletred` | <div style="color:transparent;background-color:#c71585;">&nbsp</div> |
-| `midnightblue` | <div style="color:transparent;background-color:#191970;">&nbsp</div> |
-| `mintcream` | <div style="color:transparent;background-color:#f5fffa;">&nbsp</div> |
-| `mistyrose` | <div style="color:transparent;background-color:#ffe4e1;">&nbsp</div> |
-| `moccasin` | <div style="color:transparent;background-color:#ffe4b5;">&nbsp</div> |
-| `navajowhite` | <div style="color:transparent;background-color:#ffdead;">&nbsp</div> |
-| `oldlace` | <div style="color:transparent;background-color:#fdf5e6;">&nbsp</div> |
-| `olivedrab` | <div style="color:transparent;background-color:#6b8e23;">&nbsp</div> |
-| `orangered` | <div style="color:transparent;background-color:#ff4500;">&nbsp</div> |
-| `orchid` | <div style="color:transparent;background-color:#da70d6;">&nbsp</div> |
-| `palegoldenrod` | <div style="color:transparent;background-color:#eee8aa;">&nbsp</div> |
-| `palegreen` | <div style="color:transparent;background-color:#98fb98;">&nbsp</div> |
-| `paleturquoise` | <div style="color:transparent;background-color:#afeeee;">&nbsp</div> |
-| `palevioletred` | <div style="color:transparent;background-color:#db7093;">&nbsp</div> |
-| `papayawhip` | <div style="color:transparent;background-color:#ffefd5;">&nbsp</div> |
-| `peachpuff` | <div style="color:transparent;background-color:#ffdab9;">&nbsp</div> |
-| `peru` | <div style="color:transparent;background-color:#cd853f;">&nbsp</div> |
-| `pink` | <div style="color:transparent;background-color:#ffc0cb;">&nbsp</div> |
-| `plum` | <div style="color:transparent;background-color:#dda0dd;">&nbsp</div> |
-| `powderblue` | <div style="color:transparent;background-color:#b0e0e6;">&nbsp</div> |
-| `rosybrown` | <div style="color:transparent;background-color:#bc8f8f;">&nbsp</div> |
-| `royalblue` | <div style="color:transparent;background-color:#4169e1;">&nbsp</div> |
-| `saddlebrown` | <div style="color:transparent;background-color:#8b4513;">&nbsp</div> |
-| `salmon` | <div style="color:transparent;background-color:#fa8072;">&nbsp</div> |
-| `sandybrown` | <div style="color:transparent;background-color:#f4a460;">&nbsp</div> |
-| `seagreen` | <div style="color:transparent;background-color:#2e8b57;">&nbsp</div> |
-| `seashell` | <div style="color:transparent;background-color:#fff5ee;">&nbsp</div> |
-| `sienna` | <div style="color:transparent;background-color:#a0522d;">&nbsp</div> |
-| `skyblue` | <div style="color:transparent;background-color:#87ceeb;">&nbsp</div> |
-| `slateblue` | <div style="color:transparent;background-color:#6a5acd;">&nbsp</div> |
-| `slategray` | <div style="color:transparent;background-color:#708090;">&nbsp</div> |
-| `slategrey` | <div style="color:transparent;background-color:#708090;">&nbsp</div> |
-| `snow` | <div style="color:transparent;background-color:#fffafa;">&nbsp</div> |
-| `springgreen` | <div style="color:transparent;background-color:#00ff7f;">&nbsp</div> |
-| `steelblue` | <div style="color:transparent;background-color:#4682b4;">&nbsp</div> |
-| `tan` | <div style="color:transparent;background-color:#d2b48c;">&nbsp</div> |
-| `thistle` | <div style="color:transparent;background-color:#d8bfd8;">&nbsp</div> |
-| `tomato` | <div style="color:transparent;background-color:#ff6347;">&nbsp</div> |
-| `turquoise` | <div style="color:transparent;background-color:#40e0d0;">&nbsp</div> |
-| `violet` | <div style="color:transparent;background-color:#ee82ee;">&nbsp</div> |
-| `wheat` | <div style="color:transparent;background-color:#f5deb3;">&nbsp</div> |
-| `whitesmoke` | <div style="color:transparent;background-color:#f5f5f5;">&nbsp</div> |
-| `yellowgreen` | <div style="color:transparent;background-color:#9acd32;">&nbsp</div> |
-| `rebeccapurple` | <div style="color:transparent;background-color:#663399;">&nbsp</div> |
+![Exemplos de keywords](imagens/css/exemplos_cores_keywords.png)
 
-**<div style="color:red;">Apesar dessas keywords existirem e serem aceitas, elas podem variar entre sistemas e navegadores diferentes. Sua aplicação não é muito confiável.</div>**
+> A representação de keywords pode variar entre sistemas e navegadores diferentes, portanto seu uso não é recomendável.
 
 #### RGB
 
@@ -644,7 +498,7 @@ rgb(vermelho, verde, azul);
 
 Onde coloca-se um número de *0 a 255* onde deseja aplicar a intensidade de cada cor. Conseguimos criar a cor desejada *misturando* essas cores, como pode-se ver na ilustração:
 
-![Representação RGB](imagens/representacao_rgb.png)
+![Representação RGB](imagens/css/representacao_rgb.png)
 
 Dessa forma, para deixar um parágrafo com seu texto em vermelho seria feito assim:
 
@@ -656,14 +510,7 @@ p {
 
 Alguns exemplos de cores:
 
-| Código RGB | Amostra |
-| ------ | ------ |
-| `rgb(255,0,0)` | <div style="color:transparent;background-color:rgb(255,0,0);">&nbsp</div> |
-| `rgb(0,255,0)` | <div style="color:transparent;background-color:rgb(0,255,0);">&nbsp</div> |
-| `rgb(0,0,255)` | <div style="color:transparent;background-color:rgb(0,0,255);">&nbsp</div> |
-| `rgb(0,0,0)` | <div style="color:transparent;background-color:rgb(0,0,0);">&nbsp</div> |
-| `rgb(128,128,128)` | <div style="color:transparent;background-color:rgb(128,128,128);">&nbsp</div> |
-| `rgb(255,255,255)` | <div style="color:transparent;background-color:rgb(255,255,255);">&nbsp</div> |
+![Exemplos de cores em RGB](imagens/css/exemplos_cores_rgb.png)
 
 #### Hexadecimal
 
@@ -676,7 +523,7 @@ FF em hexadecimal é igual a 255 em decimal.
 Para atribuirmos um valor hexadecimal só é necessário colocar um hashtag `#` antes do valor, como segue:
 
 ```css
- #FFFFFF;
+#FFFFFF;
 ```
 
 Sendo assim, para aplicar vermelho ao texto de um parágrafo deve ser feito assim:
@@ -687,16 +534,9 @@ p {
 }
 ```
 
-Alguns exemplos e seus valores correspondentes usando RGB:
+Alguns exemplos usando código hexadecimal:
 
-| Código Hexadecimal | RGB | Amostra |
-| ------ | ------ | ------ |
-| `#FF0000` | `rgb(255,0,0)` | <div style="color:transparent;background-color:#FF0000;">&nbsp</div> |
-| `#00FF00` | `rgb(0,255,0)` | <div style="color:transparent;background-color:#00FF00;">&nbsp</div> |
-| `#0000FF` | `rgb(0,0,255)` | <div style="color:transparent;background-color:#0000FF;">&nbsp</div> |
-| `#000000` | `rgb(0,0,0)` | <div style="color:transparent;background-color:#000000;">&nbsp</div> |
-| `#808080` | `rgb(128,128,128)` | <div style="color:transparent;background-color:#808080;">&nbsp</div> |
-| `#FFFFFF` | `rgb(255,255,255)` | <div style="color:transparent;background-color:#FFFFFF;">&nbsp</div> |
+![Exemplos de cores em hexadecimal](imagens/css/exemplos_cores_hexadecimal.png)
 
 Pode-se usar tanto letra maiúscula como minúscula, o navegador vai interpretar da mesma forma.
 
@@ -712,7 +552,7 @@ hsl(matiz, saturação, luminoside);
 
 Para entender como funciona, vejamos representações visuais desse modelo e o significado de cada parâmetro:
 
-![Representação HSL](imagens/representacao_hsl.jpg)
+![Representação HSL](imagens/css/representacao_hsl.jpg)
 
 ##### Matiz
 
@@ -736,16 +576,7 @@ p {
 }
 ```
 
-Exemplos:
-
-| HSL | Amostra |
-| ------ | ------ |
-| `hsl(0, 100%, 50%)` | <div style="color:transparent;background-color:hsl(0, 100%, 50%);">&nbsp</div> |
-| `hsl(0, 100%, 90%)` | <div style="color:transparent;background-color:hsl(0, 100%, 90%);">&nbsp</div> |
-| `hsl(0, 50%, 50%)` | <div style="color:transparent;background-color:hsl(0, 50%, 50%);">&nbsp</div> |
-| `hsl(0, 15%, 50%)` | <div style="color:transparent;background-color:hsl(0, 15%, 50%);">&nbsp</div> |
-| `hsl(120, 100%, 50%)` | <div style="color:transparent;background-color:hsl(120, 100%, 50%);">&nbsp</div> |
-| `hsl(240, 100%, 50%)` | <div style="color:transparent;background-color:hsl(240, 100%, 50%);">&nbsp</div> |
+![Exemplos de cores em HSL](imagens/css/exemplos_cores_hsl.png)
 
 ### Texto
 
@@ -828,8 +659,6 @@ p {
     text-align: center;
 }
 ```
-
-
 
 ### Bordas
 
@@ -943,7 +772,7 @@ Essa propriedade pode receber os seguintes valores:
 
 Ilustração:
 
-![Ilustração dos estilos de bordas disponíveis](imagens/border_styles.png)
+![Ilustração dos estilos de bordas disponíveis](imagens/css/border_styles.png)
 
 #### Bordas arredondadas
 
@@ -975,7 +804,7 @@ p {
 
 O que teria esse efeito:
 
-![Combinação de regras CSS](imagens/combinacao_css.png)
+![Combinação de regras CSS](imagens/css/combinacao_css.png)
 
 #### Comentários
 
@@ -985,7 +814,7 @@ Podemos inserir comentários dentro das nossas definições de regras, desde que
 
 ```css
 p {
-	/* Aqui vão as regras para o parágrafo */
+    /* Aqui vão as regras para o parágrafo */
     background-color: #cccccc; /* Aqui definimos a cor de fundo */
 }
 ```
@@ -1034,6 +863,7 @@ Todo elemento HTML possui um atributo denominado `class`, usado aqui para defini
 Por exemplo:
 
 ```html
+<!DOCTYPE html>
 <html>
     <body>
         <h1 class="verde">Título verde</h1>
@@ -1062,6 +892,7 @@ Ficando assim ao exibirmos no navegador:
 Também com as mesmas regras, podemos definir a mesma cor para tipos de elementos diferentes:
 
 ```html
+<!DOCTYPE html>
 <html>
     <body>
         <h1 class="verde">Título verde</h1>
@@ -1101,6 +932,7 @@ Por exemplo:
 Aplicado na seguinte página:
 
 ```html
+<!DOCTYPE html>
 <html>
     <body>
         <h1 class="verde">Título verde</h1>
@@ -1118,6 +950,7 @@ Temos o seguinte efeito:
 Também podemos usar duas regras no mesmo elemento, por exemplo:
 
 ```html
+<!DOCTYPE html>
 <html>
     <body>
         <h1 class="verde">Título verde</h1>
@@ -1148,9 +981,10 @@ input[type=text] {
 
 E aplicando no seguinte HTML:
 
-```xml
+```html
+<!DOCTYPE html>
 <html>
-	<body>
+    <body>
         <p>Nome:</p>
         <input type="text" />
     </body>
@@ -1172,7 +1006,7 @@ Para isso, usamos combinadores e alguns de seus tipos são:
 
 #### Elemento descendente
 
-O combinador ` ` (espaço) é usado para encontrar qual elemento que faz parte da árvore de descendentes do elemento anterior a ele. Exemplo:
+O combinador `" "` (espaço) é usado para encontrar qual elemento que faz parte da árvore de descendentes do elemento anterior a ele. Exemplo:
 
 ```css
 div span {
@@ -1180,7 +1014,8 @@ div span {
 }
 ```
 
-```xml
+```html
+<!DOCTYPE html>
 <html>
     <body>
         <div>
@@ -1208,7 +1043,8 @@ div > span {
 }
 ```
 
-```xml
+```html
+<!DOCTYPE html>
 <html>
     <body>
         <div>
@@ -1529,7 +1365,8 @@ Com essa API podemos acessar diversas áreas do nosso documento.
 
 Para conseguirmos ver o título dessa página em um alerta, por exemplo:
 
-```xml
+```html
+<!DOCTYPE html>
 <html>
 <head>
    <title>Olá, mundo!</title>
@@ -1552,7 +1389,7 @@ Para mudar isso, a versão 5 da ECMAScript trouxe o `use strict;`.
 
 Essa diretiva faz o navegador interpretar o código de uma maneira mais estrita, como diz o próprio nome. Nos forçando a escrever um código de melhor qualidade.
 
-> Para saber mais, veja em: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Strict_mode
+> Para saber mais, veja em: <https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Strict_mode>
 
 Para ativar o movo estrito, basta colocar `'use strict';` no começo do arquivo ou função que deseja aplicar.
 
@@ -1642,11 +1479,11 @@ Exemplo:
 ```javascript
 function minhaFuncao() {
     var minhaVariavel = 5;
-    
+
     if (minhaVariavel === 5) {
         var minhaOutraVariavel = 6;
     }
-    
+
     console.log(minhaOutraVariavel); // 6
 }
 ```
@@ -1718,11 +1555,11 @@ Dessa maneira, um dos exemplos anteriores ficaria assim:
 ```javascript
 function minhaFuncao() {
     let minhaVariavel = 5;
-    
+
     if (minhaVariavel === 5) {
         let minhaOutraVariavel = 6;
     }
-    
+
     console.log(minhaOutraVariavel); // erro de referëncia
 }
 ```
@@ -1762,12 +1599,12 @@ Exemplo:
 ```javascript
 function minhaFuncao() {
     let x = 10;
-    
+
     function somarDez(numero) {
         let resultado = numero + x;
         return resultado;
     }
-    
+
     return somarDez;
 }
 
@@ -1891,7 +1728,7 @@ Exemplo:
 ```javascript
 let meusNumeros = [10, 20, 30];
 meusNumeros.map(function (item) {
-	let numeroSomadoCinco = item + 5;
+    let numeroSomadoCinco = item + 5;
     return numeroSomadoCinco;
 });
 console.log(meusNumeros); // [15, 25, 35]
@@ -1908,8 +1745,8 @@ Exemplo:
 ```javascript
 let meusNumeros = [10, 20, 30];
 let numerosMaioresQuinze = meusNumeros.filter(function (item) {
-	if (item > 15) {
-    	return true;
+    if (item > 15) {
+        return true;
     }
     return false;
 });
@@ -1982,7 +1819,7 @@ Funciona de forma parecida à uma função construtora, porém mais simplificada
 
 ```javascript
 class Pessoa {
-	constructor() {
+    constructor() {
         this.nome = 'Nome';
         this.idade = 15;
     }
@@ -2009,7 +1846,7 @@ Tomemos esse exemplo de classe:
 
 ```javascript
 class Pessoa {
-	constructor() {
+    constructor() {
         this.nome = 'Nome';
         this.idade = 15;
     }
@@ -2119,13 +1956,14 @@ Para iniciarmos uma aplicação AngularJS, basta colocarmos a diretiva `ng-app` 
 
 Exemplo:
 
-```xml
+```html
+<!DOCTYPE html>
 <html ng-app="app">
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     </head>
     <body>
-    	<label>Insira seu nome:</label>
+        <label>Insira seu nome:</label>
         <input type="text" ng-model="nome" />
         <h1>Olá {{ nome }}!</h1>
     </body>
@@ -2143,7 +1981,8 @@ angular.bootstrap(document, ['app']);
 
 Exemplo:
 
-```xml
+```html
+<!DOCTYPE html>
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -2156,7 +1995,7 @@ Exemplo:
         </script>
     </head>
     <body>
-    	<label>Insira seu nome:</label>
+        <label>Insira seu nome:</label>
         <input type="text" ng-model="nome" />
         <h1>Olá {{ nome }}!</h1>
     </body>
@@ -2169,7 +2008,8 @@ Controllers são objetos usados para controlar a página, também chamada de `vi
 
 Exemplo anterior usando um controller:
 
-```xml
+```html
+<!DOCTYPE html>
 <html ng-app="app">
 
     <head>
@@ -2203,7 +2043,7 @@ Com esse processo, toda a alteração de dados feita na página é automaticamen
 
 Nos exemplos anteriores podemos ver o AngularJS se encarregar de manter o `input[text]` e o texto contido no `h1` em sincronia, não sendo necessário que nos preocupemos com isso:
 
-```xml
+```html
 <input type="text" ng-model="nome" />
 <h1>Olá {{ nome }}!</h1>
 ```
@@ -2220,7 +2060,8 @@ Scope é um objeto do AngularJS que se refere ao modelo de dados das views.
 
 No exemplo abaixo podemos ver que criando a propriedade `nome` no `$scope` do controller reflete no elemento vinculado à ela na view.
 
-```xml
+```html
+<!DOCTYPE html>
 <html ng-app="app">
 
     <head>
@@ -2248,7 +2089,7 @@ Ao executarmos no navegador, fica assim:
 
 ![Exemplo data binding com $scope](imagens/angularjs/scope_data_binding.png)
 
-> Para se aprofundar no assunto: https://github.com/angular/angular.js/wiki/Understanding-Scopes
+> Para se aprofundar no assunto: <https://github.com/angular/angular.js/wiki/Understanding-Scopes>
 
 ### *Escutando* alterações
 
@@ -2258,7 +2099,8 @@ O método `$watch` é um desses. Usado para avisar quando alguma propriedade é 
 
 No exemplo abaixo, será escrito no console o nome digitado a cada alteração:
 
-```xml
+```html
+<!DOCTYPE html>
 <html ng-app="app">
 
     <head>
@@ -2295,7 +2137,7 @@ No exemplo abaixo, será escrito no console o nome digitado a cada alteração:
 
 Pode-se, por exemplo, existir uma diretiva que altera a cor da fonte do elemento onde for aplicada para azul, fazer todas as letras ficarem maiúsculas, etc.
 
-> Para mais detalhes, consulte a documentação oficial em: https://docs.angularjs.org/guide/directive e https://docs.angularjs.org/api/ng/directive
+> Para mais detalhes, consulte a documentação oficial em: <https://docs.angularjs.org/guide/directive> e <https://docs.angularjs.org/api/ng/directive>
 
 ### Diretivas nativas
 
@@ -2323,7 +2165,7 @@ Essa diretiva serve para vincular um dado à um elemento. O conteúdo da espress
 
 Exemplo:
 
-```xml
+```html
 <h1 ng-bind="titulo"></h1>
 ```
 
@@ -2335,7 +2177,7 @@ Assim como a `ng-bind`, atualiza o elemento com a propriedade vinculada. Mas tam
 
 Exemplo:
 
-```xml
+```html
 <input type="text" ng-model="nome" />
 ```
 
@@ -2345,7 +2187,7 @@ Vincula a propriedade ao atributo `checked` do elemento em questão.
 
 Exemplo:
 
-```xml
+```html
 <input type="checkbox" ng-checked="maior" />
 ```
 
@@ -2355,7 +2197,7 @@ Faz o elemento aparecer ou sumir se a expressão atribuída for `true` ou `false
 
 Exemplo:
 
-```xml
+```html
 <h3 ng-show="nome === 'Wiley'">Que nome legal!</h3>
 ```
 
@@ -2365,7 +2207,7 @@ Faz o oposto da `ng-show`. O elemento some quando a expressão tiver `true` como
 
 Exemplo:
 
-```xml
+```html
 <h3 ng-hide="time === 'Santo'">Time encontrado.</h3>
 ```
 
@@ -2375,7 +2217,7 @@ Essa diretiva faz um efeito parecido à `ng-show`, porém  ao invés de simplesm
 
 Exemplo:
 
-```xml
+```html
 <h3 ng-if="maior === true">Conteúdo permitido</h3>
 ```
 
@@ -2385,7 +2227,7 @@ Usada para listar vários elementos de uma lista.
 
 Exemplo:
 
-```xml
+```html
 <ul>
     <li ng-repeat="nome in nomes">{{ nome }}</li>
 </ul>
@@ -2395,7 +2237,7 @@ Exemplo:
 
 Define um método a ser executado quando elemento é clicado.
 
-```xml
+```html
 <button ng-click="mostrarAlerta()">Mostrar alerta</button>
 ```
 
@@ -2403,7 +2245,7 @@ Define um método a ser executado quando elemento é clicado.
 
 Define uma expressão a ser executada quando o valor do elemento é alterado.
 
-```xml
+```html
 <input type="text" ng-model="nome" ng-change="aoAlterarNome()" />
 ```
 
@@ -2413,13 +2255,13 @@ Atribui classes CSS dinamicamente ao elemento.
 
 Pode receber o nome das classes:
 
-```xml
+```html
 <p ng-class="'verde borda'">Verde com borda</p>
 ```
 
 Um vetor as contendo:
 
-```xml
+```html
 <p ng-class="['verde', 'borda']">Verde com borda</p>
 ```
 
@@ -2433,7 +2275,7 @@ Ou um objeto com a seguinte estrutura:
 
 Por exemplo:
 
-```xml
+```html
 <p ng-class="{ 'verde': true, 'borda': true }">Verde com borda</p>
 ```
 
@@ -2458,7 +2300,7 @@ angular.module('app')
     .directive('nome', helloWorldDirective);
 
 function helloWorldDirective() {
-	let definitionObject = {
+    let definitionObject = {
         template: '<span>Hello, World!</span>'
     };
     return definitionObject;
@@ -2480,7 +2322,7 @@ Esse object definition possui diversas propriedades. Vejamos algumas delas:
 - scope
 - bindToController
 
-> Para mais informações veja em: https://docs.angularjs.org/api/ng/service/$compile#directive-definition-object
+> Para mais informações veja em: <https://docs.angularjs.org/api/ng/service/$compile#directive-definition-object>
 
 #### template
 
@@ -2619,7 +2461,7 @@ let definitionObject = {
 
 Essas propriedades são refletidas como atributos no elemento, ao ser usada na view. Exemplo:
 
-```xml
+```html
 <diretiva texto="Hello, World!"></diretiva>
 ```
 
@@ -2664,7 +2506,7 @@ let definitionObject = {
 
 Dessa forma, a diretiva deverá ser usada assim:
 
-```xml
+```html
 <diretiva meu-texto="Hello, World!"></diretiva>
 ```
 
@@ -2674,7 +2516,7 @@ Dessa forma, a diretiva deverá ser usada assim:
 
 Para facilitar a identificação das propriedades usadas na views, podemos dar nomes aos nossos controllers nela. Exemplo:
 
-```xml
+```html
 <body ng-controller="NomeController as nomeCtrl">
     <label>Insira seu nome:</label>
     <input type="text" ng-model="nomeCtrl.nome" />
@@ -2690,7 +2532,7 @@ angular
     .controller('NomeController', NomeController);
 
 function NomeController() {
-	this.nome = 'João';
+    this.nome = 'João';
 }
 ```
 
@@ -2708,7 +2550,7 @@ Mas com uma particularidade, as propriedades definidas em `scope` não são vinc
 
 ```javascript
 let objectDefinition = {
-	scope: {
+    scope: {
         texto: '@'
     },
     controller: function($scope) {
@@ -2725,7 +2567,7 @@ Esse comportamento pode ser mudado com a propriedade `bindToController`. A defin
 
 ```javascript
 let objectDefinition = {
-	scope: {
+    scope: {
         texto: '@'
     },
     controller: function() {
@@ -2740,7 +2582,7 @@ Também podemos simplificar simplesmente removendo o objeto `scope` e o colocand
 
 ```javascript
 let objectDefinition = {
-	bindToController: {
+    bindToController: {
         texto: '@'
     },
     controller: function() {
@@ -2772,11 +2614,11 @@ Vamos usar como exemplo a nossa diretiva `helloWorld`:
 
 ```javascript
 angular
-	.module('app')
+    .module('app')
     .directive('helloWorld', helloWorldDirective);
 
 function helloWorldDirective() {
-	let definitionObject = {
+    let definitionObject = {
         template: '<span>Hello, World!</span>'
     };
     return definitionObject;
@@ -2787,7 +2629,7 @@ function helloWorldDirective() {
 
 ```javascript
 angular
-	.module('app')
+    .module('app')
     .component('helloWorld', {
         template: '<span>Hello, World!</span>'
     });
@@ -2801,7 +2643,7 @@ Assim como diretivas, componentes podem receber parâmetros na sua chamada. A de
 
 ```javascript
 let objectDefinition = {
-	bindings: {
+    bindings: {
         texto: '@'
     },
     controller: function() {
@@ -2824,12 +2666,12 @@ O objeto `bindings` é a união dessas duas propriedades, logo um componente ass
 
 ```javascript
 angular
-	.module('app')
+    .module('app')
     .component('helloWorld', {
         bindings: {
-			texto: '@'
-		},
-		controller: function() { }
+            texto: '@'
+        },
+        controller: function() { }
     });
 ```
 
@@ -2837,14 +2679,14 @@ Funciona exatamente como uma diretiva usando `bindToController`:
 
 ```javascript
 angular
-	.module('app')
+    .module('app')
     .directive('helloWorld', function () {
-		return {
-			bindToController: {
-				texto: '@'
-			},
-			controller: function() { }
-		}
+        return {
+            bindToController: {
+                texto: '@'
+            },
+            controller: function() { }
+        }
     });
 ```
 
@@ -2909,7 +2751,7 @@ Não precisamos de nenhum framewok ou biblioteca para fazer requisições AJAX, 
 
 Caso precise rodar em outros navegadores, pode ficar assim:
 
-> Exemplo baseado na documentação da MDN: https://developer.mozilla.org/pt-BR/docs/AJAX/Getting_Started#O_que_%C3%A9_AJAX
+> Exemplo baseado na documentação da MDN: <https://developer.mozilla.org/pt-BR/docs/AJAX/Getting_Started#O_que_%C3%A9_AJAX>
 
 ```javascript
 let httpRequest;
@@ -2919,11 +2761,11 @@ if (window.XMLHttpRequest) {
 } else if (window.ActiveXObject) { // IE
     try {
         httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
-    } 
+    }
     catch (e) {
         try {
             httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-        } 
+        }
         catch (e) {}
     }
 }
@@ -3071,7 +2913,7 @@ Serviços são objetos providos pelo AngularJS, ou criados por nós, para prover
 
 `$http` é um exemplo de serviço nativo  do AngularJS.
 
-> Para saber sobre todos os serviços nativos veja em: https://docs.angularjs.org/api/ng/service
+> Para saber sobre todos os serviços nativos veja em: <https://docs.angularjs.org/api/ng/service>
 
 Existem três tipos de serviços no AngularJS:
 
@@ -3285,7 +3127,8 @@ Por não ser uma boa prática, o AngularJS dispõe de uma diretiva usada para id
 
 Basta colocarmos no mesmo elemento onde iniciamos a aplicação e o modo estrito é ativado:
 
-```xml
+```html
+<!DOCTYPE html>
 <html ng-app="app" ng-strict-di>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
