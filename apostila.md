@@ -1399,6 +1399,66 @@ typeof null        // object
 
 ## Aplicação
 
+Para usarmos o JS em uma página HTML, podemos fazer de forma semelhante ao CSS.
+
+Podemos colocar o código no meio do documento ou vincularmos um arquivo externo.
+
+### Código embutido
+
+Para embutirmos um código JavaScript na página, basta o colocarmos dentro de uma tag `script`.
+
+Exemplo:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Título da página</title>
+        <script>
+            var minhaVariavel = 'Olá!';
+        </script>
+    </head>
+</html>
+```
+
+Podemos colocar essa tag em qualquer parte do código. Exemplo:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Título da página</title>
+    </head>
+    <body>
+        <script>
+            var minhaVariavel = 'Olá!';
+        </script>
+    </body>
+</html>
+```
+
+### Arquivo externo
+
+Assim como CSS, um código JS também pode ser feito em um arquivo externo e referenciado na página HTML.
+
+Basta criarmos um arquivo com a extensão `.js` e referenciá-lo na tag `script` com o atributo `src`:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Título da página</title>
+    </head>
+    <body>
+        <script src="meuArquivoJavaScript.js"></script>
+    </body>
+</html>
+```
+
+> É recomendado que o código seja colocado logo antes de acabar o corpo da página, exceto em casos específicos que é recomendado colocar na `head` ou em outra parte.
+>
+> Dessa forma o navegador busca os arquivos JS após renderizar toda a página, melhorando o tempo de carregamento.
+
 ### Caixas de diálogo
 
 Existem três formas de exibirmos caixas de diálogo em um navegador:
@@ -1434,7 +1494,6 @@ prompt('Digite seu nome');
 Exibindo o seguinte:
 
 ![Exibição de um prompt](imagens/js/aplicacao_prompt.png)
-
 
 #### confirm
 
