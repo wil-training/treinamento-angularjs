@@ -409,7 +409,7 @@ Conseguimos vincular uma folha de estilos a uma página simplesmente a referenci
 ```xml
 <html>
 
-	<head>
+    <head>
     	<link rel="stylesheet" type="text/css" href="meus_paragrafos_azuis.css">
     </head>
 
@@ -3089,13 +3089,152 @@ O AngularJS trata esse tipo de serviço como uma classe, construindo um objeto a
 Sendo assim, podemos definir um service como uma classe:
 
 ```javascript
-angular
-    .module('app')
-    .service('meuService', meuService);
-
-class meuService() {
+class MeuController() {
     constructor() {
         this.nome = 'Joào';
     }
 }
+
+angular
+    .module('app')
+    .service('meuService', MeuController);
+```
+
+## Injeção de dependência
+
+Há três formas de usarmos essa injeção de dependência:
+
+- Implícita
+- Inline Array
+- Propriedade `$inject`
+
+### Anotação implícita
+
+Quando colocamos no construtor de nossos controllers ou services que dependemos de algum outro objeto, o AngularJS tenta buscar essa referência usando o nome da variável.
+
+Por exemplo, aqui o AngularJS procurará um service chamado `$http` e um `meuService`:
+
+```javascript
+class MeuController
+    constructor ($http, meuService) {
+
+    }
+}
+
+angular
+    .module('app')
+    .controller('meuController', MeuController);
+```
+
+### Anotação Inline Array
+
+Também podemos usar os nomes dos serviços a serem injetados com uma string.
+
+Para isso, ao invés de passarmos uma função no segundo parâmetro do método `controller`, usamos um array contendo todas as dependências e a função em seguida:
+
+```javascript
+class MeuController
+    constructor ($http, meuService) {
+
+    }
+}
+
+angular
+    .module('app')
+    .controller('meuController', ['$http', 'meuService', MeuController]);
+```
+
+Dessa forma o AngularJS procurará as referências com o nome informado no array e assim podemos colocar qualquer nome nas variáveis recebidas no construtor:
+
+```javascript
+class MeuController
+    constructor (request, servicoEhMeu) {
+
+    }
+}
+
+angular
+    .module('app')
+    .controller('meuController', ['$http', 'meuService', MeuController]);
+```
+
+Podemos até colocarmos todos os parâmetros em uma variável:
+
+```javascript
+class MeuController
+    constructor (request, servicoEhMeu) {
+
+    }
+}
+
+const dependencias = ['$http', 'meuService', MeuController];
+
+angular
+    .module('app')
+    .controller('meuController', dependencias);
+```
+
+### Anotação com propriedade `$inject`
+
+Aqui usamos uma propriedade no serviço ou controller que estamos criando, funcionando de forma semelhante a usar uma variável.
+
+Essa propriedade recebe um array contendo todas as dependências do objeto em questão. Dessa forma só precisamos passar o construtor para o método de criação, assim como era com a anotação implícita:
+
+```javascript
+class MeuController
+    constructor ($http, servicmeuServiceoEhMeu) {
+
+    }
+}
+
+MeuController.$inject = ['$http', 'meuService'];
+
+angular
+    .module('app')
+    .controller('meuController', MeuController);
+```
+
+### Injeção de dependência estrita
+
+Apesar de termos termos maneiras de fazer a anotação de forma implícita e explícita, não é recomendado o uso da primeira.
+
+Quando o código passa por um processo de minificação, para deixá-lo mais leve, todas as variáveis podem ser renomeadas para nomes completamente diferentes.
+
+Tomemos esse controller como exemplo:
+
+```javascript
+class MeuController
+    constructor ($http, meuService) {
+
+    }
+}
+
+angular
+    .module('app')
+    .controller('meuController', MeuController);
+```
+
+Depois de um processo de minificação pode ficar assim:
+
+```javascript
+class A { constructor (x, y) { } }; angular.module('app').controller('meuController', A);
+```
+
+Dessa forma o AngularJS não conseguirá identificar os serviços ali necessários, já que os nomes não correspondem a nenhum serviço chamada `x` ou `y`.
+
+Por não ser uma boa prática, o AngularJS dispõe de uma diretiva usada para identificar esse tipo de problema e proibir o seu uso: `ng-strict-di`.
+
+Basta colocarmos no mesmo elemento onde iniciamos a aplicação e o modo estrito é ativado:
+
+```xml
+<html ng-app="app" ng-strict-di>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <label>Insira seu nome:</label>
+        <input type="text" ng-model="nome" />
+        <h1>Olá {{ nome }}!</h1>
+    </body>
+</html>
 ```
