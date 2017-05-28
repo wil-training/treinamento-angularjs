@@ -1399,13 +1399,11 @@ typeof null        // object
 
 ## Aplicação
 
-Para usarmos o JS em uma página HTML, podemos fazer de forma semelhante ao CSS.
-
-Podemos colocar o código no meio do documento ou vincularmos um arquivo externo.
+Para usarmos o JS em uma página HTML, podemos fazer de forma semelhante ao CSS colocando o código no meio do documento ou vincularmos um arquivo externo.
 
 ### Código embutido
 
-Para embutirmos um código JavaScript na página, basta o colocarmos dentro de uma tag `script`.
+Para embutirmos um código JavaScript na página, basta colocarmos em uma tag `script`.
 
 Exemplo:
 
@@ -1421,7 +1419,7 @@ Exemplo:
 </html>
 ```
 
-Podemos colocar essa tag em qualquer parte do código. Exemplo:
+Podemos colocar essa tag em qualquer parte do código:
 
 ```html
 <!DOCTYPE html>
@@ -1483,9 +1481,7 @@ Exibindo o seguinte:
 
 #### prompt
 
-Esse método trabalha de forma parecida.
-
-Mas além de simplesmente mostrar uma mensagem ao usuário, também exibe um campo onde pode-se digitar algo e essa função se encarrega de retornar o digitado em uma string.
+Esse método trabalha de forma parecida, mas além de mostrar uma mensagem ao usuário, também exibe um campo para o usuário inserir um texto. Essa função se encarrega de retornar o texto em uma string.
 
 ```javascript
 prompt('Digite seu nome');
@@ -1497,9 +1493,7 @@ Exibindo o seguinte:
 
 #### confirm
 
-Como os outros, também mostra uma caixa de diálogo.
-
-Porém com dois botões: um para confirmar e outro para cancelar. Retornando `true` ou `false` de acordo com a escolha do usuário:
+Mostra uma caixa de diálogo com dois botões: um para confirmar e outro para cancelar. Retornando `true` ou `false` de acordo com a escolha do usuário:
 
 ```javascript
 confirm('Gostou?');
@@ -1511,9 +1505,9 @@ Exibindo o seguinte:
 
 ### Document Object Model
 
-Apesar de podermos mostrar caixas de diálogos para o usuário, essa funcionalidade está longe de ser a ideal para aplicações complexas.
+Apesar de ser possível mostrar caixas de diálogos para o usuário, essa funcionalidade está longe de ser a ideal para aplicações complexas.
 
-Comumente, fazemos formulários no próprio documento HTML para o usuário preencher os campos necessários e assim obtermos os dados ali inseridos.
+Comumente, construimos formulários no próprio documento HTML para o usuário preencher os campos necessários e assim obtermos os dados ali inseridos.
 
 Esses campos, ou elementos, definidos em uma página HTML são organizados pelo navegador em uma espécie de árvore. Essa organização é chamada de *DOM (Document Object Model)*.
 
