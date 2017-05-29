@@ -48,7 +48,7 @@ O Google foi um dos pioneiros nesse conceito, tendo o Gmail como seu carro chefe
 
 ## Camadas
 
-Uma página web é basicamente divida em 3 camadas: exibição, estilo e comportamento.
+Uma página web é basicamente dividida em 3 camadas: exibição, estilo e comportamento.
 
 *HTML* é a linguagem usada para definir a estrutura da página, contendo a informação propriamente dita.
 
@@ -60,14 +60,14 @@ Uma página web é basicamente divida em 3 camadas: exibição, estilo e comport
 
 ## Introdução
 
-Assim como a XML (usada para estrutura de dados, comunicação, entre outros), a *HTML* é derivada da SGML (Standard Generalized Markup Language).
+Assim como a XML (usada para estrutura de dados, comunicação, entre outros), a *HTML* é derivada da *SGML* (Standard Generalized Markup Language).
 
 O HTML é composto por *tags* (marcadores), delimitadas pelos sinais de menor `<` e maior `>`.
 
 Exemplo de um parágrafo em HTML:
 
 ```html
-<p>Um parágrafo em HTML é representado pela tag *p*.</p>
+<p>Um parágrafo em HTML é representado pela tag *p*</p>
 ```
 
 ## Estrutura
@@ -100,102 +100,102 @@ O exemplo acima será renderizado como a seguir:
 
 Seguem os elementos e suas tags HTML suportados pelos navegadores atuais:
 
-| Nome | Significado |
-|--------|--------|
-| `<a>` | Âncora: usado para ligar a outro recurso web |
-| `<abbr>` | Abreviação |
-| `<address>` | Endereço |
-| `<area>` | Área |
-| `<article>` | Elemento artigo |
-| `<aside>` | Elemento à parte |
-| `<audio>` | Conteúdo de som |
-| `<b>` | Texto em negrito |
-| `<base>` | Elemento base |
-| `<bdo>` | Representa explicitamente a direção do texto |
-| `<blockquote>` | Bloco de citação |
-| `<body>` | Corpo da página |
-| `<br>` | Insere uma quebra de linha |
-| `<button>` | Botão |
-| `<canvas>` | Utilizado para a renderização de gráficos |
-| `<caption>` | Legenda da tabela |
-| `<cite>` | Citação |
-| `<code>` | Texto de código computacional |
-| `<col>` |  Coluna |
-| `<colgroup>` | Grupo de colunas |
-| `<command>` | Botão de comando |
-| `<datalist>` | Lista suspensa |
-| `<dd>` | Definição da descrição |
-| `<del>` | Texto suprimido |
-| `<details>` | Detalhes |
-| `<div>` | Bloco de documento |
-| `<dl>` | Lista de definição |
-| `<dt>` | Termo de definição |
-| `<em>` | Texto enfatizado |
-| `<embed>` | Elemento embutido |
-| `<fieldset>` | Grupo de campos |
-| `<figcaption>` | Legenda de uma figura |
-| `<figure>` | Figura |
-| `<footer>` | Rodapé da página |
-| `<form>` | Formulário |
-| `<h1>` à `<h6>` | Títulos, onde o valor 1 representa um título maior do que o valor 6 |
-| `<head>` | Cabeçalho principal do documento |
-| `<header>` | Cabeçalho principal da página |
-| `<hgroup>` | Grupo de títulos |
-| `<hr>` | Linha horizontal |
-| `<html>` | Raiz de um documento HTML |
-| `<i>` | Texto em itálico |
-| `<iframe>` | Janela de navegação aninhada |
-| `<img>` | Inclui um imagem |
-| `<input>` | Campo de entrada |
-| `<ins>` | Texto inserido |
-| `<kbd>` | Texto do teclado |
-| `<label>` | Etiqueta |
-| `<legend>` | Título de um grupo de controles formulário |
-| `<li>` | Item de uma lista |
-| `<link>` | Link de recursos |
-| `<map>` | Mapa de imagens |
-| `<mark>` | Marcação |
-| `<menu>` | Menu de comandos |
-| `<meta>` | Define um meta-informação |
-| `<meter>` | Elemento de medida |
-| `<nav>` | Elemento de navegação |
-| `<noscript>` | Exibido se scripts estiver desativados |
-| `<object>` | Objeto incorporado |
-| `<ol>` | Lista ordenada |
-| `<optgroup>` | Grupo de opções |
-| `<option>` | Opção |
-| `<output>` | Resultado/saída de um cálculo |
-| `<p>` | Parágrafo |
-| `<param>` | Define parâmetro de plugins invocados pelos elementos object, não representando nada por si só |
-| `<pre>` | Texto pré-formatado |
-| `<progress>` | Progresso da conclusão de uma ação, como por exemplo um download |
-| `<q>` | Breve citação |
-| `<ruby>` | Anotação ruby |
-| `<rp>` | Parenteses de texto ruby |
-| `<rt>` | Componentes de texto ruby |
-| `<samp>` | Amostra de programa ou sistema de computação |
-| `<script>` | Representa um script |
-| `<section>` | Seção do documento |
-| `<select>` | Lista selecionável |
-| `<small>` | Texto pequeno |
-| `<source>` | Permite indicar diversas fontes para elentos de midia |
-| `<span>` | Utilizado para um elemento dentro do fluxo de texto |
-| `<strong>` | Texto grande |
-| `<style>` | Define um estilo |
-| `<sub>` | Texto com subscrição |
-| `<sup>` | Texto sobrescrito |
-| `<tbody>` | Corpo da tabela |
-| `<td>` | Célula da tabela |
-| `<textarea>` | Área de texto |
-| `<tfoot>` | Rodapé da tabela |
-| `<th>` | Célula de cabeçalho da tabela |
-| `<thead>` | Representa o cabeçalho da tabela |
-| `<time>` | Indica horas |
-| `<title>` | Título da pagina |
-| `<tr>` | Linha da tabela |
-| `<ul>` | Lista não ordenada |
-| `<var>` | Variável |
-| `<video>` | Elemento de vídeo ou filme |
+| Nome            | Significado                                                                                    |
+|-----------------|------------------------------------------------------------------------------------------------|
+| `<a>`           | Âncora: usado para ligar a outro recurso web                                                   |
+| `<abbr>`        | Abreviação                                                                                     |
+| `<address>`     | Endereço                                                                                       |
+| `<area>`        | Área                                                                                           |
+| `<article>`     | Elemento artigo                                                                                |
+| `<aside>`       | Elemento à parte                                                                               |
+| `<audio>`       | Conteúdo de som                                                                                |
+| `<b>`           | Texto em negrito                                                                               |
+| `<base>`        | Elemento base                                                                                  |
+| `<bdo>`         | Representa explicitamente a direção do texto                                                   |
+| `<blockquote>`  | Bloco de citação                                                                               |
+| `<body>`        | Corpo da página                                                                                |
+| `<br>`          | Insere uma quebra de linha                                                                     |
+| `<button>`      | Botão                                                                                          |
+| `<canvas>`      | Utilizado para a renderização de gráficos                                                      |
+| `<caption>`     | Legenda da tabela                                                                              |
+| `<cite>`        | Citação                                                                                        |
+| `<code>`        | Texto de código computacional                                                                  |
+| `<col>`         | Coluna                                                                                         |
+| `<colgroup>`    | Grupo de colunas                                                                               |
+| `<command>`     | Botão de comando                                                                               |
+| `<datalist>`    | Lista suspensa                                                                                 |
+| `<dd>`          | Definição da descrição                                                                         |
+| `<del>`         | Texto suprimido                                                                                |
+| `<details>`     | Detalhes                                                                                       |
+| `<div>`         | Bloco de documento                                                                             |
+| `<dl>`          | Lista de definição                                                                             |
+| `<dt>`          | Termo de definição                                                                             |
+| `<em>`          | Texto enfatizado                                                                               |
+| `<embed>`       | Elemento embutido                                                                              |
+| `<fieldset>`    | Grupo de campos                                                                                |
+| `<figcaption>`  | Legenda de uma figura                                                                          |
+| `<figure>`      | Figura                                                                                         |
+| `<footer>`      | Rodapé da página                                                                               |
+| `<form>`        | Formulário                                                                                     |
+| `<h1>` à `<h6>` | Títulos, onde o valor 1 representa um título maior do que o valor 6                            |
+| `<head>`        | Cabeçalho principal do documento                                                               |
+| `<header>`      | Cabeçalho principal da página                                                                  |
+| `<hgroup>`      | Grupo de títulos                                                                               |
+| `<hr>`          | Linha horizontal                                                                               |
+| `<html>`        | Raiz de um documento HTML                                                                      |
+| `<i>`           | Texto em itálico                                                                               |
+| `<iframe>`      | Janela de navegação aninhada                                                                   |
+| `<img>`         | Inclui uma imagem                                                                              |
+| `<input>`       | Campo de entrada                                                                               |
+| `<ins>`         | Texto inserido                                                                                 |
+| `<kbd>`         | Texto do teclado                                                                               |
+| `<label>`       | Etiqueta                                                                                       |
+| `<legend>`      | Título de um grupo de controles formulário                                                     |
+| `<li>`          | Item de uma lista                                                                              |
+| `<link>`        | Link de recursos                                                                               |
+| `<map>`         | Mapa de imagens                                                                                |
+| `<mark>`        | Marcação                                                                                       |
+| `<menu>`        | Menu de comandos                                                                               |
+| `<meta>`        | Define um meta-informação                                                                      |
+| `<meter>`       | Elemento de medida                                                                             |
+| `<nav>`         | Elemento de navegação                                                                          |
+| `<noscript>`    | Exibido se scripts estiver desativados                                                         |
+| `<object>`      | Objeto incorporado                                                                             |
+| `<ol>`          | Lista ordenada                                                                                 |
+| `<optgroup>`    | Grupo de opções                                                                                |
+| `<option>`      | Opção                                                                                          |
+| `<output>`      | Resultado/saída de um cálculo                                                                  |
+| `<p>`           | Parágrafo                                                                                      |
+| `<param>`       | Define parâmetro de plugins invocados pelos elementos object, não representando nada por si só |
+| `<pre>`         | Texto pré-formatado                                                                            |
+| `<progress>`    | Progresso da conclusão de uma ação, como por exemplo um download                               |
+| `<q>`           | Breve citação                                                                                  |
+| `<ruby>`        | Anotação ruby                                                                                  |
+| `<rp>`          | Parênteses de texto ruby                                                                       |
+| `<rt>`          | Componentes de texto ruby                                                                      |
+| `<samp>`        | Amostra de programa ou sistema de computação                                                   |
+| `<script>`      | Representa um script                                                                           |
+| `<section>`     | Seção do documento                                                                             |
+| `<select>`      | Lista selecionável                                                                             |
+| `<small>`       | Texto pequeno                                                                                  |
+| `<source>`      | Permite indicar diversas fontes para elementos de mídia                                        |
+| `<span>`        | Utilizado para um elemento dentro do fluxo de texto                                            |
+| `<strong>`      | Texto grande                                                                                   |
+| `<style>`       | Define um estilo                                                                               |
+| `<sub>`         | Texto com subscrição                                                                           |
+| `<sup>`         | Texto sobrescrito                                                                              |
+| `<tbody>`       | Corpo da tabela                                                                                |
+| `<td>`          | Célula da tabela                                                                               |
+| `<textarea>`    | Área de texto                                                                                  |
+| `<tfoot>`       | Rodapé da tabela                                                                               |
+| `<th>`          | Célula de cabeçalho da tabela                                                                  |
+| `<thead>`       | Representa o cabeçalho da tabela                                                               |
+| `<time>`        | Indica horas                                                                                   |
+| `<title>`       | Título da pagina                                                                               |
+| `<tr>`          | Linha da tabela                                                                                |
+| `<ul>`          | Lista não ordenada                                                                             |
+| `<var>`         | Variável                                                                                       |
+| `<video>`       | Elemento de vídeo ou filme                                                                     |
 
 ## Comentários
 
@@ -301,7 +301,7 @@ Exemplo:
 </body>
 ```
 
-Essas novas tags não trazem nenhuma diferença no visual, apenas carregam um significado semântico atrelado à elas.
+Essas novas tags não trazem nenhuma diferença no visual, apenas carregam um significado semântico atrelado a elas.
 
 Com isso algum leitor de tela, por exemplo, é capaz de ler o código e identificar as partes julgadas importantes por ele.
 
@@ -371,7 +371,7 @@ Exemplo de CSS inline:
 
 ### Folha de estilos interna
 
-Essa opção facilita o aproveitamento de estilos dentro de uma mesma página, já que as regras serão aplicadas à todos os elementos referenciados nos seletores.
+Essa opção facilita o aproveitamento de estilos dentro de uma mesma página, já que as regras serão aplicadas a todos os elementos referenciados nos seletores.
 
 Para isso, basta indicar uma tag `style` no `head` do documento.
 
@@ -400,7 +400,7 @@ Exemplo:
 
 Aqui temos um melhor aproveitamento do código, porque todos os elementos referenciados nos seletores serão afetados pelas regras ali criadas.
 
-Mas e quando temos mais de uma página? Ainda temos de copiar todo o código feito em uma para todas as outras.
+Mas, e quando temos mais de uma página? Ainda temos de copiar todo o código feito em uma para todas as outras.
 
 ### Folha de estilos externa
 
@@ -472,7 +472,7 @@ p {
 }
 ```
 
-Como pode ver, basta inserir o nome da cor e o navegador irá reproduzí-la ao usuário. Mas esta não é a única maneira de dizer a cor desejada, temos as seguintes:
+Como pode ver, basta inserir o nome da cor e o navegador irá reproduzi-la ao usuário. Mas esta não é a única maneira de dizer a cor desejada, temos as seguintes:
 
 - Por nome, também chamado de *keyword*
 - Valores em RGB
@@ -517,7 +517,7 @@ Alguns exemplos de cores:
 
 Os valores em hexadecimal funcionam da mesma forma de um em *rgb()*. Na verdade, os dois representam valores na escala RGB, apenas são representados de maneiras diferentes.
 
-Ao invés de os valores irem de 0 à 255, vão de *00 à FF*.
+Ao invés de os valores irem de 0 a 255, vão de *00 a FF*.
 
 FF em hexadecimal é igual a 255 em decimal.
 
@@ -539,10 +539,10 @@ Pode-se usar tanto letra maiúscula como minúscula, o navegador vai interpretar
 
 #### HSL
 
-É um modelo relativamente novo e portanto não é suportado em navegadores mais antigos. Sua sigla significa **H**ue, **S**aturation e **L**ightness (matiz, saturação e luminosidade).
+É um modelo relativamente novo e, portanto, não é suportado em navegadores mais antigos. Sua sigla significa **H**ue, **S**aturation e **L**ightness (matiz, saturação e luminosidade).
 
 ```css
-hsl(matiz, saturação, luminoside);
+hsl(matiz, saturação, luminosidade);
 ```
 
 Para entender como funciona, segue uma representação visual desse modelo e o significado de cada parâmetro:
@@ -595,7 +595,7 @@ p {
 }
 ```
 
-O navegador procura a fonte indo da esquerda para a direita, aplicando a que encontrar primeiro. Caso nenhuma tenha sido encontrada, ele usa a sua padrão.
+O navegador procura a fonte indo da esquerda para a direita, aplicando a que encontrar primeiro. Caso nenhuma tenha sido encontrada, ele usa a padrão.
 
 #### Tamanho
 
@@ -721,7 +721,7 @@ p {
 
 #### Cor
 
-Para definir a cor usa-se a propriedade `border-color`.
+Para definir a cor, podemos usar a propriedade `border-color`.
 
 Funcionando da mesma maneira da espessura, temos uma propriedade que agrupa todos os lados e também cada lado separadamente.
 
@@ -954,7 +954,7 @@ Também podemos usar duas regras no mesmo elemento, por exemplo:
 </html>
 ```
 
-FIcando assim:
+Ficando assim:
 
 ![Exemplo seletores ID 2](imagens/css/seletores_id2.png)
 
@@ -1099,13 +1099,13 @@ Para criar uma variável em JS:
 var minhaVariavel;
 ```
 
-Para atribuir um valor a ela, basta informà-lo depois de um `=` (sinal de igual):
+Para atribuir um valor a ela, basta informá-lo depois de um `=` (sinal de igual):
 
 ```javascript
 minhaVariavel = 5;
 ```
 
-Acima, atribuimos o valor `5` à nossa variável `minhaVariavel`.
+Acima, atribuímos o valor `5` à nossa variável `minhaVariavel`.
 
 Podemos mudar o seu valor da mesma forma que atribuímos:
 
@@ -1188,7 +1188,7 @@ Já se usarmos o igual estrito, é falso:
 
 Em JS, temos dois valores representando o vazio.
 
-`undefined` significa que uma variável foi declarada mas ainda não tem valor. Exemplo:
+`undefined` significa que uma variável foi declarada, mas ainda não tem valor. Exemplo:
 
 ```javascript
 var minhaVariavel;
@@ -1333,7 +1333,7 @@ Exibindo o seguinte:
 
 Apesar de ser possível mostrar caixas de diálogos para o usuário, essa funcionalidade está longe de ser a ideal para aplicações complexas.
 
-Comumente, construimos formulários no próprio documento HTML para o usuário preencher os campos necessários e assim obtermos os dados ali inseridos.
+Comumente, construímos formulários no próprio documento HTML para o usuário preencher os campos necessários e assim obtermos os dados ali inseridos.
 
 Esses campos, ou elementos, definidos em uma página HTML são organizados pelo navegador em uma espécie de árvore. Essa organização é chamada de *DOM (Document Object Model)*.
 
@@ -1433,7 +1433,7 @@ A diferença aqui é que estamos *guardando* uma `função anônima` em uma vari
 
 #### Execução de uma função
 
-Tanto uma função criada à partir de uma declaração quanto de uma expressão são executadas da mesma maneira:
+Tanto uma função criada a partir de uma declaração quanto de uma expressão é executada da mesma maneira:
 
 ```javascript
 nomeDaFuncao(parametro);
@@ -1449,7 +1449,7 @@ funcaoSemParametros();
 
 #### Escopo
 
-As variáveis criadas dentro de uma função pertencem à ela e não podem ser referenciadas fora:
+As variáveis criadas dentro de uma função pertencem a ela e não podem ser referenciadas fora:
 
 ```javascript
 function minhaFuncao() {
@@ -1461,7 +1461,7 @@ console.log(minhaVariavel); // variável não existe
 
 Ao contrário de linguagens como C, C# e Java, JS trabalha com escopos por função, não por blocos.
 
-Isso significa que todas as variáveis definidas dentro de uma função pode ser referenciada em qualquer parte dela, por fazer parte do mesmo escopo:
+Isso significa que todas as variáveis definidas dentro de uma função podem ser referenciadas em qualquer parte dela, por fazer parte do mesmo escopo:
 
 ```javascript
 function minhaFuncao() {
@@ -1778,7 +1778,7 @@ const novaPessoa = Object.create(Pessoa);
 
 Essa é a forma que nos dá a maior liberdade na criação de objetos.
 
-Criamos uma funçao construtora e usamos o `new` para construirmos uma instância do objeto:
+Criamos uma função construtora e usamos o `new` para construirmos uma instância do objeto:
 
 ```javascript
 function Pessoa() {
@@ -1828,7 +1828,7 @@ class Pessoa {
 }
 ```
 
-Aqui usamos a notação de ponto para introduzir duas propriedade no objeto a ser criado.
+Aqui usamos a notação de ponto para introduzir duas propriedades no objeto a ser criado.
 
 Para acessar essas propriedades, basta colocarmos o nome do nosso objeto, um ponto e o nome da propriedade em questão:
 
@@ -2027,7 +2027,7 @@ Scope é um objeto do AngularJS que se refere ao modelo de dados das views.
 
 É usado como uma *cola* entre a view e o controller, fazendo a intermediação de dados entre essas duas camadas.
 
-No exemplo abaixo podemos ver que criando a propriedade `nome` no `$scope` do controller reflete no elemento vinculado à ela na view.
+No exemplo abaixo podemos ver que criando a propriedade `nome` no `$scope` do controller reflete no elemento vinculado a ela na view.
 
 ```html
 <!DOCTYPE html>
@@ -2118,6 +2118,7 @@ Algumas delas são:
 - ng-controller
 - ng-bind
 - ng-model
+- ng-checked
 - ng-show
 - ng-hide
 - ng-if
@@ -2334,12 +2335,12 @@ Serve para definir o tipo da diretiva, como ela poderá ser referenciada na view
 
 Tendo como opções:
 
-| Opção | Significado | Exemplo |
-| - | - | - |
-| `E` | Nome do elemento | `<diretiva></diretiva>` |
-| `A` | Atributo | `<div diretiva=""></div>` |
-| `C` | Classe | `<div class="diretiva: ''"></div>` |
-| `M` | Comentário | `<!-- directive: diretiva '' -->` |
+| Opção | Significado      | Exemplo                            |
+|-------|------------------|------------------------------------|
+| `E`   | Nome do elemento | `<diretiva></diretiva>`            |
+| `A`   | Atributo         | `<div diretiva=""></div>`          |
+| `C`   | Classe           | `<div class="diretiva: ''"></div>` |
+| `M`   | Comentário       | `<!-- directive: diretiva '' -->`  |
 
 #### controller
 
@@ -2357,11 +2358,11 @@ O valor dessa propriedade pode ser:
 
 Podemos usar alguns prefixos para dizer onde procurar as diretivas listadas nessa propriedade:
 
-| Prefixo | Onde procurar |
-| - | - |
-| nenhum | No próprio elemento da diretiva |
-| `^` | No elemento e em seus ancestrais |
-| `^^` | Apenas nos ancestrais do elemento |
+| Prefixo | Onde procurar                     |
+|---------|-----------------------------------|
+| nenhum  | No próprio elemento da diretiva   |
+| `^`     | No elemento e em seus ancestrais  |
+| `^^`    | Apenas nos ancestrais do elemento |
 
 Um erro será disparado caso as diretivas listadas não sejam encontradas. Para torná-las opcionais, basta colocar um `?`. Exemplo:
 
@@ -2393,10 +2394,10 @@ Nessa propriedade definimos se e como será criado o escopo dessa diretiva, quan
 
 Temos três opções:
 
-| Opção | Significado |
-| - | - |
-| `false` | Não criará escopo próprio, usará o do elemento superior |
-| `true` | Criará um novo escopo, herdando todo o escopo pai |
+| Opção         | Significado                                                     |
+|---------------|-----------------------------------------------------------------|
+| `false`       | Não criará escopo próprio, usará o do elemento superior         |
+| `true`        | Criará um novo escopo, herdando todo o escopo pai               |
 | `{}` (objeto) | Cria um escopo isolado, com as propriedades definidas no objeto |
 
 ##### Escopo isolado
@@ -2427,12 +2428,12 @@ Também deve-se definir o tipo de vínculo a ser usado nessas propriedades. Para
 
 Essas são as opções disponíveis:
 
-| Símbolo | Significado |
-|- | - |
-| `@` | O valor será interpretado como texto |
-| `=` | Ligação bidirecional (two way binding) |
-| `<` | Ligação unidirecional |
-| `&` | Expressão que será traduzida para uma função no escopo da diretiva |
+| Símbolo | Significado                                                        |
+|---------|--------------------------------------------------------------------|
+| `@`     | O valor será interpretado como texto                               |
+| `=`     | Ligação bidirecional (two way binding)                             |
+| `<`     | Ligação unidirecional                                              |
+| `&`     | Expressão que será traduzida para uma função no escopo da diretiva |
 
 ###### Vínculo opcional
 
@@ -2564,7 +2565,7 @@ A adição desse método pode reduzir a quantidade de código escrito e a chance
 
 ### Utilização
 
-Como dito anteriomente, para criar um componente é usado o método `component`.
+Como dito anteriormente, para criar um componente é usado o método `component`.
 
 Vamos usar como exemplo a nossa diretiva `helloWorld`:
 
@@ -2648,7 +2649,7 @@ angular
 
 #### controllerAs
 
-A propriedade `controllerAs` ainda existe, porém o valor padrão passou a ser `$ctrl`.
+A propriedade `controllerAs` ainda existe, porém, o valor padrão passou a ser `$ctrl`.
 
 #### Escopo
 
@@ -2738,11 +2739,11 @@ function aoMudarStatus() {
 
 ### jQuery.ajax
 
-Com o inttuito de facilitar a vida dos desenvolvedores, várias bibliotecas surgiram. Uma delas foi a jQuery.
+Com o intuito de facilitar a vida dos desenvolvedores, várias bibliotecas surgiram. Uma delas foi a jQuery.
 
 jQuery trouxe uma infinidade de ferramentas úteis à época para o desenvolvimento web, ficando popular rapidamente. Muitos ainda a usam hoje em dia.
 
-Dentre todas as facilidades, o método `ajax` diminuia consideravelmente o tamanho do código para fazer uma requisição ajax. O próprio jQuery tratava de verificar qual era o navegador e usava o objeto certo para fazer a requisição.
+Dentre todas as facilidades, o método `ajax` diminuía consideravelmente o tamanho do código para fazer uma requisição ajax. O próprio jQuery tratava de verificar qual era o navegador e usava o objeto certo para fazer a requisição.
 
 Exemplo com a mesma chamada AJAX feita anteriormente com JS nativo, com jQuery:
 
@@ -2794,12 +2795,12 @@ $http
 
 Alguns dos métodos disponíveis nesse serviço e sua descrição:
 
-| Método | Descrição |
-| --------- | ---------- |
-| `GET` | Obter informações do servidor |
-| `POST` | Criar informações no servidor |
-| `PUT` | Atualizar informações no servidor |
-| `DELETE` | Excluir informações do servidor |
+| Método   | Descrição                         |
+|----------|-----------------------------------|
+| `GET`    | Obter informações do servidor     |
+| `POST`   | Criar informações no servidor     |
+| `PUT`    | Atualizar informações no servidor |
+| `DELETE` | Excluir informações do servidor   |
 
 Os métodos de criação, atualização ou exclusão devem enviar quais informações no servidor devem ser alteradas.
 
@@ -2853,13 +2854,13 @@ function aoOcorrerFalha(response) {}
 
 Ambos os métodos recebem um objeto `response`, o qual possui as seguintes propriedades:
 
-| Propriedade | Significado |
-| - | - |
-| `data` | O corpo da resposta, contém os dados requisitados |
-| `status` | Um código HTTP informando o status da requisição |
-| `headers` | O Cabeçalho da requisição |
-| `config` | O objeto de configuração usado |
-| `statusText` | O texto referente ao `status` |
+| Propriedade  | Significado                                       |
+|--------------|---------------------------------------------------|
+| `data`       | O corpo da resposta, contém os dados requisitados |
+| `status`     | Um código HTTP informando o status da requisição  |
+| `headers`    | O Cabeçalho da requisição                         |
+| `config`     | O objeto de configuração usado                    |
+| `statusText` | O texto referente ao `status`                     |
 
 ## Serviços
 
@@ -2959,7 +2960,7 @@ angular
 
 Esse é um tópico que merece uma atenção especial, inclusive tendo uma página própria no guia oficial do AngularJS: <https://github.com/angular/angular.js/wiki/Understanding-Dependency-Injection>
 
-O termo *injeção de dependência* é um design pattern onde os objetos recebem recebem as suas dependências, ao invés de criá-las.
+O termo *injeção de dependência* é um design pattern onde os objetos recebem as suas dependências, ao invés de criá-las.
 
 Por exemplo, um `Carro` depende de `Motor` para andar. Sem esse pattern a representação em classes seria algo como:
 
@@ -2993,7 +2994,7 @@ Mas ainda assim alguém precisa construir esse objeto `motor` e para isso o Angu
 
 Dessa forma, o próprio AngularJS se encarrega de construir essa instância de motor e assim *injetar* na classe `Carro`.
 
-Com esse sistema, os objetos (controllers, diretivas, etc) podem simplesmente definir quais são as suas dependências no seu construtor e o framework se encarregará de injetá-las.
+Com esse sistema, os objetos (controllers, diretivas, etc.) podem simplesmente definir quais são as suas dependências no seu construtor e o framework se encarregará de injetá-las.
 
 Há três formas de usarmos essa injeção de dependência:
 
