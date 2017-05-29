@@ -2957,6 +2957,44 @@ angular
 
 ## Injeção de dependência
 
+Esse é um tópico que merece uma atenção especial, inclusive tendo uma página própria no guia oficial do AngularJS: <https://github.com/angular/angular.js/wiki/Understanding-Dependency-Injection>
+
+O termo *injeção de dependência* é um design pattern onde os objetos recebem recebem as suas dependências, ao invés de criá-las.
+
+Por exemplo, um `Carro` depende de `Motor` para andar. Sem esse pattern a representação em classes seria algo como:
+
+```javascript
+class Carro() {
+    constructor() {
+        this.motor = new Motor();
+    }
+}
+
+class Motor() {}
+```
+
+O problema disso é o alto acoplamento entre as duas classes, fazendo com que uma alteração na construção de `Motor` reflita em uma alteração em `Carro`.
+
+Para amenizarmos esse problema, usamos a injeção de dependência. E o código ficaria assim:
+
+```javascript
+class Carro() {
+    constructor(motor) {
+        this.motor = motor;
+    }
+}
+
+class Motor() {}
+```
+
+`Carro` não é mais responsável pela construção do objeto `motor`, apenas o recebe.
+
+Mas ainda assim alguém precisa construir esse objeto `motor` e para isso o AngularJS conta um *sistema de injeção de dependência* próprio.
+
+Dessa forma, o próprio AngularJS se encarrega de construir essa instância de motor e assim *injetar* na classe `Carro`.
+
+Com esse sistema, os objetos (controllers, diretivas, etc) podem simplesmente definir quais são as suas dependências no seu construtor e o framework se encarregará de injetá-las.
+
 Há três formas de usarmos essa injeção de dependência:
 
 - Implícita
