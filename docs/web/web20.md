@@ -20,4 +20,4 @@ Como o próprio nome diz, SPA é basicamente uma aplicação que tem apenas uma 
 
 O Google foi um dos pioneiros nesse conceito, tendo o Gmail como seu carro chefe.
 
-![Gmail](imagens/web/gmail.png)
+![Gmail](imagens/gmail.png)

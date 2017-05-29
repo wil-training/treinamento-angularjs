@@ -6,4 +6,4 @@ O primeiro site criado pode ser visto no seguinte endereço: <http://info.cern.c
 
 Site da Microsoft em 1994:
 
-![Site da Microsoft em 1994](imagens/web/site_microsoft_1994.png)
+![Site da Microsoft em 1994](imagens/site_microsoft_1994.png)

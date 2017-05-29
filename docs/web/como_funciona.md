@@ -8,4 +8,4 @@ A grosso modo, o usuário digita um endereço no navegador e este envia uma requ
 
 Ilustração de uma requisição web:
 
-![Ilustração de uma requisição web](imagens/web/web_request.png)
+![Ilustração de uma requisição web](imagens/web_request.png)
