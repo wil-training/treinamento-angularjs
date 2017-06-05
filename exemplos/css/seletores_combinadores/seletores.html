@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    pre {
+      background-color: lightgray;
+      border: 2px dotted black;
+      border-radius: 5px;
+      min-height: 100px;
+      padding: 10px;
+    }
+
+    pre.verde {
+      background-color: green;
+    }
+
+    span.verde {
+      color: green;
+    }
+
+    #meu-pre {
+      font-size: 30px;
+    }
+
+    input[type="text"] {
+      color: rgb(0, 0, 255);
+    }
+
+    input[name="nome"] {
+      color: rgb(0, 255, 0);
+    }
+
+    input[blablabla="bleh"] {
+      color: rgb(255, 255, 0);
+    }
+
+    /*input.verde {
+      color: rgb(0, 255, 0);
+    }*/
+    input[class="verde"] {
+      color: rgb(0, 255, 0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <pre>Aqui é um pre.</pre>
+
+  <pre class="verde">Outro pre</pre>
+
+  <span class="verde">Span verde</span>
+
+  <pre id="meu-pre" class="verde">
+    Pre único verde
+  </pre>
+
+  <input type="text" name="teste" value="">
+  <input type="text" name="nome" value="">
+  <input type="text" name="nome" blablabla="bleh" value="">
+  <input type="text" class="verde" value="">
+
+</body>
+
+</html>
