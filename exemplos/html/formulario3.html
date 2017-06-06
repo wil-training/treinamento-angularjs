@@ -1,0 +1,60 @@
+<html>
+
+<head>
+  <title>Formulário</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+
+  <form action="mailto:wbarbosa@vectoritcgroup.com" 
+        method="POST"
+        enctype="text/plain"
+        novalidate>
+
+    <!--enctype="application/x-www-form-urlencoded"-->
+
+    <div>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome">
+    </div>
+
+    <div>
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha">
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+    </div>
+
+    <div>
+      <label for="cores">Cores:</label>
+      <input type="checkbox" id="cores" name="cores" value="1">
+      <input type="checkbox" id="cores" name="cores" value="2">
+    </div>
+
+    <div>
+      <label for="nascimento">Data de nascimento:</label>
+      <input type="datetime-local" 
+             required="required" 
+             id="nascimento" 
+             name="nascimento">
+    </div>
+
+    <div>
+      <label for="conhecimento">Conhecimento:</label>
+      <select name="conhecimento" id="conhecimento">
+        <option value="1">Sim</option>
+        <option value="2">Não</option>
+        <option value="3">Talvez</option>
+      </select>
+    </div>
+
+    <button>Salvar</button>
+  </form>
+
+</body>
+
+</html>
