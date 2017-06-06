@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    p {
+      display: none;
+    }
+
+    @media screen {
+      .nao-imprimir {
+        display: block;
+      }
+    }
+
+    @media print {
+      .imprimir {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<p class="nao-imprimir">Não vai ser imprimido</p>
+<p class="imprimir">Vai ser impressado</p>
+
+</body>
+
+</html>
