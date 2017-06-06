@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    .pequeno,
+    .grande,
+    .mediano {
+      display: none;
+    }
+
+    @media (max-width: 500px) {
+      .pequeno {
+        display: block;
+      }
+    }
+
+    @media (width: 600px) {
+      .mediano {
+        display: block;
+      }
+    }
+
+    @media (min-width: 700px) {
+      .grande {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<p class="grande">Tela maior de 700px</p>
+<p class="mediano">Tela igual à 600px</p>
+<p class="pequeno">Tela menor de 500px</p>
+
+</body>
+
+</html>
