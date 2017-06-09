@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title></title>
+
+  <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+
+  <style>
+    p.grande {
+      color: black;
+    }
+    p.medio {
+      color: brown;
+    }
+    p.pequeno {
+      color: yellow;
+    }
+    p.anao {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    
+    <p class="visible-lg-block">Parágrafo para desktops grandes</p>
+    <p class="visible-md-block">Parágrafo para desktops médios</p>
+    <p class="visible-sm-block">Parágrafo para tablets</p>
+    <p class="visible-xs-block">Parágrafo para celulares</p>
+
+    <p class="grande hidden-lg">Invisível em desktops grandes</p>
+    <p class="medio hidden-md">Invisível em desktops médios</p>
+    <p class="pequeno hidden-sm">Invisível em tablets</p>
+    <p class="anao hidden-xs">Invisível em celulares</p>
+
+    <p class="visible-print-block">Imprimir</p>
+    <p class="hidden-print">Não imprimir</p>
+
+  </div>
+
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
