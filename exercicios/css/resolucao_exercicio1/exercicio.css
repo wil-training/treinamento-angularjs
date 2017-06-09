@@ -1,0 +1,87 @@
+.corpo {
+  margin: 0 30px;
+}
+
+.cabecalho {
+}
+  .cabecalho img {
+    display: block;
+    width: 480px;
+    margin: 0 auto;
+  }
+
+.campo-grupo {
+  margin-bottom: 10px;
+}
+  .campo-grupo .campo {
+    width: 75%;
+    height: 25px;
+  }
+    .campo-grupo textarea.campo {
+      height: 100px;
+    }
+  .campo-grupo .nome-campo {
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+  }
+
+.botao {
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;  
+}
+  .botao.botao-azul {
+    background-color: rgb(0,0,50);
+    color: rgb(255,255,255);
+  }
+
+.botao-grupo {
+  margin-left: 20%;
+}
+
+.aviso {
+  color: rgb(255,0,0);
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .corpo {
+    margin: 0 10px;
+  }
+
+  .cabecalho img {
+    width: 200px;
+  }
+
+  .campo-grupo .campo,
+  .campo-grupo .nome-campo {
+    width: 100%;
+  }
+
+  .campo-grupo .nome-campo {
+    text-align: left;
+  }
+
+  .botao-grupo {
+    margin: 0;
+  }
+  .botao {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media print {
+  .nao-imprimir {
+    display: none;
+  }
+}
+
+@media screen {
+  .so-imprimir {
+    display: none;
+  }
+}
