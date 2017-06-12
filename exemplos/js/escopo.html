@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <button onclick="minhaFuncao()">Chama</button>
+
+  <script>
+    function minhaFuncao() {
+
+      var teste = '';
+
+      testi = 'ha';
+
+      function outraFuncao() {
+        var testa = '';
+        teste = 'ha'; // acessa variável no escopo da função 'mãe'
+        testa = teste;
+      }
+
+      outraFuncao();
+
+      console.log(teste);
+      console.log(testa); // erro
+
+      if (teste === 'ho') {
+        teste = 'he';
+        var testi = 'hi';
+      }
+
+      console.log(teste);
+      console.log('testi = ', testi);
+
+    }
+
+  </script>
+
+</body>
+
+</html>
