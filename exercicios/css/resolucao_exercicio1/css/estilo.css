@@ -1,0 +1,132 @@
+.corpo {
+  margin: 0 30px;
+}
+
+.centralizada {
+  display: block;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 500px;
+}
+
+.campos {
+  margin-top: 20px;
+}
+
+.campo {
+  width: 75%;
+  height: 25px;
+}
+  textarea.campo {
+    height: 100px;
+  }
+
+.nome-campo {
+  width: 20%;
+  display: inline-block;
+  text-align: right;
+}
+
+.botao {
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+}
+  .botao.botao-principal {
+    background-color: rgb(0,0,50);
+    color: rgb(255,255,255);
+  }
+
+.botoes {
+  margin-left: 20%;
+}
+
+.rodape {
+  margin-top: 30px;
+}
+
+.aviso {
+  color: rgb(255,0,0);
+  text-align: center;
+}
+
+.so-tela-pequena,
+.so-imprimir {
+  display: none;
+}
+
+.so-tela-grande-inline-block {
+  display: inline-block;
+}
+
+.so-tela-grande-inline {
+  display: inline;
+}
+
+.so-tela-grande-block {
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .corpo {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  .campo,
+  .nome-campo {
+    width: 100%;
+  }
+
+  .nome-campo {
+    text-align: left;
+  }
+
+  .botao {
+    width: 100%;
+  }
+
+  .botoes {
+    margin-left: 0;
+  }
+
+  .so-tela-grande {
+    display: none;
+  }
+
+  .so-tela-pequena-inline-block {
+    display: inline-block;
+  }
+
+  .so-tela-pequena-inline {
+    display: inline;
+  }
+
+  .so-tela-pequena-block {
+    display: block;
+  }
+}
+
+@media print {
+  .nao-imprimir {
+    display: none;
+  }
+
+  .so-imprimir-inline-block {
+    display: inline-block;
+  }
+
+  .so-imprimir-inline {
+    display: inline;
+  }
+
+  .so-imprimir-block {
+    display: block;
+  }
+}
