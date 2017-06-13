@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Exercício 1 - JavaScript</title>
+
+  <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+
+  <section class="container">
+
+    <form class="form-horizontal" onsubmit="enviar(event)" role="form">
+      <legend>Exercício 1 - JavaScript</legend>
+
+      <div class="form-group">
+        <label for="nome" class="col-md-2 control-label">Nome:</label>
+        <div class="col-md-10">
+          <input type="text" class="form-control" id="nome" name="nome">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="sobrenome" class="col-md-2 control-label">Sobrenome:</label>
+        <div class="col-md-10">
+          <input type="text" class="form-control" name="sobrenome" id="sobrenome">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="idade" class="col-md-2 control-label">Idade:</label>
+        <div class="col-md-10">
+          <input type="number" class="form-control" name="idade" id="idade">
+        </div>
+      </div>
+
+      <div class="col-md-offset-2">
+        <button class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" onclick="enviar()">Clique</button>
+      </div>
+    </form>
+
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+  </section>
+
+</body>
+
+</html>
