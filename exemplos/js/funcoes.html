@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <button type="button" onclick="teste('um texto qualquer', 'outro texto');">Chama</button>
+
+  <script>
+    teste('ha');
+    testa('ha'); // vai dar erro
+
+    function teste(texto, texto2) {
+      alert(texto);
+      alert(texto2);
+    }
+
+    var testa = function (texto) {
+      alert(texto);
+    };
+
+    // funciona
+    teste('ha');
+    testa('ha');
+  </script>
+
+</body>
+
+</html>

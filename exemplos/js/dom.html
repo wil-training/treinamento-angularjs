@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<label for="nome">Nome:</label>
+<input class="campo" type="text" name="nome" id="nome">
+
+<script>
+  var nomeDigitado = document.getElementById('nome');
+  var nomeDigitado = document.querySelector('body > input#nome');
+  var inputs = document.querySelectorAll('input');
+
+  nomeDigitado.value = 'novo valor do nome';
+</script>
+
+</body>
+
+</html>

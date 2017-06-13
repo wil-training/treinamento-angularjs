@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <title>Exercício 1 - CSS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/estilo.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div class="centralizada logo">
+      <img src="vector_grande.jpg" alt="Logo grande" class="so-tela-grande so-tela-grande-inline-block">
+      <img src="vector.png" alt="Logo pequeno" class="so-tela-pequena so-tela-pequena-inline-block">
+    </div>
+  </header>
+
+  <section class="corpo">
+
+    <form action="mailto:wbarbosa@vectoritcgroup.com" method="POST" enctype="text/plain">
+
+      <div class="campos">
+        <label for="nome" class="nome-campo">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Insira o nome" autofocus class="campo">
+      </div>
+
+      <div class="campos">
+        <label for="email" class="nome-campo">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Email válido" class="campo">
+      </div>
+
+      <div class="campos">
+        <label for="nascimento" class="nome-campo">Data de nascimento:</label>
+        <input type="datetime-local" id="nascimento" name="nascimento" placeholder="Data de nascimento" class="campo">
+      </div>
+
+      <div class="campos">
+        <label for="filhos" class="nome-campo">Quantidade de filhos:</label>
+        <input type="number" id="filhos" name="filhos" min="0" max="25" placeholder="0 à 25" class="campo">
+      </div>
+
+      <div class="campos">
+        <label class="nome-campo">Cores preferidas:</label>
+        <label>
+          <input type="checkbox" id="preto" name="preto"> Preto
+        </label>
+        <label>
+          <input type="checkbox" id="rosa" name="rosa"> Rosa
+        </label>
+        <label>
+          <input type="checkbox" id="azul" name="azul"> Azul
+        </label>
+      </div>
+
+      <div class="campos">
+        <label for="conhecimento" class="nome-campo">Conhecimento em HTML:</label>
+        <select id="conhecimento" name="conhecimento" class="campo">
+          <option value="nenhum">Nenhum</option>
+          <option value="basico">Básico</option>
+          <option value="intermediario">Intermediário</option>
+          <option value="avancado">Avançado</option>
+        </select>
+      </div>
+
+      <div class="campos">
+        <label class="nome-campo">Tem interesse em desenvolvimento web?</label>
+        <label>
+          <input type="radio" name="interesse" value="sim"> Sim
+        </label>
+        <label>
+          <input type="radio" name="interesse" value="nao"> Não
+        </label>
+      </div>
+
+      <div class="campos">
+        <label for="comentarios" class="nome-campo">Comentários:</label>
+        <textarea name="comentarios" id="comentarios" class="campo"></textarea>
+      </div>
+
+      <div class="campos botoes">
+        <button class="botao botao-principal nao-imprimir">Enviar</button>
+      </div>
+
+    </form>
+
+  </section>
+
+  <footer class="rodape">
+    <p class="aviso so-imprimir so-imprimir-block">
+      Enviar este formulário preenchido por correio.
+    </p>
+  </footer>
+
+</body>
+
+</html>
