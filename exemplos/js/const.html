@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <button onclick="minhaFuncao()">Chama</button>
+
+  <script>
+    function minhaFuncao() {
+      'use strict';
+
+      debugger;
+
+      const num1 = 10;
+      const num2 = 20;
+
+      // let soma = num1 + num2;
+      // num2 = (num1 + num2);
+      const soma = num1 + num2;
+
+      if (soma > 20) {
+        const sucesso = true;
+        console.log(sucesso);
+      }
+
+      // console.log(sucesso);
+
+      const objeto = {
+        nome: 'Wiley',
+        sobrenome: 'Marques'
+      };
+      console.log(objeto);
+
+      // // quebra
+      // objeto = {
+      //   nome: 'William',
+      //   sobrenome: 'Marques'
+      // };
+      // console.log(objeto);
+
+      objeto.nome = 'William';
+      console.log(objeto);
+
+      const objetoConstante = Object.freeze({
+        nome: 'Fixo',
+        sobrenome: 'Fixo'
+      });
+      console.log(objetoConstante);
+
+      objetoConstante.nome = 'Wiley'; // erro, não pode alterar, readonly
+      console.log(objetoConstante);
+
+    }
+  </script>
+
+</body>
+
+</html>
