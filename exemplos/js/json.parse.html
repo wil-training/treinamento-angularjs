@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <script>
+    const pessoa = '{ "nome": "Maria", "idade": 15 }';
+
+    debugger;
+
+    console.log(pessoa.nome); // undefined
+
+    const maria = JSON.parse(pessoa);
+
+    console.log(maria.nome); // Maria
+  </script>
+
+</body>
+
+</html>
