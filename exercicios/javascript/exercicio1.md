@@ -1,8 +1,8 @@
 # Exercício 1
 
-> Página com campos nome, sobrenome e telefone.
+> Página com campos nome, sobrenome e idade.
 > Mostrando dados em um `alert`.
-> Perguntando ao usuário em um `confirm` se deseja exibir o telefone.
+> Perguntando ao usuário em um `confirm` se deseja exibir o idade.
 
 ## Estrutura
 
