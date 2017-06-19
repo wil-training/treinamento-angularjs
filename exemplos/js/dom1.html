@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <input type="text" name="nome" id="nome" class="principal">
+
+  <button type="button" onclick="revelar();" class="">Revelar</button>
+
+  <input type="text" id="revelado">
+
+  <script>
+    function revelar() {
+      // debugger;
+
+      // document.getElementsByTagName('input')[0].value
+      // var elementoNome = document.getElementById('nome');
+      var elementoNome = document.getElementsByClassName('');
+      var nome = elementoNome.value;
+
+      var elementoRevelado = document.getElementById('revelado');
+
+      // elementoRevelado.value = 'Geiza';
+      elementoRevelado.value = nome + 'a';      
+      
+    }
+  </script>
+
+</body>
+
+</html>
