@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Exercício Twitter Bootstrap</title>
+
+  <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+
+  <section class="container">
+
+    <header class="row">
+      <a href="http://www.vectoritcgroup.com">
+        <img src="vector_grande.jpg" alt="Logo da Vector" class="hidden-xs center-block">
+        <img src="vector.png" alt="Logo da Vector" class="visible-xs-block center-block">
+      </a>
+    </header>
+
+    <div class="row">
+      <div class="alert alert-warning">Enviar este formulário preenchido por correio.</div>
+    </div>
+
+    <form action="mailto:wbarbosa@vectoritcgroup.com" method="POST" enctype="text/plain" class="form-horizontal">
+
+      <div class="form-group">
+        <label for="nome" class="control-label col-md-2">Nome:</label>
+        <div class="col-md-10">
+          <input type="text" id="nome" name="nome" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="control-label col-md-2">Email:</label>
+        <div class="col-md-10">
+          <input type="email" id="email" name="email" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nascimento" class="control-label col-md-2">Data de nascimento:</label>
+        <div class="col-md-10">
+          <input type="datetime-local" id="nascimento" name="nascimento" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="filhos" class="control-label col-md-2">Quantidade de filhos:</label>
+        <div class="col-md-10">
+          <input type="number" id="filhos" name="filhos" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-md-2">Cores preferidas:</label>
+        <div class="col-md-10">
+          <label class="checkbox-inline">
+            <input type="checkbox" name="cor" value="preto">
+            <span>Preto</span>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" name="cor" value="rosa">
+            <span>Rosa</span>
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" name="cor" value="azul">
+            <span>Azul</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="conhecimento" class="control-label col-md-2">Conhecimento em HTML:</label>
+        <div class="col-md-10">
+          <select id="conhecimento" name="conhecimento" class="form-control">
+            <option value="nenhum">Nenhum</option>
+            <option value="basico">Básico</option>
+            <option value="intermediario">Intermediário</option>
+            <option value="avancado">Avançado</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-md-2">Tem interesse em desenvolvimento web?</label>
+        <div class="col-md-10">
+          <label class="radio-inline">
+            <input type="radio" name="interesse" value="sim">
+            <span>Sim</span>
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="interesse" value="nao">
+            <span>Não</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="comentarios" class="control-label col-md-2">Comentários:</label>
+        <div class="col-md-10">
+          <textarea id="comentarios" name="comentarios" class="form-control"></textarea>
+        </div>
+      </div>
+
+      <div class="row hidden-print">
+        <div class="col-xs-12 col-md-10 col-md-offset-2">
+          <button id="salvar" class="btn btn-primary">Salvar</button>
+          <button id="cancelar" type="button" class="btn btn-default">Cancelar</button>
+        </div>
+      </div>
+
+    </form>
+
+  </section>
+
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
