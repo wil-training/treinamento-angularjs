@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body ng-controller="DiretivasController">
+  <label>Insira seu nome:</label>
+  <input type="text" ng-model="nome" />
+  <input type="text" ng-bind="nome" />
+  <!-- Não funciona-->
+  <h1>Olá {{ nome }}!</h1>
+  <h1>Olá <span ng-bind="nome"></span>!</h1>
+
+  <input type="checkbox" ng-model="marcado">
+
+  <p ng-show="nomeIgualWiley()">
+    Meu nome é Wiley, sim!
+  </p>
+
+  <p ng-hide="nomeIgualWiley()">
+    Meu nome não é Wiley.
+  </p>
+
+  <p ng-if="nomeIgualWiley()">
+    Mostra, Wiley!
+  </p>
+
+  <script src="plugins/angular-1.6.4/angular.js"></script>
+  <script src="app/app.module.js"></script>
+  <script src="app/diretivas.controller.js"></script>
+</body>
+
+</html>

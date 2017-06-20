@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body ng-controller="ArrayController">
+
+  <p>{{ nomes }}</p>
+  <p>{{ pares }}</p>
+
+  <!--<p ng-repeat="numero in numeros">{{ numero }}</p>-->
+
+  <label for="nome">Nome</label>
+  <input type="text" name="nome" id="nome" ng-model="nome">
+
+  <button type="button" ng-click="adicionarNome()">Adicionar</button>
+  <button type="button" ng-click="removerNome()">Remover</button>
+  <button type="button" ng-click="mostrar()">Mostrar pares</button>
+  <button type="button" ng-click="esconder()">Esconder</button>
+
+  <!--<ul>
+    <li ng-repeat="nome in nomes track by $index">{{ nome }}</li>
+  </ul>-->
+
+  <ul ng-show="mostrarPares === true">
+    <li ng-repeat="numero in pares track by $index">{{ numero }}</li>
+  </ul>
+
+  <script src="plugins/angular-1.6.4/angular.js"></script>
+  <script src="app/app.module.js"></script>
+  <script src="app/array.controller.js"></script>
+</body>
+
+</html>
