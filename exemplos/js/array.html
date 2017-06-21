@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <script>
+    const numeros = [1, 2, 3, 4, 5];
+
+    // numeros.forEach(mostrarAlerta);
+    // function mostrarAlerta(numero) {
+    //   alert(numero);
+    // }
+
+    // const novoArray = numeros.map(mostrarAlerta);
+    // function mostrarAlerta(numero) {
+    //   return numero * 2;
+    // }
+
+    // const pares = numeros.filter(ehPar);
+    // function ehPar(numero) {
+    //   const resto = numero % 2;
+    //   if (resto === 0) {
+    //     return true;
+    //   }
+    //   return false;
+    // }
+
+    const temPar = numeros.some(ehPar);
+    function ehPar(numero) {
+      const resto = numero % 2;
+      if (resto === 0) {
+        return true;
+      }
+      return false;
+    }
+
+    // debugger;
+  </script>
+
+</body>
+
+</html>
