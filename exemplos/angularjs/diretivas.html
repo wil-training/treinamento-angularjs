@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body ng-controller="DiretivasController">
+<body ng-controller="DiretivasController" ng-class="outrasClasses">
   <label>Insira seu nome:</label>
-  <input type="text" ng-model="nome" />
-  <input type="text" ng-bind="nome" />
+  <input type="text" ng-model="nome" ng-change="colocarNoLog()" />
   <!-- Não funciona-->
+  <!--<input type="text" ng-bind="nome" />-->
   <h1>Olá {{ nome }}!</h1>
   <h1>Olá <span ng-bind="nome"></span>!</h1>
 
@@ -27,6 +27,12 @@
   <p ng-if="nomeIgualWiley()">
     Mostra, Wiley!
   </p>
+
+  <input type="text" ng-model="classes">
+  <input type="text" ng-model="classe">
+  <button type="button" ng-click="adicionarClasse()">Adicionar classe</button>
+  <button type="button" ng-class="listaClasses">Com classe</button>
+  <button type="button" ng-class="{ 'verde-grande': true, 'borda': false, 'terceira': classe === 'vai' }">Outro botão</button>
 
   <script src="plugins/angular-1.6.4/angular.js"></script>
   <script src="app/app.module.js"></script>
