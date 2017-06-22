@@ -1,3 +1,5 @@
-<span>{{ mensagem }}</span>
+<span>{{ alertaCtrl.mensagem }}</span>
 <!--<span>{{ teste }}</span>-->
-<!--<input type="text" ng-model="mensagem">-->
+<input type="text" 
+    ng-model="alertaCtrl.mensagem" 
+    ng-change="alertaCtrl.aoMudarMensagem()">

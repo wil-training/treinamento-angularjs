@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <div ng-controller="PrimeiroController as primeiroCtrl">
+
+    <h2>Primeiro controller</h2>
+    {{ primeiroCtrl.nome }}
+    <input type="text" ng-model="primeiroCtrl.nome">
+
+    <div ng-controller="SegundoController">
+      <h3>Segundo controller</h3>
+      {{ primeiroCtrl.nome }}
+      <input type="text" ng-model="primeiroCtrl.nome">
+    </div>    
+  </div>
+
+  <script src="plugins/angular-1.6.4/angular.js"></script>
+  <script src="app/app.module.js"></script>
+  <script src="app/controllerAs.controller.js"></script>
+</body>
+
+</html>

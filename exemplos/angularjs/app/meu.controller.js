@@ -6,5 +6,12 @@
 
   function MeuController($scope) {
     $scope.teste = 'Oi, eu sou o Controller!';
+
+    $scope.aoMudarTeste = aoMudarTeste;
+
+    function aoMudarTeste(valor) {
+      debugger;
+      $scope.teste = valor;
+    }
   }
 })();

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body ng-controller="PaginaController as paginaCtrl">
+  
+  <cadastro ao-criar="paginaCtrl.salvar(nome)"></cadastro>
+
+  <h3>Cadastrados:</h3>
+  <lista nomes="paginaCtrl.cadastros"></lista>
+
+  <script src="plugins/angular-1.6.4/angular.js"></script>
+  <script src="app/app.module.js"></script>
+  <script src="app/pagina.controller.js"></script>
+  <script src="app/componentes/cadastro/controller.js"></script>
+  <script src="app/componentes/cadastro/component.js"></script>
+  <script src="app/componentes/lista/controller.js"></script>
+  <script src="app/componentes/lista/component.js"></script>
+</body>
+
+</html>

@@ -7,10 +7,14 @@
 </head>
 
 <body ng-controller="MeuController">
+
+  <h1>{{ teste }}</h1>
+  <!--<input type="text" ng-model="teste">-->
   
   <!--<vc-alerta></vc-alerta>-->
   <!-- Usando diretiva 'vcAlerta' -->
-  <div vc-alerta vc-mensagem="teste"></div>
+  <div vc-alerta vc-mensagem="teste" 
+      vc-ao-mudar-mensagem="aoMudarTeste(mensagem)"></div>
 
   <script src="plugins/angular-1.6.4/angular.js"></script>
   <script src="app/app.module.js"></script>
