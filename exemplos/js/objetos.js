@@ -1,28 +1,45 @@
-(function () {
-  'use strict';
+'use strict';
 
-  const variavel = 10;
+// Notação literal
 
-  const objeto = {
-    nome: 'João',
-    sobrenome: 'Silva',
-    executar: function () {},
-    outraFuncao: outraFuncao,
-    idade: variavel
-  };
+const objeto = {
+  nome: 'Wiley',
+  tamanho: 35
+};
 
-  function outraFuncao() {
-    console.log('passou aqui');
+// Função construtora
+
+// new Animal(); // funciona
+
+function Animal() {
+  this.barulhar = barulhar;
+
+  function barulhar() {
+    console.log('Oi, meu nome é ' + this.nome);
   }
+}
+function Pessoa(nome, idade) {
+  this.nome = nome;
+  this.idade = idade;
+}
+Pessoa.prototype = Object.create(new Animal());
+Pessoa.prototype.constructor = Animal.constructor;
 
-  objeto.nome = 'Maria';
+// Classes
 
-  console.log(objeto.outraFuncao);
+// new Animal(); // não funciona
 
-  // console.log(objeto.nome);
-})();
+class Animal {
+  barulhar() {
+    console.log('Oi, meu nome é ' + this.nome);
+  }
+}
+class Pessoa extends Animal {
+  constructor(nome, idade) {
+    super();
+    this.nome = nome;
+    this.idade = idade;
+  }
+}
 
-(function() {
-  // objeto.outraFuncao(); // não funciona
-  // outraFuncao(); // não funciona
-})();
+// new Animal(); // funciona

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <button onclick="minhaFuncao();">Minha função</button>
+
+  <script>
+    minhaFuncao();
+
+    function minhaFuncao() {
+      'use strict';
+
+      var teste;
+
+      debugger;
+
+      teste = 'olá';
+      
+      console.log(teste);
+
+      teste = '';
+
+    }
+
+    outraFuncao(); // vai quebrar
+
+    var outraFuncao = function () {
+      console.log('passei por aqui');
+    };
+  </script>
+
+</body>
+
+</html>
