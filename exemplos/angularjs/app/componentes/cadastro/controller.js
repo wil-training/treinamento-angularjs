@@ -2,13 +2,17 @@
   'use strict';
 
   class CadastroController {
+    constructor(pessoaFactory, CachorroService) {
+      debugger;
+    }
     cadastrar() {
-      // debugger;
       this.aoCriar({
         nome: this.nome
       });
     }
   }
+
+  CadastroController.$inject = ['pessoaFactory'];
 
   angular.module('app')
     .controller('CadastroController', CadastroController);

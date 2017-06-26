@@ -2,7 +2,7 @@
   'use strict';
 
   const componenteDefinicao = {
-    templateUrl: 'app/componentes/formulario/template.html',
+    templateUrl: 'app/componentes/formulario/formulario.template.html',
     controller: 'FormularioController'
   };
 

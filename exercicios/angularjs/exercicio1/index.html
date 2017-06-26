@@ -12,18 +12,29 @@
   <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
 </head>
 
-<body>
+<body ng-controller="IndexController as indexCtrl">
 
   <section class="container">
 
-    <formulario></formulario>
+    <div class="row">
+      <h2>Cadastrar pessoa</h2>
+      <formulario aoCriarPessoa="indexCtrl.criarPessoa(pessoa)"></formulario>
+    </div>
+
+    <div class="row">
+      <h2>Lista de pessoas</h2>
+      <lista pessoas="indexCtrl.pessoas"></lista>
+    </div>
 
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="plugins/angular-1.6.4/angular.js"></script>
     <script src="app/app.module.js"></script>
-    <script src="app/componentes/formulario/controller.js"></script>
-    <script src="app/componentes/formulario/component.js"></script>
+    <script src="app/services/pessoas.factory.js"></script>
+    <script src="app/componentes/formulario/formulario.controller.js"></script>
+    <script src="app/componentes/formulario/formulario.component.js"></script>
+    <script src="app/componentes/lista/lista.controller.js"></script>
+    <script src="app/componentes/lista/lista.component.js"></script>
 
   </section>
 
