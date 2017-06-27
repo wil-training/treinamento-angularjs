@@ -4,19 +4,13 @@
       "id": 1,
       "nome": "Wiley",
       "sobrenome": "Marques",
-      "idade": 22
+      "idade": 20
     },
     {
-      "id": 2,
-      "nome": "Thaiane",
-      "sobrenome": "Jesus",
-      "idade": 14
-    },
-    {
-      "nome": "Vanderslavo",
-      "sobrenome": "Iugerren",
-      "idade": 58,
-      "id": 3
+      "nome": "Wileya",
+      "sobrenome": "Marques",
+      "idade": 19,
+      "id": 2
     }
   ]
 }
