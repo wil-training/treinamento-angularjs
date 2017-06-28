@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <base href="/">
+
+  <title>AngularJS Boilerplate</title>
+
+  <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+
+  <section class="container">
+
+    <div class="row">
+
+      <div class="col-sm-2">
+        <menu></menu>
+      </div>
+
+      <div class="col-sm-10">
+        <ui-view></ui-view>
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="plugins/angular-1.6.4/angular.js"></script>
+  <script src="plugins/angular-ui-router-1.0.3/angular-ui-router.js"></script>
+
+  <!-- Módulo -->
+  <script src="js/app.module.js"></script>
+  <!-- Rotas -->
+  <script src="js/app.routes.js"></script>
+
+  <!-- Serviços -->
+  <script src="js/servicos/contatos.service.js"></script>
+
+  <!-- Componentes -->
+  <script src="js/componentes/menu/menu.controller.js"></script>
+  <script src="js/componentes/menu/menu.component.js"></script>
+  <script src="js/componentes/lista/lista.controller.js"></script>
+  <script src="js/componentes/lista/lista.component.js"></script>
+  <script src="js/componentes/cadastro/cadastro.controller.js"></script>
+  <script src="js/componentes/cadastro/cadastro.component.js"></script>
+</body>
+
+</html>
