@@ -1,7 +1,9 @@
 # Avaliação para o Treinamento de AngularJS - Agenda
 
 > Pode ser feita com consulta a qualquer material necessário, interno e externo.
-> Deve-se levar em conta as boas práticas e ferramenteas apresentadas no treinamento.
+>
+> Deve-se levar em conta as boas práticas e ferramentas apresentadas no treinamento.
+>
 > Para executar a aplicação e API, leia as instruções em `EXECUCAO.md`
 
 ## Introdução
