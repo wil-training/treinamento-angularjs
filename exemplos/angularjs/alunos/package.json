@@ -1,12 +1,11 @@
 {
-  "name": "aplicacao",
+  "name": "alunos",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.15.3",
-    "msnodesqlv8": "^0.2.17",
-    "mssql": "^4.0.4"
+    "express": "^4.15.3"
   },
   "devDependencies": {},
   "scripts": {

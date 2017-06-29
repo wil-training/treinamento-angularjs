@@ -3,7 +3,10 @@
 
   const listaComponent = {
     templateUrl: 'js/componentes/lista/lista.template.html',
-    controller: 'ListaController'
+    controller: 'ListaController',
+    bindings: {
+      alunos: '<'
+    }
   };
 
   angular.module('app')

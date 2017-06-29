@@ -1,12 +1,23 @@
 # Treinamento AngularJS Boilerplate
 
-Para iniciar a aplicação:
+## Pré-requisitos
+
+Executar esses comandos no `cmd` (em qualquer pasta) para instalar os pacotes globais.
+
+`npm install -g json-server`
+
+## Iniciar a aplicação
 
 * Abra o `cmd`
 * Navegue até a pasta desse projeto
-* Digite o comando `npm install`
+* Digite o comando `npm install`, caso seja a primeira vez
 * Digite o comando `npm start`
 * Abra o navegador na url apresentada no `cmd`
+
+## Iniciar a API e banco de dados fake
+
+* Navegue até a pasta `data` do projeto
+* Digite o comando `json-server --watch db.json`
 
 ## Arquivos
 
@@ -17,3 +28,5 @@ Nesta pasta se encontra o arquivo `index.html`, página inicial da aplicação e
 Os arquivos JS estão na pasta `app/js`, com a sua devida hierarquia de pastas.
 
 Os plugins de terceiros estão na pasta `app/plugins`.
+
+O banco de dados _fake_ está na pasta `data`.

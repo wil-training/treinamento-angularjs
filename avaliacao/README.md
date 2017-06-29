@@ -2,7 +2,7 @@
 
 > Pode ser feita com consulta a qualquer material necessário, interno e externo.
 > Deve-se levar em conta as boas práticas e ferramenteas apresentadas no treinamento.
-> Para executar a aplicação, leia as instruções em `EXECUCAO.md`
+> Para executar a aplicação e API, leia as instruções em `EXECUCAO.md`
 
 ## Introdução
 
@@ -17,8 +17,9 @@ Cada contato deve ter nome, sobrenome e telefone, onde o último deve apenas ace
 ### Página inicial / Listagem
 
 * Lista (tabela) com todos os contatos cadastrados
-* Colunas da tabela são: nome, sobrenome, telefone e _excluir_
+* Colunas da tabela são: nome, sobrenome, telefone, _editar_ e _excluir_
 * Primeira letra de nome e sobrenome devem ser apresentadas com maiúscula, mesmo o contato não estando cadastrado dessa forma
+* **A coluna editar deve apresentar um botão que quando clicado leva o usuário para uma página de edição do registro**
 * **A coluna excluir deve apresentar um botão que quando clicado exclui o registro**
 
 ### Inclusão
@@ -37,7 +38,7 @@ Funcionamento:
 Regras:
 
 * _Nome_ não pode estar vazio
-* _Sobrenome_ não pode ser igual a _Nome_
+* _Sobrenome_ não pode ser igual a _Nome_, mas pode ser vazio
 * _Telefone_ só pode conter números
 
 ### Edição

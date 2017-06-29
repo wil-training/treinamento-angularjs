@@ -1,0 +1,22 @@
+<!--<ul>
+  <li ng-repeat="aluno in $ctrl.alunos track by $index">
+    {{ aluno.nome }} - {{ aluno.sobrenome }} - {{ aluno.semestre }}
+  </li>
+</ul>-->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Semestre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="aluno in $ctrl.alunos track by $index">
+      <td>{{ aluno.nome }}</td>
+      <td>{{ aluno.sobrenome }}</td>
+      <td>{{ aluno.semestre }}</td>
+    </tr>
+  </tbody>
+</table>

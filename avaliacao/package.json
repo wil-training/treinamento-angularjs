@@ -1,5 +1,6 @@
 {
-  "name": "aplicacao",
+  "name": "avaliacao",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
