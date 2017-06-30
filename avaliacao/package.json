@@ -1,0 +1,19 @@
+{
+  "name": "avaliacao",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "consolidate": "^0.14.5",
+    "express": "^4.15.3",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Wiley Marques",
+  "license": "ISC"
+}

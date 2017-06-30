@@ -2424,7 +2424,7 @@ Essas propriedades são refletidas como atributos no elemento, ao ser usada na v
 
 ###### Tipo de vínculo
 
-Também deve-se definir o tipo de vínculo a ser usado nessas propriedades. Para fazer essa definição, usamos símbolos no valor das propriedades.
+Também pode-se definir o tipo de vínculo a ser usado nessas propriedades. Para fazer essa definição, usamos símbolos no valor das propriedades.
 
 Essas são as opções disponíveis:
 

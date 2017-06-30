@@ -1,0 +1,10 @@
+{
+  "alunos": [
+    {
+      "id": 1,
+      "nome": "Wiley",
+      "sobrenome": "Marques",
+      "semestre": 3
+    }
+  ]
+}
