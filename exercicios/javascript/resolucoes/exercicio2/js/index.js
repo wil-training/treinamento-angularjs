@@ -1,47 +1,91 @@
-function enviar(event) {
-  
-  const campoNome = document.querySelector('#nome');
-  const campoSobrenome = document.querySelector('#sobrenome');
-  const campoIdade = document.querySelector('#idade');
+const lista = {
+  nomes: [],
+  adicionar: adicionar,
+  remover: remover,
+  mostrar: mostrar,
+  mostrarComecandoComA: mostrarComecandoComA
+};
 
-  const nome = campoNome.value;
-  const sobrenome = campoSobrenome.value;
-  const idade = campoIdade.value;
+function adicionar() {
+  try {
+    const nome = obterNome();
+    if (nome === '') {
+      alert('Insira o nome');
+    } else {
+      adicionarNomeNaLista(nome);
+    }
+  } catch (e) {
+    debugger;
+    alert('Não foi possível');
+  }
+}
 
-  const mostrarIdade = confirm('Deseja mostrar a idade?');
+function remover() {
+  try {
+    const nome = obterNome();
+    if (nome === '') {
+      alert('Insira o nome');
+    } else {
+      removerNomeDaLista(nome);
+    }
+  } catch (e) {
+    alert('Não foi possível');
+  }
+}
 
-  let exibicao;
-  if (mostrarIdade === true) {
-    exibicao = obterExibicaoComIdade(nome, sobrenome, idade);
+function obterNome() {
+  const elementoNome = document.getElementById('a');
+  if (typeof elementoNome === 'undefined' || elementoNome === null) {
+    throw 'Elemento não encontrado';
+  }
+  return elementoNome.value;
+}
+
+function adicionarNomeNaLista(nome) {
+  if (nome !== '') {
+    lista.nomes.push(nome);
+  }
+}
+
+function removerNomeDaLista(nome) {
+  const indice = obterIndiceDoNome(nome);
+  if (indice < 0) {
+    alert('Nome não encontrado');
   } else {
-    exibicao = obterExibicaoSemIdade(nome, sobrenome);
-  }
-
-  alert(exibicao);
-
-  if (event !== null && typeof event !== 'undefined') {
-    event.preventDefault();
+    lista.nomes.splice(indice, 1);
   }
 }
 
-function obterExibicaoComIdade(nome, sobrenome, idade) {
-  const exibicaoNome = 'Nome = ' + nome;
-  const exibicaoSobrenome = 'Sobrenome = ' + sobrenome;
-  const exibicaoIdade = 'Idade = ' + idade;
-
-  const exibicaoCompleta = exibicaoNome + ' - ' + 
-                           exibicaoSobrenome + ' - ' + 
-                           exibicaoIdade;
-
-  return exibicaoCompleta;
+function obterIndiceDoNome(nome) {
+  const indice = lista.nomes.indexOf(nome);
+  return indice;
 }
 
-function obterExibicaoSemIdade(nome, sobrenome) {
-  const exibicaoNome = 'Nome = ' + nome;
-  const exibicaoSobrenome = 'Sobrenome = ' + sobrenome;
+function mostrar() {
+  const nomesConcatenados = concatenarNomes(lista.nomes);
+  alert(nomesConcatenados);
+}
 
-  const exibicaoCompleta = exibicaoNome + ' - ' + 
-                           exibicaoSobrenome;
+function mostrarComecandoComA() {
+  const nomesComA = lista.nomes.filter(comecaComA);
+  const nomesConcatenados = concatenarNomes(nomesComA);
+  alert(nomesConcatenados);
 
-  return exibicaoCompleta;
+  function comecaComA(nome) {
+    const primeiraLetra = nome[0];
+    if (primeiraLetra === 'a' || primeiraLetra === 'A') {
+      return true;
+    }
+    return false;
+  }
+}
+
+function concatenarNomes(nomes) {
+  let nomesConcatenados = '';
+  nomes.forEach(concatenarNome);
+  return nomesConcatenados;
+
+  function concatenarNome(nome) {
+    nomesConcatenados += (nome + '\n');
+  }
 }

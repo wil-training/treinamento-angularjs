@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <input type="text" name="nome" id="nome" class="principal">
+
+  <!--<button type="button" onclick="revelar();" class="principal">Revelar</button>
+
+  <input type="text" id="revelado">-->
+
+  <script>
+    function revelar() {
+
+      // var elementoNome = document.querySelector('#nome');
+      // elementoNome.className; // principal
+      // elementoNome.className = elementoNome.className + ' outra';
+
+      // var elementoNome = document.querySelector('.principal');
+      var elementoNome = document.querySelector('input.principal#nome');
+
+      var elementoComClassePrincipal = document.querySelectorAll('.principal');
+
+      var elementoRevelado = document.querySelector('#revelado');
+
+      elementoRevelado.value = 'Geiza';
+      // elementoRevelado.value = nome + 'a'; 
+
+      debugger;
+
+    }
+  </script>
+
+</body>
+
+</html>
