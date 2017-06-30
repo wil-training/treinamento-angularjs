@@ -3,7 +3,10 @@
 
   const cadastroComponent = {
     templateUrl: 'js/componentes/cadastro/cadastro.template.html',
-    controller: 'CadastroController'
+    controller: 'CadastroController',
+    bindings: {
+      aluno: '<'
+    }
   };
 
   angular.module('app')

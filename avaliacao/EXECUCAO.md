@@ -2,22 +2,24 @@
 
 ## Pré-requisitos
 
-Executar esses comandos no `cmd` (em qualquer pasta) para instalar os pacotes globais.
+Deve ter [NodeJS](https://nodejs.org/en/) instalado na máquina, recomendado a versão [LTS (6.11.0)](https://nodejs.org/dist/v6.11.0/node-v6.11.0-x64.msi).
+
+Após o NodeJS estar instalado, executar esses comandos no _Prompt de Comando_, _PowerShell_ ou _Shell_ (em qualquer pasta) para instalar os pacotes globais.
 
 `npm install -g json-server`
 
 ## Iniciar a aplicação
 
-* Abra o `cmd`
-* Navegue até a pasta desse projeto
-* Digite o comando `npm install`, caso seja a primeira vez
-* Digite o comando `npm start`
-* Abra o navegador na url apresentada no `cmd`
+- Abra o `cmd`
+- Navegue até a pasta desse projeto
+- Digite o comando `npm install`, caso seja a primeira vez
+- Digite o comando `npm start`
+- Abra o navegador na url apresentada no `cmd`
 
 ## Iniciar a API e banco de dados fake
 
-* Navegue até a pasta `data` do projeto
-* Digite o comando `json-server --watch db.json`
+- Navegue até a pasta `data` do projeto
+- Digite o comando `json-server --watch db.json`
 
 ## Arquivos
 
