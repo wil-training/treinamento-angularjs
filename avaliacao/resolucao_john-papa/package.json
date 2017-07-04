@@ -1,0 +1,22 @@
+{
+  "name": "resolucao_john-papa",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "consolidate": "^0.14.5",
+    "errorhandler": "^1.5.0",
+    "express": "^4.15.3",
+    "jscs": "^3.0.7",
+    "jshint": "^2.9.5",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Wiley Marques",
+  "license": "ISC"
+}
