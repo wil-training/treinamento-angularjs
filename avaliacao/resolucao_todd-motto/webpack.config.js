@@ -1,6 +1,7 @@
 const cleanPlugin = require('clean-webpack-plugin');
 const copyPlugin = require('copy-webpack-plugin');
 const extractPlugin = require('extract-text-webpack-plugin');
+// require('bootstrap-loader');
 
 const root = `${__dirname}/src`;
 const dist = `${__dirname}/dist`;
@@ -30,21 +31,41 @@ const scripts = {
   ],
 };
 
+const styles = {
+  test: /\.scss$/,
+  loaders: [
+    'style-loader',
+    'css-loader',
+    'postcss-loader',
+    'sass-loader',
+  ]
+};
+
 const markup = {
   test: /\.html$/,
   loader: 'ngtemplate-loader!html-loader',
 };
 
+const fonts = {
+  test: /\.(eot|svg|ttf|woff|woff2)$/,
+  loader: 'file-loader?name=fonts/[name].[ext]',
+};
+
 // Config object
 const config = {
   entry: {
-    bundle: paths.app,
+    bundle: [
+      'bootstrap-loader',
+      paths.app,
+    ]
   },
   devtool: 'source-map',
   module: {
     loaders: [
       scripts,
       markup,
+      styles,
+      fonts,
     ],
   },
   plugins: [
