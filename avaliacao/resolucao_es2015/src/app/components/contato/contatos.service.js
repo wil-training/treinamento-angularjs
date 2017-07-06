@@ -1,6 +1,6 @@
 const url = 'http://localhost:3000/contatos';
 
-class ContatosService {
+export class ContatosService {
   constructor($http, $q) {
     'ngInject';
     
@@ -48,5 +48,3 @@ class ContatosService {
     }
   }
 }
-
-export default ContatosService;

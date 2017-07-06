@@ -1,6 +1,6 @@
 import templateUrl from './contato-lista.template.html';
 
-const ContatoListaComponent = {
+export const ContatoListaComponent = {
   templateUrl,
   bindings: {
     contatos: '<'
@@ -39,5 +39,3 @@ const ContatoListaComponent = {
     }
   }
 };
-
-export default ContatoListaComponent;

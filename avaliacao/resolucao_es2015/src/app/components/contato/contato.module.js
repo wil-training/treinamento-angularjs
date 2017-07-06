@@ -1,11 +1,11 @@
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 
-import ContatoListaModule from './contato-lista/contato-lista.module';
-import ContatoFormularioModule from './contato-formulario/contato-formulario.module';
-import ContatosService from './contatos.service';
+import { ContatoListaModule } from './contato-lista/contato-lista.module';
+import { ContatoFormularioModule } from './contato-formulario/contato-formulario.module';
+import { ContatosService } from './contatos.service';
 
-const ContatoModule = angular
+export const ContatoModule = angular
   .module('contato', [
     ContatoListaModule,
     ContatoFormularioModule,
@@ -55,5 +55,3 @@ const ContatoModule = angular
     $urlRouterProvider.otherwise('/');
   })
   .name;
-
-export default ContatoModule;

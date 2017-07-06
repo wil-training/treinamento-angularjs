@@ -1,11 +1,11 @@
 import templateUrl from './contato-formulario.template.html';
 
-const CadastroFormularioComponent = {
+export const ContatoFormularioComponent = {
   templateUrl,
   bindings: {
     contato: '<'
   },
-  controller: class CadastroFormularioComponent {
+  controller: class ContatoFormularioComponent {
     constructor(ContatosService) {
       'ngInject';
 
@@ -154,5 +154,3 @@ const CadastroFormularioComponent = {
     }
   },
 };
-
-export default CadastroFormularioComponent;

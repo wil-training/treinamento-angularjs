@@ -1,6 +1,6 @@
 import templateUrl from './navbar.template.html';
 
-const NavbarComponent = {
+export const NavbarComponent = {
   templateUrl,
   controller: class NavbarComponent {
     constructor() {
@@ -8,5 +8,3 @@ const NavbarComponent = {
     }
   }
 };
-
-export default NavbarComponent;
