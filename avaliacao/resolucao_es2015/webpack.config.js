@@ -1,7 +1,5 @@
 const cleanPlugin = require('clean-webpack-plugin');
 const copyPlugin = require('copy-webpack-plugin');
-const extractPlugin = require('extract-text-webpack-plugin');
-// require('bootstrap-loader');
 
 const root = `${__dirname}/src`;
 const dist = `${__dirname}/dist`;

@@ -10,6 +10,6 @@ Aqui temos a avaliação resolvida de 3 maneiras. Com base nas propostas de esti
 
 Para acessar:
 
-* [John Papa](resolucao_john-papa)
-* [Todd Motto](resolucao_todd-motto)
+* [John Papa](resolucao)
+* [Todd Motto](resolucao_es2015)
 * [Angular (2+)](resolucao_angular)

@@ -2,9 +2,6 @@
   <div class="alert alert-info" ng-show="$ctrl.contatos.length <= 0" role="alert">
     Não há contatos cadastros até o momento
   </div>
-  <div class="alert alert-success" ng-show="$ctrl.mostraMensagemSucesso === true" role="alert">
-    Cadastro excluído com sucesso
-  </div>
   <div class="alert alert-danger" ng-show="$ctrl.mostraMensagensFalha === true" role="alert">
     {{ $ctrl.mensagemFalha }}
   </div>
@@ -26,7 +23,7 @@
       <td>{{ contato.telefone }}</td>
       <td>
         <a class="btn btn-default" ui-sref="edicao({ id: contato.id })">Editar</a>
-        <a class="btn btn-danger" ng-click="$ctrl.excluirContato(contado.id)">Excluir</a>
+        <a class="btn btn-danger" ng-click="$ctrl.excluirContato(contato.id)">Excluir</a>
       </td>
     </tr>
   </tbody>

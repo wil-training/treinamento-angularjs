@@ -17,10 +17,12 @@
   "devDependencies": {
     "babel-core": "^6.11.4",
     "babel-loader": "^6.2.5",
+    "babel-plugin-angularjs-annotate": "^0.7.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.14.0",
     "bootstrap-loader": "^2.1.0",
     "bootstrap-sass": "^3.3.7",
+    "concurrently": "^3.5.0",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
@@ -36,7 +38,7 @@
     "webpack-dev-server": "^2.5.0"
   },
   "scripts": {
-    "start": "webpack-dev-server -d --progress --colors --inline --hot --open --content-base bin/"
+    "start": "concurrently --kill-others \"json-server --watch data/db.json\" \"webpack-dev-server -d --progress --colors --inline --hot --open --content-base bin/\""
   },
   "license": "ISC"
 }
