@@ -1,48 +1,17 @@
 # Avaliação para o Treinamento de AngularJS - Agenda
 
-> Pode ser feita com consulta a qualquer material necessário, interno e externo.
->
-> Deve-se levar em conta as boas práticas e ferramentas apresentadas no treinamento.
->
-> Para executar a aplicação e API, leia as instruções em `EXECUCAO.md`
+## Proposta
 
-## Introdução
+Entre em [proposta](Proposta) para ver o que foi proposto como avaliação.
 
-Aplicação para cadastro de contatos (agenda) com listagem, inclusão, edição e exclusão.
+## Resolução
 
-Importante colocar links e/ou botões para realizar a navegação na página.
+Aqui temos a avaliação resolvida de 3 maneiras.
 
-Cada contato deve ter nome, sobrenome e telefone, onde o último deve apenas aceitar números.
+Com base nas propostas de estilo de codificação do [John Papa](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#routing), [Todd Motto](https://github.com/toddmotto/angularjs-styleguide) (com ES2015) e uma versão usando [Angular 4](https://angular.io/).
 
-## Estrutura
+Para acessar:
 
-### Página inicial / Listagem
-
-- Lista (tabela) com todos os contatos cadastrados
-- Colunas da tabela são: nome, sobrenome, telefone, _editar_ e _excluir_
-- Primeira letra de nome e sobrenome devem ser apresentadas com maiúscula, mesmo o contato não estando cadastrado dessa forma
-- **A coluna editar deve apresentar um botão que quando clicado leva o usuário para uma página de edição do registro**
-- **A coluna excluir deve apresentar um botão que quando clicado exclui o registro**
-
-### Inclusão
-
-Tela com os campos:
-
-- Nome
-- Sobrenome
-- Telefone (numérico)
-- Botão _Salvar_
-
-Funcionamento:
-
-- Ao clicar em _Salvar_, deve-se verificar se as informações foram devidamente preenchidas pelo usuário e _guardá-las_ em um banco de dados
-
-Regras:
-
-- _Nome_ não pode estar vazio
-- _Sobrenome_ não pode ser igual a _Nome_, mas pode ser vazio
-- _Telefone_ só pode conter números
-
-### Edição
-
-Igual a tela de inclusão, mas carrega um contato já existente e o botão _Salvar_ o atualiza no banco de dados.
+* [John Papa](resolucao)
+* [Todd Motto (ES2015)](resolucao-es2015)
+* [Angular 4](resolucao-angular)

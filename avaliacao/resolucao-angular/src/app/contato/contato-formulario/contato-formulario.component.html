@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="alert alert-success" [hidden]="mostraMensagemSucesso === false" role="alert">
+    {{ mensagemSucesso }}
+  </div>
+  <div class="alert alert-danger" [hidden]="mostraMensagensFalha === false" role="alert">
+    <ul>
+      <li *ngFor="let mensagemFalha of mensagensFalha">
+        {{ mensagemFalha }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<form class="form-horizontal">
+
+  <legend>
+    <span *ngIf="modoCriacao() === true">Novo</span>
+    <span *ngIf="modoCriacao() === false">Alterar</span>
+    <span> cadastro</span>
+  </legend>
+
+  <div class="form-group" [ngClass]="{ 'has-error': verificarSeCampoEstaInvalido('nome') }">
+    <label for="nome" class="control-label col-sm-2">Nome:</label>
+    <div class="col-sm-10">
+      <input type="text" id="nome" name="nome" placeholder="Obrigatório" [(ngModel)]="contato.nome" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="{ 'has-error': verificarSeCampoEstaInvalido('sobrenome') }">
+    <label for="sobrenome" class="control-label col-sm-2">Sobrenome:</label>
+    <div class="col-sm-10">
+      <input type="text" id="sobrenome" name="sobrenome" placeholder="Opcional" [(ngModel)]="contato.sobrenome" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="{ 'has-error': verificarSeCampoEstaInvalido('telefone') }">
+    <label for="telefone" class="control-label col-sm-2">Telefone:</label>
+    <div class="col-sm-10">
+      <input type="tel" id="telefone" name="telefone" placeholder="Obrigatório" [(ngModel)]="contato.telefone" class="form-control">
+    </div>
+  </div>
+
+  <div class="col-sm-offset-2">
+    <button type="button" (click)="cadastrar()" class="btn btn-success">Salvar</button>
+  </div>
+
+</form>

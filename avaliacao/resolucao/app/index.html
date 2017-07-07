@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <base href="/">
+
+  <title>Resolução da Avaliação AngularJS</title>
+
+  <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+
+  <navbar></navbar>
+
+  <section class="container">
+
+    <div class="row">
+      <ui-view></ui-view>
+    </div>
+
+  </section>
+
+  <!-- Plugins -->
+  <script src="plugins/angular-1.6.4/angular.js"></script>
+  <script src="plugins/angular-ui-router-1.0.3/angular-ui-router.js"></script>
+  <script src="plugins/angular-ui-bootstrap-2.5.0/ui-bootstrap-tpls-2.5.0.js"></script>
+
+  <!-- Módulo -->
+  <script src="js/app.module.js"></script>
+  <!-- Rotas -->
+  <script src="js/app.routes.js"></script>
+
+  <!-- Serviços -->
+  <script src="js/servicos/contatos.service.js"></script>
+
+  <!-- Componentes -->
+  <script src="js/componentes/navbar/navbar.controller.js"></script>
+  <script src="js/componentes/navbar/navbar.component.js"></script>
+  <script src="js/componentes/lista/lista.controller.js"></script>
+  <script src="js/componentes/lista/lista.component.js"></script>
+  <script src="js/componentes/cadastro/cadastro.controller.js"></script>
+  <script src="js/componentes/cadastro/cadastro.component.js"></script>
+</body>
+
+</html>
