@@ -1,28 +1,35 @@
-# ResolucaoAngular
+# Treinamento AngularJS Boilerplate - ES2015
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
+## Pré-requisitos
 
-## Development server
+Deve ter [NodeJS](https://nodejs.org/en/) instalado na máquina, recomendado a versão [LTS (6.11.0)](https://nodejs.org/dist/v6.11.0/node-v6.11.0-x64.msi).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Após o NodeJS estar instalado, executar o seguinte comando no _Prompt de Comando_, _PowerShell_ ou _Shell_ (em qualquer pasta), para instalar os pacotes globais:
 
-## Code scaffolding
+`npm install -g json-server`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+## Iniciar a aplicação
 
-## Build
+* Abra o prompt de comando
+* Navegue até a pasta desse projeto
+* Digite o comando `npm install`, caso seja a primeira vez
+* Digite o comando `npm start`
+* Abra o navegador em [http://localhost:4200](http://localhost:4200)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Iniciar a API e banco de dados fake
 
-## Running unit tests
+A API já será inicializada quando der o comando `npm start`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Foi configurado assim para simplificar a execução.
 
-## Running end-to-end tests
+## Arquivos
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Os arquivos da aplicação estão na pasta _src_.
 
-## Further help
+Nesta pasta se encontra o arquivo _index.html_, página inicial da aplicação e demais arquivos necessários para o seu funcionamento.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Os arquivos da aplicação estão em _src/app_, com a sua devida hierarquia de pastas.
+
+Os plugins de terceiros são carregados como módulos do _npm_, não sendo mais necessária a pasta _plugins_.
+
+O banco de dados _fake_ está na pasta _data_.
