@@ -1,4 +1,4 @@
-# Treinamento AngularJS Boilerplate - ES2015
+# Resolução avaliação AngularJS - Usando Angular 4
 
 ## Pré-requisitos
 

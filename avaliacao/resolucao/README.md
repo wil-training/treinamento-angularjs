@@ -1,4 +1,4 @@
-# Treinamento AngularJS Boilerplate
+# Resolução avaliação AngularJS
 
 ## Pré-requisitos
 
