@@ -1,10 +1,14 @@
 {
-  "name": "resolucao_todd-motto",
+  "name": "resolucao-es2015",
   "author": "Wiley Marques",
   "private": true,
   "version": "1.0.0",
-  "description": "",
+  "license": "MIT",
+  "description": "Resolução da prova do treinamento de AngularJS usando ES2015",
   "main": "server.js",
+  "scripts": {
+    "start": "concurrently --kill-others \"json-server --watch data/db.json\" \"webpack-dev-server -d --progress --colors --inline --hot --open --content-base bin/\""
+  },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.5",
     "@uirouter/core": "^5.0.5",
@@ -36,9 +40,5 @@
     "url-loader": "^0.5.9",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.5.0"
-  },
-  "scripts": {
-    "start": "concurrently --kill-others \"json-server --watch data/db.json\" \"webpack-dev-server -d --progress --colors --inline --hot --open --content-base bin/\""
-  },
-  "license": "ISC"
+  }
 }

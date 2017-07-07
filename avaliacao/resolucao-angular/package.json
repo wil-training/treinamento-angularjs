@@ -1,16 +1,18 @@
 {
   "name": "resolucao-angular",
-  "version": "0.0.0",
+  "author": "Wiley Marques",
+  "private": true,
+  "version": "1.0.0",
   "license": "MIT",
+  "description": "Resolução da prova do treinamento de AngularJS usando Angular (4)",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently --kill-others \"json-server --watch data/db.json\" \"ng serve\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
@@ -21,6 +23,9 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "@uirouter/angular": "^1.0.0-beta.7",
+    "@uirouter/core": "^5.0.5",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
@@ -33,6 +38,7 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.0.1",
+    "concurrently": "^3.5.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",

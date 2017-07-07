@@ -104,7 +104,7 @@
       return true;
     }
     validarNome() {
-      const nome = this.contato.nome.replace(' ', '');
+      const nomeSemEspacos = this.removerEspacos(this.contato.nome);
       if (nome === '') {
         this.camposComErro.push('nome');
         this.mensagensFalha.push('Nome não informado');
@@ -113,9 +113,9 @@
       return true;
     }
     validarSobrenome() {
-      const nome = this.contato.nome.replace(' ', '');
-      const sobrenome = this.contato.sobrenome.replace(' ', '');
-      if (sobrenome !== '' && sobrenome === nome) {
+      const nomeSemEspacos = this.removerEspacos(this.contato.nome);
+      const sobrenomeSemEspacos = this.removerEspacos(this.contato.sobrenome);
+      if (sobrenomeSemEspacos !== '' && sobrenomeSemEspacos === nomeSemEspacos) {
         this.camposComErro.push('sobrenome');
         this.mensagensFalha.push('Sobrenome não pode ser igual ao nome');
         return false;
@@ -123,13 +123,13 @@
       return true;
     }
     validarTelefone() {
-      const telefone = this.contato.telefone.replace(' ', '');
-      if (telefone === '') {
+      const telefoneSemEspacos = this.removerEspacos(this.contato.telefone);
+      if (telefoneSemEspacos === '') {
         this.camposComErro.push('telefone');
         this.mensagensFalha.push('Telefone não informado');
         return false;
       } else {
-        const telefoneNumerico = Number(telefone);
+        const telefoneNumerico = Number(telefoneSemEspacos);
         if (Number.isNaN(telefoneNumerico)) {
           this.camposComErro.push('telefone');
           this.mensagensFalha.push('Telefone só pode contar números');
@@ -150,6 +150,12 @@
     mostrarMensagemErro(mensagem) {
       this.mensagensFalha.push(mensagem);
       this.mostraMensagensFalha = true;
+    }
+
+    removerEspacos(texto) {
+      const regexTodosEspacos = new RegExp(' ', 'g');
+      const textoSemEspacos = texto.replace(regexTodosEspacos, '');
+      return textoSemEspacos;
     }
   }
 

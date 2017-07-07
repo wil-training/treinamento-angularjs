@@ -1,4 +1,4 @@
-import templateUrl from './navbar.template.html';
+import templateUrl from './navbar.component.html';
 
 export const NavbarComponent = {
   templateUrl,

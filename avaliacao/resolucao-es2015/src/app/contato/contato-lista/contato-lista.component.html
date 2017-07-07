@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="alert alert-info" ng-show="$ctrl.contatos.length <= 0" role="alert">
+  <div class="alert alert-info" ng-hide="$ctrl.existemContatos()" role="alert">
     Não há contatos cadastros até o momento
   </div>
   <div class="alert alert-danger" ng-show="$ctrl.mostraMensagensFalha === true" role="alert">
@@ -7,7 +7,7 @@
   </div>
 </div>
 
-<table class="table table-hover table-condensed" ng-show="$ctrl.contatos.length > 0">
+<table class="table table-hover table-condensed" ng-if="$ctrl.existemContatos()">
   <thead>
     <tr class="active">
       <th>Nome</th>

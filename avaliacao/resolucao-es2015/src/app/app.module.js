@@ -2,11 +2,13 @@ import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 
 import { AppComponent } from './app.component';
-import { ComponentsModule } from './components/components.module';
+import { NavbarComponent } from './navbar/navbar.component';
+
+import { ContatoModule } from './contato/contato.module';
 
 export const app = angular
   .module('app', [
-    ComponentsModule,
+    ContatoModule,
     uiRouter,
   ])
   .config(($locationProvider) => {
@@ -14,4 +16,5 @@ export const app = angular
     $locationProvider.html5Mode(true);
   })
   .component('app', AppComponent)
+  .component('navbar', NavbarComponent)
   .name;

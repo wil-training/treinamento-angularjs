@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="alert alert-info" [hidden]="existemContatos()" role="alert">
+    Não há contatos cadastros até o momento
+  </div>
+  <div class="alert alert-danger" [hidden]="mostraMensagensFalha === false" role="alert">
+    {{ mensagemFalha }}
+  </div>
+</div>
+
+<table class="table table-hover table-condensed" *ngIf="existemContatos()">
+  <thead>
+    <tr class="active">
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Telefone</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contato of contatos">
+      <td class="text-capitalize">{{ contato.nome }}</td>
+      <td class="text-capitalize">{{ contato.sobrenome }}</td>
+      <td>{{ contato.telefone }}</td>
+      <td>
+        <a class="btn btn-default" uiSref="edicao" [uiParams]="{ id: contato.id }">Editar</a>
+        <a class="btn btn-danger" (click)="excluirContato(contato.id)">Excluir</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

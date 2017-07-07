@@ -1,4 +1,4 @@
-import templateUrl from './contato-lista.template.html';
+import templateUrl from './contato-lista.component.html';
 
 export const ContatoListaComponent = {
   templateUrl,
@@ -12,7 +12,14 @@ export const ContatoListaComponent = {
       this.mostraMensagensFalha = false;
 
       this.$state = $state;
-      this.ContatosService = ContatosService;
+      this.contatosService = ContatosService;
+    }
+
+    existemContatos() {
+      if (this.contatos != null && this.contatos.length > 0) {
+        return true;
+      }
+      return false;
     }
 
     excluirContato(contatoId) {
@@ -24,7 +31,7 @@ export const ContatoListaComponent = {
         return;
       }
 
-      this.ContatosService.excluir(contatoId)
+      this.contatosService.excluir(contatoId)
         .then(() => this.$state.reload())
         .catch(mensagem => this.mostrarMensagemDeFalha(mensagem));
     }

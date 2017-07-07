@@ -1,4 +1,4 @@
-import templateUrl from './contato-formulario.template.html';
+import templateUrl from './contato-formulario.component.html';
 
 export const ContatoFormularioComponent = {
   templateUrl,
@@ -18,11 +18,11 @@ export const ContatoFormularioComponent = {
       this.mensagensFalha = [];
       this.mostraMensagensFalha = false;
 
-      this.ContatosService = ContatosService;
+      this.contatosService = ContatosService;
     }
 
     $onInit() {
-      if (this.contato === null || typeof this.contato === 'undefined') {
+      if (this.contato == null) {
         this.inicializarCadastro();
       }
     }
@@ -46,7 +46,7 @@ export const ContatoFormularioComponent = {
     }
 
     modoCriacao() {
-      if (this.contato.id === null || typeof this.contato.id === 'undefined') {
+      if (this.contato.id == null) {
         return true;
       }
       return false;
@@ -60,7 +60,7 @@ export const ContatoFormularioComponent = {
         this.mostraMensagemSucesso = true;
       };
 
-      this.ContatosService.criar(novoContato)
+      this.contatosService.criar(novoContato)
         .then(aoCriarNovoContatoSucesso)
         .catch(mensagem => this.mostrarMensagemErro(mensagem));
     }
@@ -72,7 +72,7 @@ export const ContatoFormularioComponent = {
         this.mostraMensagemSucesso = true;
       };
 
-      this.ContatosService.alterar(contato)
+      this.contatosService.alterar(contato)
         .then(aoAlterarContatoSucesso)
         .catch(mensagem => this.mostrarMensagemErro(mensagem));
     }
@@ -104,8 +104,8 @@ export const ContatoFormularioComponent = {
       return true;
     }
     validarNome() {
-      const nome = this.contato.nome.replace(' ', '');
-      if (nome === '') {
+      const nomeSemEspacos = this.removerEspacos(this.contato.nome);
+      if (nomeSemEspacos === '') {
         this.camposComErro.push('nome');
         this.mensagensFalha.push('Nome não informado');
         return false;
@@ -114,11 +114,11 @@ export const ContatoFormularioComponent = {
     }
     validarSobrenome() {
       const nomeMinusculo = this.contato.nome.toLocaleLowerCase();
-      const nomeMinusculoSemEspacos = nomeMinusculo.replace(' ', '');
+      const nomeMinusculoSemEspacos = this.removerEspacos(nomeMinusculo);
 
       const sobrenomeMinusculo = this.contato.sobrenome.toLocaleLowerCase();
-      const sobrenomeMinusculoSemEspacos = sobrenomeMinusculo.replace(' ', '');
-      
+      const sobrenomeMinusculoSemEspacos = this.removerEspacos(sobrenomeMinusculo);
+
       if (sobrenomeMinusculoSemEspacos !== '' && sobrenomeMinusculoSemEspacos === nomeMinusculoSemEspacos) {
         this.camposComErro.push('sobrenome');
         this.mensagensFalha.push('Sobrenome não pode ser igual ao nome');
@@ -127,13 +127,13 @@ export const ContatoFormularioComponent = {
       return true;
     }
     validarTelefone() {
-      const telefone = this.contato.telefone.replace(' ', '');
-      if (telefone === '') {
+      const telefoneSemEspacos = this.removerEspacos(this.contato.telefone);
+      if (telefoneSemEspacos === '') {
         this.camposComErro.push('telefone');
         this.mensagensFalha.push('Telefone não informado');
         return false;
       } else {
-        const telefoneNumerico = Number(telefone);
+        const telefoneNumerico = Number(telefoneSemEspacos);
         if (Number.isNaN(telefoneNumerico)) {
           this.camposComErro.push('telefone');
           this.mensagensFalha.push('Telefone só pode contar números');
@@ -151,6 +151,12 @@ export const ContatoFormularioComponent = {
     mostrarMensagemErro(mensagem) {
       this.mensagensFalha.push(mensagem);
       this.mostraMensagensFalha = true;
+    }
+
+    removerEspacos(texto) {
+      const regexTodosEspacos = new RegExp(' ', 'g');
+      const textoSemEspacos = texto.replace(regexTodosEspacos, '');
+      return textoSemEspacos;
     }
   },
 };
