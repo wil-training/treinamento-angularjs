@@ -12,6 +12,6 @@ Com base nas propostas de estilo de codificação do [John Papa](https://github.
 
 Para acessar:
 
-* [John Papa](resolucao)
-* [Todd Motto (ES2015)](resolucao-es2015)
-* [Angular 4](resolucao-angular)
+* [John Papa](https://github.com/vectoritcgroup/resolucao-treinamento)
+* [Todd Motto (ES2015)](https://github.com/vectoritcgroup/resolucao-treinamento-es2015)
+* [Angular 4](https://github.com/vectoritcgroup/resolucao-treinamento-angular)
